@@ -137,3 +137,127 @@ print(result)  # [1, 4, 9, 16]
 
 ✅ Python allows both **imperative(how to do)** and **functional(what to do)** styles, but FP makes programs more elegant, readable, and maintainable.
 
+Here’s a clear, structured explanation of **how Python is an Object-Oriented Programming (OOP) language**, covering each point you listed 👇
+
+---
+
+### 8. Python is Object Oriented Programming Language — How?
+
+Python supports all the core **Object-Oriented Programming (OOP)** principles such as **Encapsulation, Inheritance, Polymorphism, and Abstraction**.
+Everything in Python — from numbers to functions — is an **object**.
+
+#### **1️⃣ Package, Subpackage, and Module**
+
+* **Module:**
+  A Python file (`.py`) that contains variables, functions, or classes.
+  Example:
+
+  ```python
+  # file: math_utils.py
+  def add(a, b):
+      return a + b
+  ```
+
+* **Package:**
+  A collection of related modules kept in a directory with an `__init__.py` file.
+  Example structure:
+
+  ```
+  mypackage/
+      __init__.py
+      math_utils.py
+      string_utils.py
+  ```
+
+* **Subpackage:**
+  A package inside another package (used for better organization).
+  Example:
+
+  ```
+  myproject/
+      __init__.py
+      utils/
+          __init__.py
+          file_utils.py
+  ```
+
+✅ **In short:**
+Package → folder containing modules
+Module → single Python file
+Subpackage → nested package
+
+
+#### **2️⃣ Class**
+
+A **class** is a blueprint or template to create objects.
+It can contain **variables (attributes)** and **functions (methods)** that describe the behavior of the object.
+
+Example:
+
+```python
+class Student:
+    school_name = "ABC Public School"   # Class variable
+
+    def __init__(self, name, age):      # Constructor
+        self.name = name
+        self.age = age
+
+    def show(self):                     # Member function
+        print(f"Name: {self.name}, Age: {self.age}")
+```
+
+
+#### **3️⃣ Members (Variables and Functions inside a Class)**
+
+* **Data Members (Variables):** Hold data specific to the object or class.
+* **Member Functions (Methods):** Define the behavior of that data.
+
+Example:
+
+```python
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand        # data member
+        self.color = color        # data member
+
+    def start(self):              # member function
+        print(f"{self.color} {self.brand} started!")
+```
+
+#### **4️⃣ Constructor**
+
+* The **constructor** in Python is a special method named `__init__()`.
+* It automatically executes when an object is created.
+* Purpose: Initialize object properties.
+
+Example:
+
+```python
+class Employee:
+    def __init__(self, name, dept):
+        self.name = name
+        self.dept = dept
+```
+
+#### **5️⃣ Object (Instance of the Class)**
+
+An **object** is a real instance created from a class — it occupies memory.
+You call a class like a function to create an object:
+
+```python
+e1 = Employee("Murali", "Big Data")
+print(e1.name)       # Accessing data member
+```
+
+✅ When you create an object (like `e1`), the constructor runs automatically and loads the class into memory.
+
+#### **In Simple Words**
+
+| Concept              | Meaning                          | Example                       |
+| -------------------- | -------------------------------- | ----------------------------- |
+| **Class**            | Blueprint / Template             | `class Student:`              |
+| **Object**           | Real instance in memory          | `s1 = Student()`              |
+| **Members**          | Variables & functions in a class | `self.name`, `def show()`     |
+| **Constructor**      | Initializes object properties    | `__init__()`                  |
+| **Package / Module** | Organizes Python code            | `import mypackage.math_utils` |
+
