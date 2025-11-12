@@ -14,6 +14,7 @@
 - **Open Source?**  
   From the very beginning, Python has been **open source**.
 
+---
 
 ## 💡 Why Python?
 
@@ -25,7 +26,7 @@
 | **Third-party utilities (e.g., Numeric, NumPy, SciPy)** | Large ecosystem of external libraries makes complex tasks like math, data analysis, and AI easier.             |
 | **Automatic memory management**                         | Python automatically allocates and frees memory using garbage collection — no manual memory handling needed.   |
 
-
+---
 
 ## 🧠 What is Python?
 
@@ -40,9 +41,13 @@ Python is:
 
 ![img.png](files/img.png)
 
+---
+
 ### 1. Python is an Interpreter or Complier Language?
 
 ![img.png](files/img2.png)
+
+---
 
 ### 2. How Python Code Gets Executed?
 
@@ -56,6 +61,8 @@ Python is:
    * Note: **JVM cannot run inside PVM.**
 ![img.png](files/img3.png)
 
+---
+
 ### 3. Python is Indent Based language. Why?
 
 * Python uses **indentation (spaces or tabs)** to define code blocks instead of braces `{}` or keywords like `BEGIN...END`.
@@ -63,6 +70,8 @@ Python is:
 * Other languages like **SQL**, **Scala**, **Java**, **PL/SQL**, and **Linux Shell scripting** follow a **block-based programming model**, not indentation-based.
 * In Python, indentation is part of the **syntax** — missing or incorrect indentation causes errors.
 * Standard practice: use **4 spaces** (recommended by PEP 8) or **a single TAB** for indentation.
+
+---
 
 ### 4. Why Python is a High-Level Programming Language?
 
@@ -78,6 +87,8 @@ Python is:
 | **Mid-Level Programming**  | Medium complexity, moderate lines of code, custom functions or logic written by user.         | a=0<br/>for i in 'hello':<br/>a+=len(i)<br/>print(a)          |
 | **Low-Level Programming**  | High complexity, more lines of code, deals with system-level operations (e.g., C, C++, Java). | #include<stdio.h><br/>int main()<br/>{<br/>printf(\"Hello\");<br/>return 0;<br/>}<br/> |
 
+---
+
 ### 5. Why Python is General Purpose / Universal?
 
 * Python is called a **General Purpose (or Universal)** programming language because it can be used across **almost all domains and platforms** — not limited to a specific use case.
@@ -85,6 +96,7 @@ Python is:
 * Being **open source**, Python has a **rich ecosystem of libraries** (like NumPy, Pandas, TensorFlow, Flask, etc.) that make it powerful and versatile.
 * Its **strong community support** and **decades of maturity** make it a reliable and **legacy-rich** programming language suitable for both beginners and large-scale enterprise solutions.
 
+---
 
 ### 6. Why Python is a Scripting-Based Programming Language
 
@@ -103,6 +115,8 @@ print("Sum:", x + y)
 ```
 
 ✅ Runs directly as a script — no class, no function, no boilerplate code required.
+
+---
 
 ### 7. Why Python is a Function-Based Programming Language
 
