@@ -44,7 +44,7 @@ Python is:
 
 ![img.png](files/img2.png)
 
-**How Python Code Gets Executed?**
+### 2. How Python Code Gets Executed?**
 
    1. Python source code (.py) is first **compiled into bytecode** (.pyc) automatically.
    2. The **Python Virtual Machine (PVM)** then **interprets and executes** this bytecode line by line.
