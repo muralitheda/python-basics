@@ -63,3 +63,17 @@ Python is:
 * Other languages like **SQL**, **Scala**, **Java**, **PL/SQL**, and **Linux Shell scripting** follow a **block-based programming model**, not indentation-based.
 * In Python, indentation is part of the **syntax** — missing or incorrect indentation causes errors.
 * Standard practice: use **4 spaces** (recommended by PEP 8) or **a single TAB** for indentation.
+
+### 4. Why Python is a High-Level Programming Language?
+
+* Python is considered a **high-level programming language** because it abstracts away most hardware details and provides many built-in functions, reducing code complexity.
+* It allows developers to focus on **logic** rather than managing memory or system-level operations.
+* Though Python can also be used as a **mid-level language**, it is **recommended as high-level** for productivity and simplicity.
+
+**Types of Programming Languages**
+
+| Type                       | Description                                                                                   | Example                                                       |
+| -------------------------- | --------------------------------------------------------------------------------------------- |---------------------------------------------------------------|
+| **High-Level Programming** | Low complexity, fewer lines of code, mostly uses predefined functions.                        | `len('Hello')`                                                |
+| **Mid-Level Programming**  | Medium complexity, moderate lines of code, custom functions or logic written by user.         | a=0<br/>for i in 'hello':<br/>a+=len(i)<br/>print(a)          |
+| **Low-Level Programming**  | High complexity, more lines of code, deals with system-level operations (e.g., C, C++, Java). | #include<stdio.h><br/>int main(){printf(\"Hello\");return 0;}<br/> |
