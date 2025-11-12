@@ -275,3 +275,4 @@ print(e1.name)       # Accessing data member
 | **Constructor**      | Initializes object properties    | `__init__()`                  |
 | **Package / Module** | Organizes Python code            | `import mypackage.math_utils` |
 
+---
