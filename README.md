@@ -76,4 +76,4 @@ Python is:
 | -------------------------- | --------------------------------------------------------------------------------------------- |---------------------------------------------------------------|
 | **High-Level Programming** | Low complexity, fewer lines of code, mostly uses predefined functions.                        | `len('Hello')`                                                |
 | **Mid-Level Programming**  | Medium complexity, moderate lines of code, custom functions or logic written by user.         | a=0<br/>for i in 'hello':<br/>a+=len(i)<br/>print(a)          |
-| **Low-Level Programming**  | High complexity, more lines of code, deals with system-level operations (e.g., C, C++, Java). | #include<stdio.h><br/>int main(){printf(\"Hello\");return 0;}<br/> |
+| **Low-Level Programming**  | High complexity, more lines of code, deals with system-level operations (e.g., C, C++, Java). | #include<stdio.h><br/>int main(){<br/>printf(\"Hello\");<br/>return 0;<br/>}<br/> |
