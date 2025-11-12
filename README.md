@@ -34,3 +34,22 @@ Python is:
 5. **Scripting-based**  
 6. **Function-based**  
 7. **Object-oriented** programming language  
+
+![img.png](files/img.png)
+
+### 1. Python is an Interpreter or Complier Language?
+
+![img.png](files/img2.png)
+
+**How Python Code Gets Executed?**
+
+1. Python source code (.py) is first **compiled into bytecode** (.pyc) automatically.
+2. The **Python Virtual Machine (PVM)** then **interprets and executes** this bytecode line by line.
+3. Only the code is compiled/interpreted — variable values and runtime data are handled in **PVM memory** (similar to JVM’s garbage collection).
+4. **.pyi files** can be used to avoid recompiling the same workload repeatedly.
+
+**PySpark Case:**
+
+* Spark uses **JVM**, Python uses **PVM**.
+* When using PySpark, the **PVM runs inside the JVM** to execute Python code and interact with the Spark engine.
+* Note: **JVM cannot run inside PVM.**
