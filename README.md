@@ -17,11 +17,14 @@
 
 ## 💡 Why Python?
 
-- Built-in types and library utilities  
-- Dynamic typing  
-- Strong typing  
-- Third-party utilities (e.g., **Numeric**, **NumPy**, **SciPy**)  
-- Automatic memory management  
+| Feature                                                 | Reason / Explanation                                                                                           |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Built-in types and library utilities**                | Provides ready-to-use data types (list, dict, tuple, etc.) and a rich standard library for faster development. |
+| **Dynamic typing**                                      | You don’t need to declare variable types; Python automatically detects the data type at runtime.               |
+| **Strong typing**                                       | Prevents mixing incompatible data types (e.g., can’t add string and integer directly), ensuring safer code.    |
+| **Third-party utilities (e.g., Numeric, NumPy, SciPy)** | Large ecosystem of external libraries makes complex tasks like math, data analysis, and AI easier.             |
+| **Automatic memory management**                         | Python automatically allocates and frees memory using garbage collection — no manual memory handling needed.   |
+
 
 
 ## 🧠 What is Python?
@@ -43,13 +46,11 @@ Python is:
 
 **How Python Code Gets Executed?**
 
-1. Python source code (.py) is first **compiled into bytecode** (.pyc) automatically.
-2. The **Python Virtual Machine (PVM)** then **interprets and executes** this bytecode line by line.
-3. Only the code is compiled/interpreted — variable values and runtime data are handled in **PVM memory** (similar to JVM’s garbage collection).
-4. **.pyi files** can be used to avoid recompiling the same workload repeatedly.
-
-**PySpark Case:**
-
-* Spark uses **JVM**, Python uses **PVM**.
-* When using PySpark, the **PVM runs inside the JVM** to execute Python code and interact with the Spark engine.
-* Note: **JVM cannot run inside PVM.**
+   1. Python source code (.py) is first **compiled into bytecode** (.pyc) automatically.
+   2. The **Python Virtual Machine (PVM)** then **interprets and executes** this bytecode line by line.
+   3. Only the code is compiled/interpreted — variable values and runtime data are handled in **PVM memory** (similar to JVM’s garbage collection).
+   4. **.pyi files** can be used to avoid recompiling the same workload repeatedly.
+   5. **PySpark Case:**
+      * Spark uses **JVM**, Python uses **PVM**.
+      * When using PySpark, the **PVM runs inside the JVM** to execute Python code and interact with the Spark engine.
+      * Note: **JVM cannot run inside PVM.**
