@@ -44,13 +44,22 @@ Python is:
 
 ![img.png](files/img2.png)
 
-### 2. How Python Code Gets Executed?**
+### 2. How Python Code Gets Executed?
 
-   1. Python source code (.py) is first **compiled into bytecode** (.pyc) automatically.
-   2. The **Python Virtual Machine (PVM)** then **interprets and executes** this bytecode line by line.
-   3. Only the code is compiled/interpreted — variable values and runtime data are handled in **PVM memory** (similar to JVM’s garbage collection).
-   4. **.pyi files** can be used to avoid recompiling the same workload repeatedly.
-   5. **PySpark Case:**
-      * Spark uses **JVM**, Python uses **PVM**.
-      * When using PySpark, the **PVM runs inside the JVM** to execute Python code and interact with the Spark engine.
-      * Note: **JVM cannot run inside PVM.**
+1. Python source code (.py) is first **compiled into bytecode** (.pyc) automatically.
+2. The **Python Virtual Machine (PVM)** then **interprets and executes** this bytecode line by line.
+3. Only the code is compiled/interpreted — variable values and runtime data are handled in **PVM memory** (similar to JVM’s garbage collection).
+4. **.pyi files** can be used to avoid recompiling the same workload repeatedly.
+5. **PySpark Case:**
+   * Spark uses **JVM**, Python uses **PVM**.
+   * When using PySpark, the **PVM runs inside the JVM** to execute Python code and interact with the Spark engine.
+   * Note: **JVM cannot run inside PVM.**
+![img.png](files/img3.png)
+
+### 3. Python is Indent Based language. Why?
+
+* Python uses **indentation (spaces or tabs)** to define code blocks instead of braces `{}` or keywords like `BEGIN...END`.
+* This enforces **clean formatting**, **readability**, and **structured coding** — making programs easier to read, understand, and maintain.
+* Other languages like **SQL**, **Scala**, **Java**, **PL/SQL**, and **Linux Shell scripting** follow a **block-based programming model**, not indentation-based.
+* In Python, indentation is part of the **syntax** — missing or incorrect indentation causes errors.
+* Standard practice: use **4 spaces** (recommended by PEP 8) or **a single TAB** for indentation.
