@@ -16,7 +16,7 @@ print('z1 =',z1)
 
 ```
 
-```
+```python
 type(z)= <class 'int'>
 z = 1000
 type(z1)= <class 'float'>
