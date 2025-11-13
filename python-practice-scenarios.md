@@ -1,6 +1,6 @@
 # Python Programming
 
-##🎯 Variables
+## 🎯 Variables
 
 1. Create two variables `x = 100` and `y = 10`, find their multiplication and division, and store the results in variables `z` and `z1`.
 2. Create a variable `a = 2000`, divide `a` by `y` (from step 1), and reassign `a` with the divided result.
