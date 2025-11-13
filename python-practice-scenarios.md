@@ -15,7 +15,7 @@
 
 ---
 
-## Conditional Structures
+## 🎯 Conditional Structures
 
 11. Write a program to find the greatest of three numbers.
 12. Write a single program to check if a number is even or negative and print the result as:
@@ -39,7 +39,7 @@
 
 ---
 
-## Control Statements
+## 🎯 Control Statements
 
 16. Using a `for` loop, print even and odd numbers in the range `[5–20]`.
 17. Write a `while` loop to print multiples of 3 up to 21 and store the results in a list.
@@ -51,7 +51,7 @@
 
 ---
 
-## Collections: List, Dictionary, Tuple, and Set
+## 🎯 Collections: List, Dictionary, Tuple, and Set
 
 23. Create a list of numbers from 2 to 11. Demonstrate mutability by updating the 3rd element and resizability by inserting 100 at the 5th position.
 24. Create a tuple `("Inceptez", "Technologies", "Pvt", "Ltd")`, prove immutability and non-resizability, and access the 2nd and 4th elements to form another tuple.
@@ -81,7 +81,7 @@
 
 ---
 
-## Functions
+## 🎯 Functions
 
 33. Create `def` functions to generalize the logic from steps 11–15 and 26–32.
 34. Call the function from step 11 using both positional and keyword arguments.
@@ -108,7 +108,7 @@
 
 ---
 
-## Exception Handling
+## 🎯 Exception Handling
 
 41. Apply exception handling to the calculator (step 35):
 
@@ -117,7 +117,7 @@
 
 ---
 
-## Object-Oriented Programming (OOP)
+## 🎯 Object-Oriented Programming (OOP)
 
 43. Create a package named `inceptez.usecases`.
 44. Inside the package, create a module called `oops`.
