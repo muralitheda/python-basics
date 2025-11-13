@@ -14,13 +14,12 @@ print('z =',z)
 print("type(z1)=",type(z1))
 print('z1 =',z1)
 
-"""
+```
 type(z)= <class 'int'>
 z = 1000
 type(z1)= <class 'float'>
 z1 = 10.0
-"""
-```
+
 2. Create a variable `a = 2000`, divide `a` by `y` (from step 1), and reassign `a` with the divided result.
 3. Prove Python is dynamically typed by creating `x: int = 100`, then assigning `y = str(x)` and printing the types of `x` and `y`.
 4. Demonstrate Python’s dynamic inference feature with an example showing automatic datatype detection.
