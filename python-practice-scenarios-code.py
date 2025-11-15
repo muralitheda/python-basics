@@ -127,7 +127,6 @@ a = 10
 b = 20
 c = 30
 d = 40
-
 print(f"a={a} b={b} c={c} d={d}")
 
 # OR
@@ -140,7 +139,6 @@ print()
 
 name = "Alan Harpor"
 Name = "alan harpor"
-
 print(f"name={name} | Name={Name}")
 
 """
@@ -163,10 +161,8 @@ print()
 
 name = 'I cant wait'
 print(name)
-
 name = "I can't wait"
 print(name)
-
 name = """I 
 can't 
 wait
@@ -182,29 +178,183 @@ wait
 """
 
 #10. Demonstrate examples using arithmetic, assignment, comparison, relational, and logical operators.
+print()
 
+a = 3
+b = 2
+c = 1
 
+print(f"a = {a} | b = {b} | c = {c}")
+
+print("Arithmetic Operations Examples:")
+print("1. Addition(+)        : a+b+c = ",a+b+c)
+print("2. Subtraction(-)     : a-b-c = ",a-b-c)
+print("3. Multiplication(*)  : a*b*c = ",a*b*c)
+print("4. Division(/)        : a/b/c = ",a/b/c)
+print("5. Modulus(%)         : a%b   = ",a%b)
+print("6. Exponentiation(**) : a**b  = ",a**b)
+print("7. Floor Division(//) : a//b  = ",a//b)
+
+print()
+print("Relational Operator Examples:")
+print("1. Equal To (==)                 : a == b = ",a == b)
+print("2. Not Equal To (!=)             : a != b = ",a != b)
+print("3. Greater Than (>)              : a > b  = ",a > b)
+print("4. Less Than (<)                 : a < b  = ",a < b)
+print("5. Greater Than and Equal To (>=): a >= b = ",a >= b)
+print("6. Less Than and Equal To (<=)   : a <= b = ",a <= b)
+
+print()
+print("Logical Operators Examples:")
+a = True
+b = False
+print(f"a = {a} | b = {b}")
+print("1. AND (a and b) = ",a and b)
+print("2. OR (a or b) = ",a or b)
+print("3. NOT (not b) = ", not b)
+
+print()
+print("Assignment Operators Examples:")
+a = 5
+print("1. Simple Assignment (a = 5) = ", a)
+a += 5
+print("2. Add and Assign (a += 5) => (a = a + 5)      = ", a)
+a = 5; a -= 5
+print("3. Subtract and Assign (a -= 5) => (a = a - 5) = ", a)
+a = 5; a *= 5
+print("4. Multiply and Assign (a *= 5) => (a = a * 5) = ", a)
+a = 5; a /= 5
+print("5. Division and Assign (a /= 5) => (a = a / 5) = ", a)
+a = 5; a %= 5
+print("6. Modulus and Assign (a %= 5) => (a = a % 5)  = ", a)
+a = 5; a **= 5
+print("7. Exponentiation and Assign (a **= 5) => (a = a ** 5) = ", a)
+a = 5; a //= 5
+print("8. Floor Division and Assign (a //= 5) => (a = a // 5) = ", a)
+
+"""
+a = 3 | b = 2 | c = 1
+
+Arithmetic Operations Examples:
+1. Addition(+)        : a+b+c =  6
+2. Subtraction(-)     : a-b-c =  0
+3. Multiplication(*)  : a*b*c =  6
+4. Division(/)        : a/b/c =  1.5
+5. Modulus(%)         : a%b   =  1
+6. Exponentiation(**) : a**b  =  9
+7. Floor Division(//) : a//b  =  1
+
+Relational Operator Examples:
+1. Equal To (==)                 : a == b =  False
+2. Not Equal To (!=)             : a != b =  True
+3. Greater Than (>)              : a > b  =  True
+4. Less Than (<)                 : a < b  =  False
+5. Greater Than and Equal To (>=): a >= b =  True
+6. Less Than and Equal To (<=)   : a <= b =  False
+
+Logical Operators Examples:
+a = True | b = False
+1. AND (a and b) =  False
+2. OR (a or b) =  True
+3. NOT (not b) =  True
+
+Assignment Operators Examples:
+1. Simple Assignment (a = 5) =  5
+2. Add and Assign (a += 5) => (a = a + 5)      =  10
+3. Subtract and Assign (a -= 5) => (a = a - 5) =  0
+4. Multiply and Assign (a *= 5) => (a = a * 5) =  25
+5. Division and Assign (a /= 5) => (a = a / 5) =  1.0
+6. Modulus and Assign (a %= 5) => (a = a % 5)  =  0
+7. Exponentiation and Assign (a **= 5) => (a = a ** 5) =  3125
+8. Floor Division and Assign (a //= 5) => (a = a // 5) =  1
+"""
 
 #########################################
 ## 🎯 Conditional Structures
 #########################################
 #11. Write a program to find the greatest of three numbers.
-#12. Write a single program to check if a number is even or negative and print the result as:
-"""
-* “Even but not negative”
-* “Not even but negative”
-* “Neither even nor negative”
-"""
+print()
+
+a = 1; b=2; c=3
+print(f"a = {a} | b = {b} | c = {c}")
+if a > b and a > c:
+    print("{a} is greater than {b} and {c}")
+elif b > a and b > c:
+    print("{b} is greater than {a} and {c}")
+elif c > a and c > b:
+    print("{c} is greater than {a} and {b}")
+else:
+    pass
+
+#12. Write a single program to check if a number is even or negative and print the result as: “Even but not negative”, “Not even but negative”, “Neither even nor negative”
+print()
+
+numbers = [-5,-4,-3,-2,-1,0,1,2,3,4,5]
+print(f"numbers:{numbers}")
+
+for number in numbers:
+    if number % 2 == 0 and number > 0:
+        print(f"The given number {number} is even and positive.")
+    elif number % 2 == 0 and number < 0:
+        print(f"The given number {number} is even and negative.")
+    elif number % 2 != 0 and number > 0:
+        print(f"The given number {number} is odd and positive.")
+    elif number % 2 != 0 and number < 0:
+        print(f"The given number {number} is odd and negative.")
+    else:
+        print(f"The given number {number} is zero.")
+
 #13. Write a nested `if-else` structure to print course fees:
 """
 * Big Data → 25000
 * Spark → 15000
 * Data Science →
-
   * Machine Learning → 25000
   * Deep Learning → 45000
   * Both → 50000
 """
+
+print('''
+1. BigData
+2. Spark
+3. DataScience
+  4. MachineLearning5
+  5. DeepLearning
+  6. Both
+''')
+print("Enter the course name or number:")
+course = input()
+print("course:",course)
+
+fee = 0
+
+# Check if the course is numeric
+if course.isdigit():
+    course_int = int(course)
+else:
+    course_int = None
+
+# Logic
+if course_int == 1 or course.lower() == "bigdata" :
+    fee = 25000
+elif course_int == 2 or course.lower() == "spark" :
+    fee = 15000
+elif course_int == 3 or course.lower() == "datascience" :
+    fee = 70000
+elif course_int == 4 or course.lower() == "machinelearning" :
+    fee = 25000
+elif course_int == 5 or course.lower() == "deeplearning" :
+    fee = 45000
+elif course_int == 6 or course.lower() == "both" :
+    fee = 45000
+else:
+    pass
+
+if fee != 0:
+    print(f"Entered course {course} fee is {fee}.")
+else:
+    print("Entered the course is not available.")
+
 #14. Check whether a given string is a palindrome using a reverse function.
 #15. Check whether `x = 100` is an integer or a string using functions like `isinstance()` or `type()`.
 
