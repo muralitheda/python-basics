@@ -318,13 +318,13 @@ print('''
 1. BigData
 2. Spark
 3. DataScience
-  4. MachineLearning5
+  4. MachineLearning
   5. DeepLearning
   6. Both
 ''')
 print("Enter the course name or number:")
 course = input()
-print("course:",course)
+print("input => course = ",course)
 
 fee = 0
 
@@ -337,27 +337,92 @@ else:
 # Logic
 if course_int == 1 or course.lower() == "bigdata" :
     fee = 25000
+    course = "Big Data"
 elif course_int == 2 or course.lower() == "spark" :
     fee = 15000
+    course = "Spark"
 elif course_int == 3 or course.lower() == "datascience" :
     fee = 70000
+    course = "Data Science"
 elif course_int == 4 or course.lower() == "machinelearning" :
     fee = 25000
+    course = "Machine Learning"
 elif course_int == 5 or course.lower() == "deeplearning" :
     fee = 45000
+    course = "Deep Learning"
 elif course_int == 6 or course.lower() == "both" :
-    fee = 45000
+    fee = 70000
+    course = "Machine Learning & Deep Learning"
 else:
     pass
 
 if fee != 0:
-    print(f"Entered course {course} fee is {fee}.")
+    print(f"Entered course '{course}' fee is Rs.{fee}.")
 else:
     print("Entered the course is not available.")
 
-#14. Check whether a given string is a palindrome using a reverse function.
-#15. Check whether `x = 100` is an integer or a string using functions like `isinstance()` or `type()`.
+"""
+1. BigData
+2. Spark
+3. DataScience
+  4. MachineLearning
+  5. DeepLearning
+  6. Both
 
+Enter the course name or number:
+3
+input => course =  3
+Entered course 'Data Science' fee is Rs.70000.
+"""
+
+#14. Check whether a given string is a palindrome using a reverse function.
+print()
+
+print("Enter the word to check whether it is a plaindrome or not:")
+word = input()
+
+reversed_word = ""
+for i in word:
+    reversed_word = i + reversed_word
+# OR
+reversed_word = "".join(reversed(word))
+print(f"reversed_word:{reversed_word}")
+
+
+if word == reversed_word:
+    print(f"The entered the word '{word}' is a plaindrome.")
+else:
+    print(f"The entered the word '{word}' is not a plaindrome.")
+
+"""
+Enter the word to check whether it is a plaindrome or not:
+madam
+reversed_word:madam
+The entered the word 'madam' is a plaindrome.
+"""
+
+#15. Check whether `x = 100` is an integer or a string using functions like `isinstance()` or `type()`.
+print()
+
+x = 'hello'
+print("Entered the value:",x)
+
+if isinstance(x, int):
+    print(f"{x} is an integer.")
+elif isinstance(x, str):
+    print(f"{x} is a string.")
+
+# OR
+if type(x) == int :
+    print(f"{x} is an integer.")
+elif type(x) == str:
+    print(f"{x} is a string.")
+
+"""
+Entered the value: hello
+hello is a string.
+hello is a string.
+"""
 #########################################
 ## 🎯 Control Statements
 #########################################
