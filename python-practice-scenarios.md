@@ -23,6 +23,11 @@ z1 = 10.0
 ```
 
 2. Create a variable `a = 2000`, divide `a` by `y` (from step 1), and reassign `a` with the divided result.
+
+```python
+
+```
+
 3. Prove Python is dynamically typed by creating `x: int = 100`, then assigning `y = str(x)` and printing the types of `x` and `y`.
 4. Demonstrate Python’s dynamic inference feature with an example showing automatic datatype detection.
 5. Prove Python is a strongly typed language using incompatible type operations.
