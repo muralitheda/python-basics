@@ -379,7 +379,7 @@ Entered course 'Data Science' fee is Rs.70000.
 print()
 
 print("Enter the word to check whether it is a plaindrome or not:")
-word = input()
+word = "madam"##input()
 
 reversed_word = ""
 for i in word:
@@ -423,17 +423,174 @@ Entered the value: hello
 hello is a string.
 hello is a string.
 """
+
 #########################################
 ## 🎯 Control Statements
 #########################################
-#16. Using a `for` loop, print even and odd numbers in the range `[5–20]`.
-#17. Write a `while` loop to print multiples of 3 up to 21 and store the results in a list.
-#18. Write a loop to calculate the cube of 4 using repeated multiplication (4 * 4 * 4 = 64).
-#19. Given `sal_lst = [10000,20000,30000,10000,15000]`, add a bonus of 1000 to each salary, store it in `sal_bonus_lst`, and create another list for salaries above 11000.
-#20. Write a `do-while` equivalent loop to print “Inceptez Technologies” `n` times, ensuring it prints at least once.
-#21. Given `lst1 = [[10,20],[30,40,50],[60,70,80]]`, calculate the total sum, minimum, and maximum values using nested loops.
-#22. Create a looping construct to print the multiplication table for 3 up to 10.
+#16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
+print()
 
+numbers = list(range(5,20))
+print("Numbers:",numbers)
+
+oddNumbers = ""
+evenNumbers = ""
+for i in numbers:
+  if i%2 != 0 :
+      oddNumbers = oddNumbers + str(i) + ","
+  else:
+      evenNumbers = evenNumbers + str(i) + ","
+
+print(f"oddNumbers: {oddNumbers}")
+print(f"evenNumbers: {evenNumbers}")
+
+"""
+Numbers: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+oddNumbers: 5,7,9,11,13,15,17,19,
+evenNumbers: 6,8,10,12,14,16,18,
+"""
+
+#17. Write a while loop to loop from 0 till 21 with the increment of 3, the result should be exactly 3,6,9,12,15,18 and store this result in a list
+print()
+
+x = 0
+result = []
+while x < 21 :
+    if x%3 == 0 and x !=0:
+        result.append(x)
+    x += 1
+print("result:",result)
+
+"""
+result: [3, 6, 9, 12, 15, 18]
+"""
+
+#18. Write a for or while loop to print the cube of 4, result should be 4*4*4=64 (initiate some variable outside the loop with 4 and loop through 3 times to achieve the result)
+print()
+
+number = int(input("Enter the number:"))
+cubeNumber = int(input("Enter the cube number:"))
+x = 1
+result = 1
+while x <= cubeNumber:
+    result = result * number
+    x += 1
+print("result:",result)
+
+"""
+Enter the number:4
+Enter the cube number:4
+result: 256
+"""
+
+#19. Create a list as sal_lst=[10000,20000,30000,10000,15000], loop through the list and add 1000 bonus to the salary and store in another list sal_bonus_lst=[11000,21000,31000,11000,16000] then store the bonus applied salary in another list where sal>11000
+print()
+
+sal_lst=[10000,20000,30000,10000,15000]
+revised_sal_lst = []
+revised_sal = 0
+bonus = 1000
+sal_gt_11000 = []
+
+for i in sal_lst:
+    revised_sal = i + bonus
+    revised_sal_lst.append(revised_sal)
+    if revised_sal > 11000:
+        sal_gt_11000.append(revised_sal)
+
+print("revised_sal_lst:",revised_sal_lst)
+print("sal_gt_11000:",sal_gt_11000)
+
+"""
+revised_sal_lst: [11000, 21000, 31000, 11000, 16000]
+sal_gt_11000: [21000, 31000, 16000]
+"""
+
+#20. Write a do while loop to print “Inception Technologies” n number of times as per the input you get from the user. Minimum it has to be printed at least one time regardless of the user input.
+print()
+
+text = "Inception Technologies"
+nooftimes = int(input("How many times you want to print? "))
+
+x = 1
+if nooftimes <= 0:
+    nooftimes = 1
+
+while x <= nooftimes:
+    print(text)
+    x += 1
+
+"""
+How many times you want to print? 2
+Inception Technologies
+Inception Technologies
+"""
+
+#21. From the given list of list of elements produce the following output using nested for loop lst1=[[10,20],[30,40,50],[60,70,80]], calculate the sum of all number, calculate the min value and the max value of all the elements in the lst1.
+print()
+
+startNumber = 10
+reqlist = [2,3,4]
+lst1 = []
+value =0
+
+for length in reqlist:
+    x = 1
+    tmpList = []
+    while x <= length:
+        x += 1
+        value = value + 10
+        tmpList.append(value)
+    lst1.append(tmpList)
+
+print("lst1: ",lst1)
+
+
+allNumbers = []
+for numbers in lst1:
+    length = len(numbers)
+    if length >1:
+        x = 1
+        while x <= length:
+            x += 1
+            for number in numbers:
+                allNumbers.append(number)
+    elif length ==1:
+        allNumbers.append(number)
+    else:
+        pass
+
+print("Sum of all numbers: ",allNumbers)
+print("Min value from the list: ",min(allNumbers))
+print("Max value from the list: ",max(allNumbers))
+
+"""
+lst1:  [[10, 20], [30, 40, 50], [60, 70, 80, 90]]
+Sum of all numbers:  [10, 20, 10, 20, 30, 40, 50, 30, 40, 50, 30, 40, 50, 60, 70, 80, 90, 60, 70, 80, 90, 60, 70, 80, 90, 60, 70, 80, 90]
+Min value from the list:  10
+Max value from the list:  90
+"""
+
+#22. Create a looping construct to print the multiplication table for 3 up to 10.
+print()
+
+tableOf=int(input("Which multiplication do you want? "))
+upToMax=int(input("Evaluate up to how many numbers? "))
+upToSeq=1
+
+while upToSeq <= upToMax:
+    print(f"{upToSeq} * {tableOf} = {upToSeq*tableOf}")
+    upToSeq += 1
+
+"""
+Which multiplication do you want? 2
+Evaluate up to how many numbers? 5
+1 * 2 = 2
+2 * 2 = 4
+3 * 2 = 6
+4 * 2 = 8
+5 * 2 = 10
+"""
 ##################################################
 ## 🎯 Collections: List, Dictionary, Tuple, and Set
 ##################################################
