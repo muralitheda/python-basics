@@ -760,12 +760,55 @@ After remove the number 30 and 20 from the list: [40, 20, 10]
 """
 
 #30. Perform the same operations from step 29 on a tuple `(10,20,40,30,20)`.
-#31. Convert the string `"Inceptez Technologies Pvt Ltd"` to a list `['Inceptez', 'Technologies', 'Pvt', 'Ltd']`.
+print()
+
+lst = (10,20,40,30,20)
+print(f"Original List: {lst}")
+
+# 1. Find the first, last values of the list
+length = len(lst)
+print(f"First value: {lst[0]} Last value: {lst[length-1]}")
+
+# 2. Sort the list in ascending order
+sorted_lst = sorted(lst)
+print(f"sorted_lst ascending: {sorted_lst}")
+
+# 3. Sort the list in decending order
+sorted_lst = sorted(lst,reverse=True)
+print(f"sorted_lst decending: {sorted_lst}")
+
+# 4. Minumum and maximum values of the descending sorted list
+print(f"Min value: {min(sorted_lst)} Max value: {max(sorted_lst)}")
+
+# 5. Find the sum of all elements in the list
+print(f"Sum of all elements: {sum(sorted_lst)}")
+
+# 6. Remove the number 30 and 20 from the list
+sorted_lst.remove(30)
+sorted_lst.remove(20)
+print(f"Final list: {sorted_lst}")
+
+"""
+Original List: (10, 20, 40, 30, 20)
+First value: 10 Last value: 20
+sorted_lst ascending: [10, 20, 20, 30, 40]
+sorted_lst decending: [40, 30, 20, 20, 10]
+Min value: 10 Max value: 40
+Sum of all elements: 120
+Final list: [40, 20, 10]
+"""
+
+#31. Convert the string `"Inception Technologies Pvt Ltd"` to a list `['Inception', 'Technologies', 'Pvt', 'Ltd']`.
+print()
+
+name = "Inception Technologies Pvt Ltd"
+nameList = name.split(sep=" ")
+print("name: ",name)
+print("nameList: ",nameList)
+
 #32. Given
 """
-    ```python
     emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
-    ```
 
     Perform:
     a. Convert the first sublist to a tuple.
@@ -773,6 +816,28 @@ After remove the number 30 and 20 from the list: [40, 20, 10]
     c. Convert the entire list into tuples of tuples.
     d. Calculate the total salary.
 """
+print()
+
+emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
+
+# a. Convert the first sublist to a tuple.
+tupFirstList = tuple(emplstlst[0])
+print(f"First tuple sublist: ",tupFirstList)
+
+# b. Reverse the first and last name of the second element.
+secElement = sorted(emplstlst[1][1],reverse=True)
+print(f"secElement: {secElement}")
+
+# c. Convert the entire list into tuples of tuples.
+emplstlst_tuple = tuple(emplstlst)
+print(f"emplstlst_tuple: {emplstlst_tuple}")
+
+# d. Calculate the total salary.
+sal = 0
+for item in emplstlst:
+    sal = sal + int(item[2])
+
+print(f"Total Sal: {sal}")
 
 #########################################
 ## 🎯 Functions
