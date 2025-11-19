@@ -616,19 +616,149 @@ resized rangeList:  [2, 3, 100, 5, 100, 6, 7, 8, 9, 10]
 """
 
 #24. Create a tuple of 2 fields eg. ("Inception","Technologies","Pvt","Ltd"), prove immutability and non-resizable nature, access the 2nd and 4th fields and store in another tuple.
+print()
 
+namesTuple = ("Inception","Technologies","Pvt","Ltd")
+# namesTuple[0]= "The" # Tuples don't support item assignment
+# .append() or .insert() are not available for tuples
 
-#25. Convert `[("Inceptez","Technologies"),("Apple","Incorporation")]` into `[{"Inceptez":"Technologies"},{"Apple":"Incorporation"}]`, and demonstrate the difference between `dict[key]` and `dict.get(key)`.
-#26. Create a list of tuples with duplicates and remove the duplicates.
+namesList = []
+i = 0
+length = len(namesTuple)
+
+for name in namesTuple:
+    if i in (1,3):
+         namesList.append(name)
+    i += 1
+print("filteredNames: ",namesList)
+
+"""
+filteredNames:  ['Technologies', 'Ltd']
+"""
+
+#25. Convert the list of tuples [("Inception","Technologies"),("Apple","Incorporation")] to list of dictionary type, using for loop as given below [{"Inception":"Technologies"},{"Apple":"Incorporation"}] , once the list of dictionary is arrived print only "Incorporation" by passing "Apple" as a key using dict["Apple"] and dict.get("Apple") and try with dict["Apple1"] and dict.get("Apple1") then find the difference between get and using[] notation.
+print()
+
+listOfTuples = [("Inception","Technologies"),("Apple","Incorporation")]
+#dictOfTuples = dict(listOfTuples)
+#print("dictOfTuples: ",dictOfTuples)
+
+dictOfTuples = {}
+for list1 in listOfTuples:
+    i = 0
+    key = ""
+    value = ""
+    for element in list1:
+        if i == 0:
+            key = element
+        elif i == 1:
+            value = element
+        else:
+            pass
+        i += 1
+    dictOfTuples[key]=value
+
+print("dictOfTuples: ",dictOfTuples)
+print("dictOfTuples['Apple']: ",dictOfTuples['Apple'])
+print("dictOfTuples['Inception']: ",dictOfTuples['Inception'])
+#print("dictOfTuples['Apple1']: ",dictOfTuples['Apple1'])            # This will throw an error. Alternate is dictOfTuples.get('Apple1').
+#print("dictOfTuples['Inception1']: ",dictOfTuples['Inception1'])    # This will throw an error. Alternate is dictOfTuples.get('Inception1').
+
+print("dictOfTuples.get('Apple'): ",dictOfTuples.get("Apple"))
+print("dictOfTuples.get('Inception'): ",dictOfTuples.get("Inception"))
+print("dictOfTuples.get('Apple1'): ",dictOfTuples.get("Apple1"))
+print("dictOfTuples.get('Inception1'): ",dictOfTuples.get("Inception1"))
+
+"""
+dictOfTuples:  {'Inception': 'Technologies', 'Apple': 'Incorporation'}
+dictOfTuples['Apple']:  Incorporation
+dictOfTuples['Inception']:  Technologies
+dictOfTuples.get('Apple'):  Incorporation
+dictOfTuples.get('Inception'):  Technologies
+dictOfTuples.get('Apple1'):  None
+dictOfTuples.get('Inception1'):  None
+"""
+
+#26. Create a list of tuple as given below and delete all duplicate tuples of the list  lst=[("Inceptez","Technologies"),("Apple","Incorporation"),("Inceptez","Technologies"),("Inceptez","Technologies")]
+print()
+
+lst=[("Inception","Technologies"),("Apple","Incorporation"),("Inception","Technologies"),("Inception","Technologies")]
+print("OriginalList: ",lst)
+distinct_set = set(lst)
+print("distinct_set: ",distinct_set)
+distinct_list = list(distinct_set)
+print("distinct_list: ",distinct_list)
+
+"""
+OriginalList:  [('Inception', 'Technologies'), ('Apple', 'Incorporation'), ('Inception', 'Technologies'), ('Inception', 'Technologies')]
+distinct_set:  {('Apple', 'Incorporation'), ('Inception', 'Technologies')}
+distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies')]
+"""
+
 #27. Append a new tuple `("Intel", "Corp")` to the de-duplicated list.
-#28. Convert `lst_dict = [{"Inceptez":"Technologies"},{"Apple":"Incorporation"}]` to `["Inceptez","Apple"]` using keys and list functions.
-#29. Given `lst = [10,20,40,30,20]`, perform:
+print()
+
+distinct_list.append(("Intel", "Corp"))
+print("distinct_list: ",distinct_list)
+
 """
-    * Retrieve first and last values
-    * Sort ascending & descending
-    * Print min, max, and sum
-    * Remove 30 and 20
+distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies'), ('Intel', 'Corp')]
 """
+
+#28. Convert the lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}] to lst1=["Inception","Apple"] , think about using for loop, list() function, keys function and list append functions to achieve this.
+print()
+
+lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}]
+final_list = []
+for item in lst_dict:
+    for key,value in item.items():
+        final_list.append(key)
+print("final_list: ",final_list)
+
+"""
+final_list:  ['Inception', 'Apple']
+"""
+
+
+#29. Create a list of values lst=[10,20,40,30,20], find the first, last values of the list, sort the list in ascending order, sort in descending order, print the minumum and maximum values of the descending sorted list, find the sum of all elements in the list, remove the number 30 and 20 from the list.
+print()
+
+lst = [10,20,40,30,20]
+print(f"Original List: {lst}")
+
+# 1. Find the first, last values of the list
+length = len(lst)
+print(f"First value: {lst[0]} Last value: {lst[length-1]}")
+
+# 2. Sort the list in ascending order
+lst.sort(reverse=False)
+print(f"Sorted list ascending: ",lst)
+
+# 3. Sort the list in decending order
+lst.sort(reverse=True)
+print(f"Sorted list decending: ",lst)
+
+# 4. Minumum and maximum values of the descending sorted list
+print(f"Minimum value: {min(lst)} Maximum value: {max(lst)}")
+
+# 5. Find the sum of all elements in the list
+print(f"Sum of all the elements: {sum(lst)}")
+
+# 6. Remove the number 30 and 20 from the list
+lst.remove(30)
+lst.remove(20)
+print(f"After remove the number 30 and 20 from the list: {lst}")
+
+"""
+Original List: [10, 20, 40, 30, 20]
+First value: 10 Last value: 20
+Sorted list ascending:  [10, 20, 20, 30, 40]
+Sorted list decending:  [40, 30, 20, 20, 10]
+Minimum value: 10 Maximum value: 40
+Sum of all the elements: 120
+After remove the number 30 and 20 from the list: [40, 20, 10]
+"""
+
 #30. Perform the same operations from step 29 on a tuple `(10,20,40,30,20)`.
 #31. Convert the string `"Inceptez Technologies Pvt Ltd"` to a list `['Inceptez', 'Technologies', 'Pvt', 'Ltd']`.
 #32. Given
