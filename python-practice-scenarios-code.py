@@ -591,11 +591,33 @@ Evaluate up to how many numbers? 5
 4 * 2 = 8
 5 * 2 = 10
 """
+
 ##################################################
 ## 🎯 Collections: List, Dictionary, Tuple, and Set
 ##################################################
-#23. Create a list of numbers from 2 to 11. Demonstrate mutability by updating the 3rd element and resizability by inserting 100 at the 5th position.
-#24. Create a tuple `("Inceptez", "Technologies", "Pvt", "Ltd")`, prove immutability and non-resizability, and access the 2nd and 4th elements to form another tuple.
+#23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
+print()
+
+rangeList = list(range(2,11))
+print("rangeList: ",rangeList)
+
+#Updating 3rd element with 100
+rangeList[2]=100
+print("updated rangeList: ",rangeList)
+
+#Inserting a new value 100 in the 5th position
+rangeList.insert(4,100)
+print("resized rangeList: ",rangeList)
+
+"""
+rangeList:  [2, 3, 4, 5, 6, 7, 8, 9, 10]
+updated rangeList:  [2, 3, 100, 5, 6, 7, 8, 9, 10]
+resized rangeList:  [2, 3, 100, 5, 100, 6, 7, 8, 9, 10]
+"""
+
+#24. Create a tuple of 2 fields eg. ("Inception","Technologies","Pvt","Ltd"), prove immutability and non-resizable nature, access the 2nd and 4th fields and store in another tuple.
+
+
 #25. Convert `[("Inceptez","Technologies"),("Apple","Incorporation")]` into `[{"Inceptez":"Technologies"},{"Apple":"Incorporation"}]`, and demonstrate the difference between `dict[key]` and `dict.get(key)`.
 #26. Create a list of tuples with duplicates and remove the duplicates.
 #27. Append a new tuple `("Intel", "Corp")` to the de-duplicated list.
