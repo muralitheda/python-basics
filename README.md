@@ -151,8 +151,6 @@ print(result)  # [1, 4, 9, 16]
 
 ✅ Python allows both **imperative(how to do)** and **functional(what to do)** styles, but FP makes programs more elegant, readable, and maintainable.
 
-Here’s a clear, structured explanation of **how Python is an Object-Oriented Programming (OOP) language**, covering each point you listed 👇
-
 ---
 
 ### 8. Python is Object Oriented Programming Language — How?
