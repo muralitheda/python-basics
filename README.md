@@ -213,8 +213,8 @@ class Student:
     school_name = "ABC Public School"   # Class variable
 
     def __init__(self, name, age):      # Constructor
-        self.name = name
-        self.age = age
+        self.name = name                # Member Data /Variable
+        self.age = age                  # Member Data /Variable
 
     def show(self):                     # Member function
         print(f"Name: {self.name}, Age: {self.age}")
@@ -267,12 +267,12 @@ print(e1.name)       # Accessing data member
 
 #### **In Simple Words**
 
-| Concept              | Meaning                          | Example                       |
-| -------------------- | -------------------------------- | ----------------------------- |
-| **Class**            | Blueprint / Template             | `class Student:`              |
-| **Object**           | Real instance in memory          | `s1 = Student()`              |
-| **Members**          | Variables & functions in a class | `self.name`, `def show()`     |
-| **Constructor**      | Initializes object properties    | `__init__()`                  |
-| **Package / Module** | Organizes Python code            | `import mypackage.math_utils` |
+| Concept              | Meaning                          | Example                   |
+| -------------------- | -------------------------------- |---------------------------|
+| **Class**            | Blueprint / Template             | `class Student:`          |
+| **Object**           | Real instance in memory          | `s1 = Student()`          |
+| **Members**          | Variables & functions in a class | `self.name`, `def show()` |
+| **Constructor**      | Initializes object properties    | `__init__()`              |
+| **Package / Module** | Organizes Python code            | `import myproject.utils`  |
 
 ---
