@@ -904,8 +904,7 @@ The given number 1 is odd and positive.
 The given number 2 is even and positive.
 """
 
-
-## 13. Write a nested if then else to print the course fees - check if student choosing bigdata, then fees is 25000, if student choosing spark then fees is 15000, if the student choosing datascience then check if machinelearning then 25000 or if deep learning then 45000 otherwise if both then 25000+25000.
+### 13. Write a nested if then else to print the course fees - check if student choosing bigdata, then fees is 25000, if student choosing spark then fees is 15000, if the student choosing datascience then check if machinelearning then 25000 or if deep learning then 45000 otherwise if both then 25000+25000.
 print()
 
 
@@ -975,7 +974,7 @@ Enter the course name or number:
 Course fee is 70000
 """
 
-## 14. Check whether the given string is palindrome or not (try to use some function like reverse). For eg: x="madam" and y="madam", if x matches with y then print as "palindrome" else "not a  palindrome".
+### 14. Check whether the given string is palindrome or not (try to use some function like reverse). For eg: x="madam" and y="madam", if x matches with y then print as "palindrome" else "not a  palindrome".
 print()
 
 def palindrome_check(word):
@@ -1006,7 +1005,7 @@ Reversed Word: madam
 Plaindrome check is True
 """
 
-## 15. Check whether the x=100 is an integer or string. (try to use some functions like str or upper function etc to execute this use case) or use isinstanceof(variablename,datatype) function.
+### 15. Check whether the x=100 is an integer or string. (try to use some functions like str or upper function etc to execute this use case) or use isinstanceof(variablename,datatype) function.
 print()
 
 def check_string_or_int(x):
@@ -1037,29 +1036,119 @@ Entered the value hello is a string.
 Entered the value 100 is an integer.
 """
 
-## 16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
+### 16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
 print()
 
 def find_odd_even_numbers(numbers:list):
-
-oddNumbers = ""
-evenNumbers = ""
-for i in numbers:
-  if i%2 != 0 :
-      oddNumbers = oddNumbers + str(i) + ","
-  else:
-      evenNumbers = evenNumbers + str(i) + ","
-
-print(f"oddNumbers: {oddNumbers}")
-print(f"evenNumbers: {evenNumbers}")
+    '''purpose: To find out the odd nnumber and even numbers'''
+    try:
+        oddNumbers = ""
+        evenNumbers = ""
+        for i in numbers:
+          if i%2 != 0 :
+              oddNumbers = oddNumbers + str(i) + ","
+          else:
+              evenNumbers = evenNumbers + str(i) + ","
+        return f"Odd numbers: {oddNumbers} Even numbers: {evenNumbers}"
+    except Exception as e:
+        return f"Exception: {e}"
 
 numbers = list(range(5,20))
-print("Numbers:",numbers)
+print(find_odd_even_numbers(numbers))
 
-## 17.
-## 18.
-## 19.
-## 20.
+"""
+Odd numbers: 5,7,9,11,13,15,17,19, Even numbers: 6,8,10,12,14,16,18,
+"""
+
+### 17. Write a while loop to loop from 0 till 21 with the increment of 3, the result should be exactly 3,6,9,12,15,18 and store this result in a list
+print()
+
+def multiple_of_number(maxnumber:int):
+    '''Purpose: Function to produce the multiple of given numbers'''
+    try:
+        x = 0
+        result = []
+        while x < maxnumber :
+            if x%3 == 0 and x !=0:
+                result.append(x)
+            x += 1
+        return  result
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(multiple_of_number(maxnumber=21))
+
+"""
+[3, 6, 9, 12, 15, 18]
+"""
+
+### 18. Write a for or while loop to print the cube of 4, result should be 4*4*4=64 (initiate some variable outside the loop with 4 and loop through 3 times to achieve the result)
+print()
+
+def get_cube_value(number:int, cubeNumber:int):
+    '''purpose: get the cube value'''
+    x = 1
+    result = 1
+    while x <= cubeNumber:
+        result = result * number
+        x += 1
+    return result
+
+number = int(input("Enter the number: "))
+cubeNumber = int(input("Enter the cube number: "))
+print("result: ",get_cube_value(number,cubeNumber))
+
+"""
+Enter the number:2
+Enter the cube number:3
+result:  8
+"""
+
+### 19. Create a list as sal_lst=[10000,20000,30000,10000,15000], loop through the list and add 1000 bonus to the salary and store in another list sal_bonus_lst=[11000,21000,31000,11000,16000] then store the bonus applied salary in another list where sal>11000
+print()
+
+def get_revisied_salary(sal_lst:list):
+    '''purpose: get the salary revisied list'''
+    try:
+        revised_sal_lst = []
+        revised_sal = 0
+        bonus = 1000
+        sal_gt_11000 = []
+
+        for i in sal_lst:
+            revised_sal = i + bonus
+            revised_sal_lst.append(revised_sal)
+            if revised_sal > 11000:
+                sal_gt_11000.append(revised_sal)
+        return revised_sal_lst
+    except Exception as e:
+        return f"Exception: {e}"
+
+sal_lst = [10000,20000,40000,50000]
+print("Salary List: ",sal_lst)
+print("Revised Salary List: ",get_revisied_salary(sal_lst=sal_lst))
+
+## 20. Write a do while loop to print “Inception Technologies” n number of times as per the input you get from the user. Minimum it has to be printed at least one time regardless of the user input.
+print()
+
+def print_text(text:str,nooftimes:int):
+    '''purpose: print text'''
+    try:
+        x = 1
+        text1 = ""
+        if nooftimes <= 0:
+            nooftimes = 1
+
+        while x <= nooftimes:
+            text1 = text1 + "\n" +text
+            x += 1
+        return text1
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(print_text("Hello World!",5))
+
+
 ## 21.
 ## 22.
 
