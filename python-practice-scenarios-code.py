@@ -912,40 +912,43 @@ print()
 def get_course_fee(course):
     '''Purpose: Get the course fee.'''
 
-    fee = 0
+    try:
+        fee = 0
 
-    # Check if the course is numeric
-    if course.isdigit():
-        course_int = int(course)
-    else:
-        course_int = None
+        # Check if the course is numeric
+        if course.isdigit():
+            course_int = int(course)
+        else:
+            course_int = None
 
-    # Logic
-    if course_int == 1 or course.lower() == "bigdata" :
-        fee = 25000
-        course = "Big Data"
-    elif course_int == 2 or course.lower() == "spark" :
-        fee = 15000
-        course = "Spark"
-    elif course_int == 3 or course.lower() == "datascience" :
-        fee = 70000
-        course = "Data Science"
-    elif course_int == 4 or course.lower() == "machinelearning" :
-        fee = 25000
-        course = "Machine Learning"
-    elif course_int == 5 or course.lower() == "deeplearning" :
-        fee = 45000
-        course = "Deep Learning"
-    elif course_int == 6 or course.lower() == "both" :
-        fee = 70000
-        course = "Machine Learning & Deep Learning"
-    else:
-        pass
+        # Logic
+        if course_int == 1 or course.lower() == "bigdata" :
+            fee = 25000
+            course = "Big Data"
+        elif course_int == 2 or course.lower() == "spark" :
+            fee = 15000
+            course = "Spark"
+        elif course_int == 3 or course.lower() == "datascience" :
+            fee = 70000
+            course = "Data Science"
+        elif course_int == 4 or course.lower() == "machinelearning" :
+            fee = 25000
+            course = "Machine Learning"
+        elif course_int == 5 or course.lower() == "deeplearning" :
+            fee = 45000
+            course = "Deep Learning"
+        elif course_int == 6 or course.lower() == "both" :
+            fee = 70000
+            course = "Machine Learning & Deep Learning"
+        else:
+            pass
 
-    if fee != 0:
-        return f"Course fee is {fee}"
-    else:
-        return "Entered the course is not available."
+        if fee != 0:
+            return f"Course fee is {fee}"
+        else:
+            return "Entered the course is not available."
+    except Exception as e:
+        return f"Exception occured. {e}"
 
 print('''
 1. BigData
@@ -977,24 +980,64 @@ print()
 
 def palindrome_check(word):
     '''Purpose: To check the entered text/number is plaindrome or not.'''
+    try:
+        reversed_word = ""
+        for i in word:
+            reversed_word = i + reversed_word
+        # OR
+        reversed_word = "".join(reversed(word))
+        print(f"Entered Word: {word}")
+        print(f"Reversed Word: {reversed_word}")
 
-    reversed_word = ""
-    for i in word:
-        reversed_word = i + reversed_word
-    # OR
-    reversed_word = "".join(reversed(word))
-    print(f"Entered Word: {word}")
-    print(f"Reversed Word: {reversed_word}")
+        if word == reversed_word:
+            return True
+        else:
+            return False
+    except Exception as e:
+        return f"Exception occured. {e}"
 
-    if word == reversed_word:
-        return True
-    else:
-        return False
 
 word = "madam"  ##input()
 print(f"Plaindrome check is {palindrome_check(word)}")
 
-## 15.
+"""
+Entered Word: madam
+Reversed Word: madam
+Plaindrome check is True
+"""
+
+## 15. Check whether the x=100 is an integer or string. (try to use some functions like str or upper function etc to execute this use case) or use isinstanceof(variablename,datatype) function.
+print()
+
+def check_string_or_int(x):
+    '''Purpose: Check the entered text is string or int.'''
+    try:
+        if isinstance(x, int):
+            print(f"{x} is an integer.")
+        elif isinstance(x, str):
+            print(f"{x} is a string.")
+
+        # OR
+        if type(x) == int :
+            return (f"{x} is an integer.")
+        elif type(x) == str:
+            return(f"{x} is a string.")
+    except Exception as e:
+        return f"Exception occured. {e}"
+
+x = 'hello'
+print(f"Entered the value {check_string_or_int(x)}")
+x = 100
+print(f"Entered the value {check_string_or_int(x)}")
+
+"""
+hello is a string.
+Entered the value hello is a string.
+100 is an integer.
+Entered the value 100 is an integer.
+"""
+
+
 ## 16.
 ## 17.
 ## 18.
