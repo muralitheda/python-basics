@@ -905,8 +905,95 @@ The given number 2 is even and positive.
 """
 
 
-## 13.
-## 14.
+## 13. Write a nested if then else to print the course fees - check if student choosing bigdata, then fees is 25000, if student choosing spark then fees is 15000, if the student choosing datascience then check if machinelearning then 25000 or if deep learning then 45000 otherwise if both then 25000+25000.
+print()
+
+
+def get_course_fee(course):
+    '''Purpose: Get the course fee.'''
+
+    fee = 0
+
+    # Check if the course is numeric
+    if course.isdigit():
+        course_int = int(course)
+    else:
+        course_int = None
+
+    # Logic
+    if course_int == 1 or course.lower() == "bigdata" :
+        fee = 25000
+        course = "Big Data"
+    elif course_int == 2 or course.lower() == "spark" :
+        fee = 15000
+        course = "Spark"
+    elif course_int == 3 or course.lower() == "datascience" :
+        fee = 70000
+        course = "Data Science"
+    elif course_int == 4 or course.lower() == "machinelearning" :
+        fee = 25000
+        course = "Machine Learning"
+    elif course_int == 5 or course.lower() == "deeplearning" :
+        fee = 45000
+        course = "Deep Learning"
+    elif course_int == 6 or course.lower() == "both" :
+        fee = 70000
+        course = "Machine Learning & Deep Learning"
+    else:
+        pass
+
+    if fee != 0:
+        return f"Course fee is {fee}"
+    else:
+        return "Entered the course is not available."
+
+print('''
+1. BigData
+2. Spark
+3. DataScience
+  4. MachineLearning
+  5. DeepLearning
+  6. Both
+''')
+print("Enter the course name or number:")
+course = input()
+print(get_course_fee(course))
+
+"""
+1. BigData
+2. Spark
+3. DataScience
+  4. MachineLearning
+  5. DeepLearning
+  6. Both
+
+Enter the course name or number:
+3
+Course fee is 70000
+"""
+
+## 14. Check whether the given string is palindrome or not (try to use some function like reverse). For eg: x="madam" and y="madam", if x matches with y then print as "palindrome" else "not a  palindrome".
+print()
+
+def palindrome_check(word):
+    '''Purpose: To check the entered text/number is plaindrome or not.'''
+
+    reversed_word = ""
+    for i in word:
+        reversed_word = i + reversed_word
+    # OR
+    reversed_word = "".join(reversed(word))
+    print(f"Entered Word: {word}")
+    print(f"Reversed Word: {reversed_word}")
+
+    if word == reversed_word:
+        return True
+    else:
+        return False
+
+word = "madam"  ##input()
+print(f"Plaindrome check is {palindrome_check(word)}")
+
 ## 15.
 ## 16.
 ## 17.
