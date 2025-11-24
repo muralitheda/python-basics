@@ -1037,8 +1037,25 @@ Entered the value hello is a string.
 Entered the value 100 is an integer.
 """
 
+## 16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
+print()
 
-## 16.
+def find_odd_even_numbers(numbers:list):
+
+oddNumbers = ""
+evenNumbers = ""
+for i in numbers:
+  if i%2 != 0 :
+      oddNumbers = oddNumbers + str(i) + ","
+  else:
+      evenNumbers = evenNumbers + str(i) + ","
+
+print(f"oddNumbers: {oddNumbers}")
+print(f"evenNumbers: {evenNumbers}")
+
+numbers = list(range(5,20))
+print("Numbers:",numbers)
+
 ## 17.
 ## 18.
 ## 19.
