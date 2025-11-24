@@ -842,7 +842,80 @@ print(f"Total Sal: {sal}")
 #########################################
 ## 🎯 Functions
 #########################################
-#33. Create `def` functions to generalize the logic from steps 11–15 and 26–32.
+#33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
+
+### 11. Write a program to find the greatest of three numbers.
+print()
+
+def max_of_three(a:int, b:int, c:int):
+    '''Purpose: Function to find the greatest of three numbers'''
+    try:
+        print(f"a = {a} | b = {b} | c = {c}")
+        if a > b and a > c:
+            print("{a} is greater than {b} and {c}")
+        elif b > a and b > c:
+            print("{b} is greater than {a} and {c}")
+        elif c > a and c > b:
+            print("{c} is greater than {a} and {b}")
+        else:
+            pass
+    except Exception as e:
+        return f"[Exception] {e}"
+max_of_three(1,2,0) # Positional Argument Function Call
+max_of_three(a=1,b=2,c=0) # Named Argument Function Call
+
+"""
+a = 1 | b = 2 | c = 0
+{b} is greater than {a} and {c}
+Max of three - positional (1,2,0):  None
+a = 1 | b = 2 | c = 0
+{b} is greater than {a} and {c}
+Max of three - named (1,2,0):  None
+"""
+
+### 12. Write a single program to check if a number is even or negative and print the result as: “Even but not negative”, “Not even but negative”, “Neither even nor negative”
+print()
+
+def findout_even_odd_positive_negative(number:int):
+    '''Purpose: Function to find out given number is even/odd & positive/negative.'''
+    try:
+        if number % 2 == 0 and number > 0:
+            return (f"The given number {number} is even and positive.")
+        elif number % 2 == 0 and number < 0:
+            return (f"The given number {number} is even and negative.")
+        elif number % 2 != 0 and number > 0:
+            return (f"The given number {number} is odd and positive.")
+        elif number % 2 != 0 and number < 0:
+            return (f"The given number {number} is odd and negative.")
+        else:
+            return (f"The given number {number} is zero.")
+    except Exception as e:
+        return f"Execption occured {e}"
+
+numbers = [-2,-1,0,1,2]
+for i in numbers:
+    print(findout_even_odd_positive_negative(i))
+
+"""
+The given number -2 is even and negative.
+The given number -1 is odd and negative.
+The given number 0 is zero.
+The given number 1 is odd and positive.
+The given number 2 is even and positive.
+"""
+
+
+## 13.
+## 14.
+## 15.
+## 16.
+## 17.
+## 18.
+## 19.
+## 20.
+## 21.
+## 22.
+
 #34. Call the function from step 11 using both positional and keyword arguments.
 #35. Write a calculator function that takes three parameters (`int`, `int`, `str`) to perform add/sub/mul/div. Default the 3rd argument to `"add"`.
 #36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
