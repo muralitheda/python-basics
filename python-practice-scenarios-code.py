@@ -1148,8 +1148,53 @@ def print_text(text:str,nooftimes:int):
 
 print(print_text("Hello World!",5))
 
+"""
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+"""
 
-## 21.
+## 21. From the given list of list of elements produce the following output using nested for loop lst1=[[10,20],[30,40,50],[60,70,80]], calculate the sum of all number, calculate the min value and the max value of all the elements in the lst1.
+print()
+
+def number_formatting(startNumber:int, incrementNumber:int, reqlist:list):
+    "Purpose: Number formatting"
+
+    try:
+        lst1 = []
+        value =0
+
+        for length in reqlist:
+            x = 1
+            tmpList = []
+            while x <= length:
+                x += 1
+                value = value + 10
+                tmpList.append(value)
+            lst1.append(tmpList)
+
+        print("lst1: ",lst1)
+
+        allNumbers = []
+        for numbers in lst1:
+            items = numbers
+            for item in items:
+                allNumbers.append(item)
+        return allNumbers
+    except Exception as e:
+        return f"Exception: {e}"
+
+startNumber = 10
+reqlist = [2,3,4]
+allNumbers = number_formatting(startNumber=startNumber,incrementNumber=10,reqlist=reqlist)
+print("All numbers: ",allNumbers)
+print("Sum of all numbers: ",sum(allNumbers))
+print("Min value from the list: ",min(allNumbers))
+print("Max value from the list: ",max(allNumbers))
+
+
 ## 22.
 
 #34. Call the function from step 11 using both positional and keyword arguments.
