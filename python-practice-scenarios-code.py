@@ -1194,11 +1194,75 @@ print("Sum of all numbers: ",sum(allNumbers))
 print("Min value from the list: ",min(allNumbers))
 print("Max value from the list: ",max(allNumbers))
 
+"""
+lst1:  [[10, 20], [30, 40, 50], [60, 70, 80, 90]]
+All numbers:  [10, 20, 30, 40, 50, 60, 70, 80, 90]
+Sum of all numbers:  450
+Min value from the list:  10
+Max value from the list:  90
+"""
 
-## 22.
+## 22. Create a looping construct to create 3 tables upto 10 values.
+print()
+
+def multiplication_table(tableOf:int,upToMax:int):
+    '''Purpose: Multiplication table'''
+    try:
+        upToSeq=1
+        tbl = ""
+        while upToSeq <= upToMax:
+            tbl = tbl + (f"{upToSeq} * {tableOf} = {upToSeq*tableOf}") + "\n"
+            upToSeq += 1
+        return tbl
+    except Exception as e:
+        return f"Exception: {e}"
+
+result=multiplication_table(tableOf=5,upToMax=5)
+print(result)
 
 #34. Call the function from step 11 using both positional and keyword arguments.
+max_of_three(a=2,b=1,c=1000)
+max_of_three(200,1,100)
+
 #35. Write a calculator function that takes three parameters (`int`, `int`, `str`) to perform add/sub/mul/div. Default the 3rd argument to `"add"`.
+print()
+
+def calculator(numbersList:list,oper:str='add/sub/mul/div'):
+    '''Purpose: Calculator function'''
+    try:
+
+        if oper.lower()== 'add':
+           value = 0
+           for i in numbersList:
+               value = value + i
+        elif oper.lower() == 'mul':
+           value = 1
+           for i in numbersList:
+                value = value * i
+        elif oper.lower() == 'sub':
+           value = 0
+           iCnt = 1
+           for i in numbersList:
+               if iCnt == 1:
+                   value = numbersList[0]
+               else:
+                   value = value - i
+               iCnt = iCnt + 1
+        elif oper.lower() == 'div':
+           value = 1
+           for i in numbersList:
+                value = value / i
+        else:
+            pass
+        return value
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("Addition [5,4,3,2,1] :",calculator(oper='ADD',numbersList=[5,4,3,2,1]))
+print("Subtraction [5,4,3,2,1] :",calculator(oper='SUB',numbersList=[5,4,3,2,1]))
+print("Multiplication [5,4,3,2,1] :",calculator(oper='MUL',numbersList=[5,4,3,2,1]))
+print("Division [5,4,3,2,1] :",calculator(oper='DIV',numbersList=[5,4,3,2,1]))
+
 #36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
 #37. Write a function that accepts a string like `"inceptez technologies"` and returns:
 """
