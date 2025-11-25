@@ -1263,7 +1263,65 @@ print("Subtraction [5,4,3,2,1] :",calculator(oper='SUB',numbersList=[5,4,3,2,1])
 print("Multiplication [5,4,3,2,1] :",calculator(oper='MUL',numbersList=[5,4,3,2,1]))
 print("Division [5,4,3,2,1] :",calculator(oper='DIV',numbersList=[5,4,3,2,1]))
 
+"""
+Addition [5,4,3,2,1] : 15
+Subtraction [5,4,3,2,1] : -5
+Multiplication [5,4,3,2,1] : 120
+Division [5,4,3,2,1] : 0.008333333333333333
+"""
+
 #36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
+print()
+
+def calculator2(numbersList:list,oper:str='add/sub/mul/div/all'):
+    '''Purpose: Calculator function'''
+    try:
+
+        result = []
+        if oper.lower() == 'all':
+            oper = ['add','sub','mul','div']
+        else:
+            oper = oper.split('/')
+
+        for oper in oper:
+            if oper.lower()== 'add':
+               value = 0
+               for i in numbersList:
+                   value = value + i
+               result.append(f"Addition: {value}")
+            elif oper.lower() == 'mul':
+               value = 1
+               for i in numbersList:
+                    value = value * i
+               result.append(f"Multiplication: {value}")
+            elif oper.lower() == 'sub':
+               value = 0
+               iCnt = 1
+               for i in numbersList:
+                   if iCnt == 1:
+                       value = numbersList[0]
+                   else:
+                       value = value - i
+                   iCnt = iCnt + 1
+               result.append(f"Subtraction: {value}")
+            elif oper.lower() == 'div':
+               value = 1
+               for i in numbersList:
+                    value = value / i
+               result.append(f"Division: {value}")
+            else:
+                pass
+        return list(result)
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("Addition [5,4,3,2,1] :",calculator2(oper='ADD',numbersList=[5,4,3,2,1]))
+print("Subtraction [5,4,3,2,1] :",calculator2(oper='SUB',numbersList=[5,4,3,2,1]))
+print("Multiplication [5,4,3,2,1] :",calculator2(oper='MUL',numbersList=[5,4,3,2,1]))
+print("Division [5,4,3,2,1] :",calculator2(oper='DIV',numbersList=[5,4,3,2,1]))
+print("All [5,4,3,2,1] :",calculator2(oper='ALL',numbersList=[5,4,3,2,1]))
+print("Add/Sub [5,4,3,2,1] :",calculator2(oper='add/sub',numbersList=[5,4,3,2,1]))
+
 #37. Write a function that accepts a string like `"inceptez technologies"` and returns:
 """
 * Capitalized
