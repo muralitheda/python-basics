@@ -1535,6 +1535,79 @@ promo1ext a: amount=50000,offer_percent=10 =>  5000.0
 promo1ext b: amount=5000,offer_percent=-10 =>  Exception: -> Negative Number Entered
 """
 
+## Additional Program #1: FoodApp Promotion Usecase:
+"""
+FoodApp Promotion
+#Business req: minimum purchase cap (1000), discount percent 10% or max discount amt 200 rupees whichever is lower
+#Scenarios/test cases
+#Scenario1: amount of purchase = 2500, charge amount 2500-200=2300
+#Scenario2: amount of purchase = 1500, charge amount 1500-(1500*.10)= 1500-150 = 1350
+#Scenario3: amount of purchase = 900, charge amount 900 (no eligible offers)
+"""
+print()
+
+def foodAppPromo(pur_amt:int, min_pur_amt:int=1000,discount_per:float=0.10,max_discount_amt:int=200):
+    '''purpose: food order promotion'''
+    try:
+        if pur_amt <= min_pur_amt:
+            return f"Sorry. Minmum purchange amount must be {min_pur_amt}."
+        else:
+            discount_amount = pur_amt * discount_per
+            if discount_amount > max_discount_amt:
+                discount_amount = max_discount_amt
+            return f"Final discount amount is {pur_amt-discount_amount} and discount applied {discount_amount}."
+
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(foodAppPromo(pur_amt=2500))
+print(foodAppPromo(pur_amt=1500))
+print(foodAppPromo(pur_amt=900))
+
+"""
+Final discount amount is 2300 and discount applied 200.
+Final discount amount is 1350.0 and discount applied 150.0.
+Sorry. Minmum purchange amount must be 1000.
+"""
+
+## Additional Program #2: Create a method to calculate sal+bonus+incentives for different IT companies using either arbitrary keyword arg function
+"""
+#Hewitt/HRworkways..
+#CTS, Infy, HCL calculate sal+bon+inc
+## where CTS give all the 3 components
+## Infy gives only first 2 components
+## HCL gives only first 1 component
+
+#calc_gross_sal(comp='CTS',sal=100000,bon=10,inc=5000) -> 115000
+#calc_gross_sal(comp='INFY',sal=100000,bon=5) -> 105000
+#calc_gross_sal(comp='HCL',sal=100000) -> 100000
+from math import factorial
+"""
+print()
+
+def gross_sal_cal(**kwargs):
+    '''purpose: gross salary calculation'''
+    try:
+        company = kwargs.get("comp",None)
+        salary = kwargs.get("sal",0)
+        bonus = kwargs.get("bon",0)
+        incentive = kwargs.get("inc",0)
+
+        gross_salary = 0
+        if company.lower() == 'cts':
+            gross_salary = salary + bonus + incentive
+        elif company.lower() == 'infy':
+            gross_salary = salary + bonus
+        else:
+            gross_salary= salary
+        return gross_salary
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(gross_sal_cal(comp='CTS',sal=100000,bon=1000,inc=5000)) # 106000
+print(gross_sal_cal(comp='INFY',sal=100000,bon=500)) # 100500
+print(gross_sal_cal(comp='HCL',sal=100000)) # 100000
+
 
 #########################################
 ## 🎯 Object-Oriented Programming (OOP)
