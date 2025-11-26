@@ -1512,7 +1512,29 @@ Addition (5,4,3,2,1) : ['Addition: 15']
 Addition ('5','4',3,2,1) : ['Addition: 15']
 """
 
-#42. In the `promo` function (step 38), raise an exception if the second argument (`offer_percent`) is negative.
+#42. Write an exception handler code to raise exception if the 2nd argument passed is a negative value in the function created in step 38
+print()
+
+def promo1ext(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
+    """Purpose: Offer discount logic"""
+    try:
+        if amount < 0 or offer_percent < 0 or offer_cap_limit < 0:
+            raise Exception("-> Negative Number Entered")
+        discount_amt = amount * (offer_percent/100)
+        if discount_amt > offer_cap_limit:
+            discount_amt = offer_cap_limit
+        return discount_amt
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("promo1ext a: amount=50000,offer_percent=10 => ",promo1ext(amount=50000,offer_percent=10))
+print("promo1ext b: amount=5000,offer_percent=-10 => ",promo1ext(5000,-10))
+
+"""
+promo1ext a: amount=50000,offer_percent=10 =>  5000.0
+promo1ext b: amount=5000,offer_percent=-10 =>  Exception: -> Negative Number Entered
+"""
+
 
 #########################################
 ## 🎯 Object-Oriented Programming (OOP)
