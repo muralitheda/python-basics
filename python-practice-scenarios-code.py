@@ -1448,10 +1448,70 @@ promo_lambda_function:: amount=50000,offer_percent=10 =>  45000
 #########################################
 ## 🎯 Exception Handling
 #########################################
-#41. Apply exception handling to the calculator (step 35):
+#41. Apply exception handler code in the above usecase number 35 to achieve the followings
 """
-    * If either of the first two arguments are non-integer, raise an exception and re-call the function after converting them to integers.
+a.  If the calculator function is called with either the first or second argument as non integer values then raise Exception and call the calculator function with the type casted value
+for eg. calc("10",20, "add") in the except block of the exception handler we have to call the same function as calc(int("10"),20, "add") and return the result to the calling environment.
 """
+print()
+
+def calculator3(numbersList:tuple,oper:str='add/sub/mul/div/all'):
+    '''Purpose: Calculator function'''
+    try:
+
+        result = []
+        if oper.lower() == 'all':
+            oper = ['add','sub','mul','div']
+        else:
+            oper = oper.split('/')
+
+        for oper in oper:
+            if oper.lower()== 'add':
+               value = 0
+               for i in numbersList:
+                   value = value + i
+               result.append(f"Addition: {value}")
+            elif oper.lower() == 'mul':
+               value = 1
+               for i in numbersList:
+                    value = value * i
+               result.append(f"Multiplication: {value}")
+            elif oper.lower() == 'sub':
+               value = 0
+               iCnt = 1
+               for i in numbersList:
+                   if iCnt == 1:
+                       value = numbersList[0]
+                   else:
+                       value = value - i
+                   iCnt = iCnt + 1
+               result.append(f"Subtraction: {value}")
+            elif oper.lower() == 'div':
+               value = 1
+               for i in numbersList:
+                    value = value / i
+               result.append(f"Division: {value}")
+            else:
+                return f"[Invalid Operand]"
+        return list(result)
+    except TypeError as e:
+        numbersList2 = []
+        for i in numbersList:
+            item = int(i)
+            numbersList2.append(item)
+        numbersList3 = tuple(numbersList2)
+        return calculator3(oper=oper,numbersList=numbersList3)
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("Addition (5,4,3,2,1) :",calculator3(oper='ADD',numbersList=(5,4,3,2,1)))
+print("Addition ('5','4',3,2,1) :",calculator3(oper='ADD',numbersList=('5','4',3,2,1)))
+
+"""
+Addition (5,4,3,2,1) : ['Addition: 15']
+Addition ('5','4',3,2,1) : ['Addition: 15']
+"""
+
 #42. In the `promo` function (step 38), raise an exception if the second argument (`offer_percent`) is negative.
 
 #########################################
