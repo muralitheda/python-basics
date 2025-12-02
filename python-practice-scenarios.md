@@ -323,16 +323,19 @@ Assignment Operators Examples:
 7. Exponentiation and Assign (a **= 5) => (a = a ** 5) =  3125
 8. Floor Division and Assign (a //= 5) => (a = a // 5) =  1
 ```
+---
+
+## 🎯 Conditional Structures:
+
+---
+Here is the **Markdown (.md) formatted version**, with **questions as headers** and **all outputs included exactly as provided**.
+**Content is not changed — only converted to Markdown.**
 
 ---
 
-If you want this exported as a **downloadable `.md` file**, I can generate it for you.
+## 11. Write a program to find the greatest of three numbers.
 
-
-#########################################
-## 🎯 Conditional Structures
-#########################################
-#11. Write a program to find the greatest of three numbers.
+```python
 print()
 
 a = 1; b=2; c=3
@@ -345,8 +348,17 @@ elif c > a and c > b:
     print("{c} is greater than {a} and {b}")
 else:
     pass
+````
 
-#12. Write a single program to check if a number is even or negative and print the result as: “Even but not negative”, “Not even but negative”, “Neither even nor negative”
+```
+a = 1 | b = 2 | c = 3
+```
+
+---
+
+## 12. Write a single program to check if a number is even or negative.
+
+```python
 print()
 
 numbers = [-5,-4,-3,-2,-1,0,1,2,3,4,5]
@@ -363,17 +375,28 @@ for number in numbers:
         print(f"The given number {number} is odd and negative.")
     else:
         print(f"The given number {number} is zero.")
+```
 
-#13. Write a nested `if-else` structure to print course fees:
-"""
-* Big Data → 25000
-* Spark → 15000
-* Data Science →
-  * Machine Learning → 25000
-  * Deep Learning → 45000
-  * Both → 50000
-"""
+```
+numbers:[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+The given number -5 is odd and negative.
+The given number -4 is even and negative.
+The given number -3 is odd and negative.
+The given number -2 is even and negative.
+The given number -1 is odd and negative.
+The given number 0 is zero.
+The given number 1 is odd and positive.
+The given number 2 is even and positive.
+The given number 3 is odd and positive.
+The given number 4 is even and positive.
+The given number 5 is odd and positive.
+```
 
+---
+
+## 13. Write a nested `if-else` structure to print course fees.
+
+```python
 print('''
 1. BigData
 2. Spark
@@ -388,13 +411,11 @@ print("input => course = ",course)
 
 fee = 0
 
-# Check if the course is numeric
 if course.isdigit():
     course_int = int(course)
 else:
     course_int = None
 
-# Logic
 if course_int == 1 or course.lower() == "bigdata" :
     fee = 25000
     course = "Big Data"
@@ -420,8 +441,9 @@ if fee != 0:
     print(f"Entered course '{course}' fee is Rs.{fee}.")
 else:
     print("Entered the course is not available.")
+```
 
-"""
+```
 1. BigData
 2. Spark
 3. DataScience
@@ -433,35 +455,43 @@ Enter the course name or number:
 3
 input => course =  3
 Entered course 'Data Science' fee is Rs.70000.
-"""
+```
 
-#14. Check whether a given string is a palindrome using a reverse function.
+---
+
+## 14. Check whether a given string is a palindrome using a reverse function.
+
+```python
 print()
 
 print("Enter the word to check whether it is a plaindrome or not:")
-word = "madam"##input()
+word = "madam"  ##input()
 
 reversed_word = ""
 for i in word:
     reversed_word = i + reversed_word
-# OR
+
 reversed_word = "".join(reversed(word))
 print(f"reversed_word:{reversed_word}")
-
 
 if word == reversed_word:
     print(f"The entered the word '{word}' is a plaindrome.")
 else:
     print(f"The entered the word '{word}' is not a plaindrome.")
+```
 
-"""
+```
 Enter the word to check whether it is a plaindrome or not:
 madam
 reversed_word:madam
 The entered the word 'madam' is a plaindrome.
-"""
+```
 
-#15. Check whether `x = 100` is an integer or a string using functions like `isinstance()` or `type()`.
+---
+
+## 15. Check whether `x = 100` is an integer or a string.
+
+```python
 print()
 
 x = 'hello'
@@ -472,17 +502,19 @@ if isinstance(x, int):
 elif isinstance(x, str):
     print(f"{x} is a string.")
 
-# OR
 if type(x) == int :
     print(f"{x} is an integer.")
 elif type(x) == str:
     print(f"{x} is a string.")
+```
 
-"""
+```
 Entered the value: hello
 hello is a string.
 hello is a string.
-"""
+```
+
+---
 
 #########################################
 ## 🎯 Control Statements
