@@ -325,12 +325,7 @@ Assignment Operators Examples:
 ```
 ---
 
-## 🎯 Conditional Structures:
-
----
-Here is the **Markdown (.md) formatted version**, with **questions as headers** and **all outputs included exactly as provided**.
-**Content is not changed — only converted to Markdown.**
-
+# 🎯 Conditional Structures:
 ---
 
 ## 11. Write a program to find the greatest of three numbers.
