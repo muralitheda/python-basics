@@ -200,7 +200,7 @@ wait
 """
 ```
 
-#10. Demonstrate examples using arithmetic, assignment, comparison, relational, and logical operators.
+## 10. Demonstrate examples using arithmetic, assignment, comparison, relational, and logical operators.
 ```python
 print()
 
