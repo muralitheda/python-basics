@@ -11,12 +11,13 @@ z = x * y
 z1 = x / y
 print("type(z):",type(z), "z:",z)
 print("type(z1):", type(z1), "z1:", z1)
+```
 
-"""
+```
 type(z): <class 'int'> z: 1000
 type(z1): <class 'float'> z1: 10.0
-"""
 ```
+
 
 ## 2. Create a variable `a = 2000`, divide `a` by `y` (from step 1), and reassign `a` with the divided result.
 
