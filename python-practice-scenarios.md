@@ -1776,3 +1776,148 @@ print(f"Salary with Bonus: {mainout_bouns(0.10)}")
 
 ```
 # 🎯 OOPS (Object Oriented Programming):
+
+## 43. Create a package named `python.usecases`.
+```
+python
+    __init__.py  #Package initialization
+    usecases
+        __init__.py  # Sub Package initialization
+
+```
+
+## 44. Inside the package, create a module called `oops`.
+```
+python
+    __init__.py  #Package initialization
+    usecases
+        __init__.py  # Sub Package initialization
+        oops.py      # Module - actual programing file
+
+```
+## 45. Create two classes: `Mask` and `Endecode`.
+```python
+class Mask:
+    def __init__(self):
+        pass
+
+class EnDecode:
+    def __init__(self):
+        pass
+
+```
+
+## 46. In the `Mask` class, define a private variable `addhash = 100` and a method `hashMask(str)` that returns the hash of `str + addhash`.
+
+```python
+class Mask:
+    def __init__(self):
+        try:
+            self.__addhash =100  # Private variable can't be accessed by object instances
+        except Exception as e:
+            pass # cant return under the __init__ constructor method
+
+
+    def hashMash(self,text):
+        try:
+            return hash(str(text)+str(self.__addhash))
+        except Exception as e:
+            return f'[ExceptionOccured]{e}'
+
+```
+
+## 47. In the `Endecode` class, define private variable `prefixstr = "aix"` and a method `revEncode(str)` that returns `prefixstr + reverse(str)`.
+
+```python
+class EnDecode:
+    def __init__(self):
+        try:
+            self.__prefixstr = "aix"
+        except Exception as e:
+            pass
+
+    def revEncode(self,text):
+        try:
+            return self.__prefixstr + ''.join(reversed(str(text)))
+        except Exception as e:
+            return f"Exception: {e}"
+
+    def revDecode(self,text):
+        try:
+            text = str(text)
+            text_prefix = text[:3]
+            text_without_prefix = text[3:]
+            if text_prefix == self.__prefixstr:
+                return ''.join(reversed(str(text_without_prefix)))
+            else:
+                return "Unable to decode."
+        except Exception as e:
+            return f"Exception: {e}"
+```
+
+## 48. Create another module in the same package that instantiates objects `objmask` and `objendecode` for the respective classes.
+```python
+from python.usecases.oops import Mask
+from python.usecases.oops import EnDecode
+
+#Execution
+objmask = Mask()
+objendecode = EnDecode()
+
+```
+## 49. Create a list `["alan", "jake", "charlie"]`, and use `map()` to apply `hashMask()` to all elements and print the results.
+```python
+nameslist = ["Alan","Jake","Charlie"]
+print('Names:',nameslist)
+
+"""
+Names: ['Alan', 'Jake', 'Charlie']
+"""
+
+print('#1.Getting Hash Mask Value:')
+hasMash_value_dict = {}
+for name in nameslist:
+    hasMash_value_dict[name] = objmask.hashMask(name)
+
+print(hasMash_value_dict)
+
+"""
+#1.Getting Hash Mask Value:
+{'Alan': -6767629245512748524, 'Jake': 6013411149039668558, 'Charlie': 896875423019824000}
+"""
+```
+
+## 50. Apply `revEncode()` on the same list using `map()` and print the encoded values.
+```python
+print('#2. Encode the Masked Value:')
+encoded_value_dict = {}
+for name, hashvalue in hasMash_value_dict.items():
+    encoded_value_dict[name] = objendecode.revEncode(hashvalue)
+    print(f"{name} = {encoded_value_dict[name]}")
+```
+
+```
+#2. Encode the Masked Value:
+Alan = aix4258472155429267676-
+Jake = aix8558669309411143106
+Charlie = aix000428910324578698
+```
+
+## 51. Add a method `revDecode()` inside the `Endecode` class to decode the values encoded in step 50.
+```python
+print('#3. Decode the Encoded Value:')
+decoded_value_dict = {}
+for name, value in encoded_value_dict.items():
+    decoded_value_dict[name] = objendecode.revDecode(value)
+    print(f"{name} = {decoded_value_dict[name]}")
+
+```
+
+```
+#3. Decode the Encoded Value:
+Alan = -6767629245512748524
+Jake = 6013411149039668558
+Charlie = 896875423019824000
+```
+
+
