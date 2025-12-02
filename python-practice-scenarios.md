@@ -28,10 +28,10 @@ print()
 a = 2000
 a = a / y
 print("type(a):",type(a),"a:",a)
+```
 
-"""
+```
 type(a): <class 'float'> a: 200.0
-"""
 ```
 
 ## 3. Prove Python is dynamically typed by creating `x: int = 100`, then assigning `y = str(x)` and printing the types of `x` and `y`.
@@ -42,12 +42,14 @@ x: int = 100
 y = str(x)
 print("type(x):",type(x))
 print("type(y):",type(y))
+```
 
-"""
+```
 type(x): <class 'int'>
 type(y): <class 'str'>
-"""
 ```
+
+
 
 
 ## 4. Demonstrate Python’s dynamic inference feature with an example showing automatic datatype detection.
@@ -87,7 +89,8 @@ code = True
 print("code=",code)
 print("type(code)=",type(code))
 
-"""
+```
+```
 code= 100
 type(code)= <class 'int'>
 
@@ -111,8 +114,6 @@ type(code)= <class 'dict'>
 
 code= True
 type(code)= <class 'bool'>
-"""
-
 ```
 
 ## 5. Prove Python is a strongly typed language using incompatible type operations.
@@ -128,12 +129,12 @@ print("age=",age,"type(age)=",type(age))
 
 #concatenate string + number is not possible
 #concate_name_age = name + age # strongly typed
+```
 
-"""
+```
 name= Alan Harpor type(name)= <class 'str'>
 age= 40 type(age)= <class 'int'>
 TypeError: can only concatenate str (not "int") to str
-"""
 ```
 
 ## 6. Create variables `a, b, c, d` assigned with values `10, 20, 30, 40` respectively.
@@ -159,10 +160,10 @@ print()
 name = "Alan Harpor"
 Name = "alan harpor"
 print(f"name={name} | Name={Name}")
+```
 
-"""
+```
 name=Alan Harpor Name=alan harpor
-"""
 ```
 
 ## 8. Demonstrate that variable names cannot start with numbers or contain special characters (except `_`).
@@ -171,11 +172,12 @@ print()
 
 _number = 100  # valid
 number_ = 100  # valid
-"""
+```
+
+```
 1number = 100  # not valid
 $number = 100  # not valid
 num$ber = 100  # not valid
-"""
 ```
 
 ## 9. Show examples of using single, double, and triple quotes in Python.
@@ -191,14 +193,14 @@ can't
 wait
 """
 print(name)
+```
 
-"""
+```
 I cant wait
 I can't wait
 I 
 can't 
 wait
-"""
 ```
 
 ## 10. Demonstrate examples using arithmetic, assignment, comparison, relational, and logical operators.
@@ -257,7 +259,9 @@ print("7. Exponentiation and Assign (a **= 5) => (a = a ** 5) = ", a)
 a = 5; a //= 5
 print("8. Floor Division and Assign (a //= 5) => (a = a // 5) = ", a)
 
-"""
+```
+
+```
 a = 3 | b = 2 | c = 1
 
 Arithmetic Operations Examples:
@@ -292,7 +296,7 @@ Assignment Operators Examples:
 6. Modulus and Assign (a %= 5) => (a = a % 5)  =  0
 7. Exponentiation and Assign (a **= 5) => (a = a ** 5) =  3125
 8. Floor Division and Assign (a //= 5) => (a = a // 5) =  1
-"""
+
 ```
 
 # 🎯 Conditional Structures:
