@@ -1338,7 +1338,7 @@ max_of_three(a=2,b=1,c=1000)
 max_of_three(200,1,100)
 ```
 
-#35. Write a calculator function that takes three parameters (`int`, `int`, `str`) to perform add/sub/mul/div. Default the 3rd argument to `"add"`.
+## 35. Write a calculator function that takes three parameters (`int`, `int`, `str`) to perform add/sub/mul/div. Default the 3rd argument to `"add"`.
 ```python
 print()
 
@@ -1378,14 +1378,17 @@ print("Subtraction [5,4,3,2,1] :",calculator(oper='SUB',numbersList=[5,4,3,2,1])
 print("Multiplication [5,4,3,2,1] :",calculator(oper='MUL',numbersList=[5,4,3,2,1]))
 print("Division [5,4,3,2,1] :",calculator(oper='DIV',numbersList=[5,4,3,2,1]))
 ```
-"""
+
+```
 Addition [5,4,3,2,1] : 15
 Subtraction [5,4,3,2,1] : -5
 Multiplication [5,4,3,2,1] : 120
 Division [5,4,3,2,1] : 0.008333333333333333
-"""
+```
 
-#36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
+## 36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
+```python
+
 print()
 
 def calculator2(numbersList:list,oper:str='add/sub/mul/div/all'):
@@ -1436,16 +1439,17 @@ print("Multiplication [5,4,3,2,1] :",calculator2(oper='MUL',numbersList=[5,4,3,2
 print("Division [5,4,3,2,1] :",calculator2(oper='DIV',numbersList=[5,4,3,2,1]))
 print("All [5,4,3,2,1] :",calculator2(oper='ALL',numbersList=[5,4,3,2,1]))
 print("Add/Sub [5,4,3,2,1] :",calculator2(oper='add/sub',numbersList=[5,4,3,2,1]))
+```
 
-#37. Write a function that accepts a string like `"inception technologies"` and returns:
-"""
+## 37. Write a function that accepts a string like `"inception technologies"` and returns:
 * Capitalized
 * Uppercase
 * Length
 * Word count
 * Ends with “s” (True/False)
 * Replace ‘e’ with ‘a’
-"""
+
+```python
 print()
 
 def word_analysis(inputString:str):
@@ -1463,19 +1467,19 @@ def word_analysis(inputString:str):
         return f"Exception. {e}"
 
 print(word_analysis(inputString="inception technologies"))
+```
 
-"""
+```
 ['Capitalized: Inception technologies', 'Uppercase: INCEPTION TECHNOLOGIES', 'Length: 22', 'Word count: 2', "Ends with 's' True/False: True", "Replace 'e' with 'a': incaption tachnologias"]
-"""
+```
 
-#38. Create a `promo` function with three parameters: `amount`, `offer_percent`, and `offer_cap_limit`. Apply the discount logic and return the final amount.
-"""
+## 38. Create a `promo` function with three parameters: `amount`, `offer_percent`, and `offer_cap_limit`. Apply the discount logic and return the final amount.
 * a. Call with all parameters
 * b. Call using default parameter
 * c. Call using arbitrary arguments (`*args`)
 * d. Call using keyword arguments (`**kwargs`)
-"""
 
+```python
 def promo1(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
     """Purpose: Offer discount logic"""
     try:
@@ -1488,10 +1492,14 @@ def promo1(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
 
 print("promo1 a: amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10))
 print("promo1 b: amount=5000,offer_percent=10 => ",promo1(5000,10))
-"""
+```
+
+```
 promo1 a: amount=50000,offer_percent=10 =>  5000.0
 promo1 b: amount=5000,offer_percent=10 =>  500.0
-"""
+```
+
+```python
 
 def promo2(*args):
     """Purpose: Offer discount logic"""
@@ -1509,6 +1517,10 @@ def promo2(*args):
 
 print("promo2 c: amount=3000,offer_percent=10 => ",promo1(3000,10))
 
+```
+
+```python
+
 def promo3(**kwargs):
     """Purpose: Offer discount logic"""
     amount = kwargs["amount"]
@@ -1524,15 +1536,17 @@ def promo3(**kwargs):
         return f"Exception: {e}"
 
 print("promo3 a: amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10,offer_cap_limit=5000))
+```
 
-"""
+```
 promo1 a: amount=50000,offer_percent=10 =>  5000.0
 promo1 b: amount=5000,offer_percent=10 =>  500.0
 promo2 c: amount=3000,offer_percent=10 =>  300.0
 promo3 a: amount=50000,offer_percent=10 =>  5000.0
-"""
+```
 
-#39. Create a lambda function with the logic of lam=amount-(amount*offer_percent) and create a regular function with the above same logic with 4 arguments to Calculate if amount*offer_percent < offer_cap_limit then return lam(amount,offer_percent) else return the amount-offer_cap_limit. Eg. Call this function like promo(1000,.10,200,lam) to ensure this is a higher order function
+## 39. Create a lambda function with the logic of lam=amount-(amount*offer_percent) and create a regular function with the above same logic with 4 arguments to Calculate if amount*offer_percent < offer_cap_limit then return lam(amount,offer_percent) else return the amount-offer_cap_limit. Eg. Call this function like promo(1000,.10,200,lam) to ensure this is a higher order function
+```python
 lambda_function = lambda amount,offer_percent : amount - (offer_percent/100)
 
 def promo4(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
@@ -1546,21 +1560,22 @@ def promo4(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
         return f"Exception: {e}"
 
 print("promo4 amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10,offer_cap_limit=5000))
+```
 
-"""
+```
 promo4 amount=50000,offer_percent=10 =>  5000.0
-"""
+```
 
-#40. Recreate the function from step 38 entirely as a lambda expression.
-
+## 40. Recreate the function from step 38 entirely as a lambda expression.
+```python
 promo_lambda_function = lambda amount,offer_percent,offer_cap_limit=100 : (lambda discount_amount : amount - discount_amount if discount_amount < offer_percent else amount - offer_cap_limit)(amount*(offer_percent/100))
 
 print("promo_lambda_function:: amount=50000,offer_percent=10 => ",promo_lambda_function(50000,10,5000))
+```
 
-"""
+```
 promo_lambda_function:: amount=50000,offer_percent=10 =>  45000
-"""
-
+```
 # 🎯 Exception Handling:
 
 # 🎯 OOPS (Object Oriented Programming):
