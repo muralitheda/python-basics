@@ -924,6 +924,643 @@ print(f"Total Sal: {sal}")
 
 # 🎯 Functions:
 
+## 33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
+
+### 11. Write a program to find the greatest of three numbers.
+```python
+print()
+
+def max_of_three(a:int, b:int, c:int):
+    '''Purpose: Function to find the greatest of three numbers'''
+    try:
+        print(f"a = {a} | b = {b} | c = {c}")
+        if a > b and a > c:
+            print("{a} is greater than {b} and {c}")
+        elif b > a and b > c:
+            print("{b} is greater than {a} and {c}")
+        elif c > a and c > b:
+            print("{c} is greater than {a} and {b}")
+        else:
+            pass
+    except Exception as e:
+        return f"[Exception] {e}"
+max_of_three(1,2,0) # Positional Argument Function Call
+max_of_three(a=1,b=2,c=0) # Named Argument Function Call
+```
+
+```
+a = 1 | b = 2 | c = 0
+{b} is greater than {a} and {c}
+Max of three - positional (1,2,0):  None
+a = 1 | b = 2 | c = 0
+{b} is greater than {a} and {c}
+Max of three - named (1,2,0):  None
+```
+
+### 12. Write a single program to check if a number is even or negative and print the result as: “Even but not negative”, “Not even but negative”, “Neither even nor negative”
+```python
+print()
+
+def findout_even_odd_positive_negative(number:int):
+    '''Purpose: Function to find out given number is even/odd & positive/negative.'''
+    try:
+        if number % 2 == 0 and number > 0:
+            return (f"The given number {number} is even and positive.")
+        elif number % 2 == 0 and number < 0:
+            return (f"The given number {number} is even and negative.")
+        elif number % 2 != 0 and number > 0:
+            return (f"The given number {number} is odd and positive.")
+        elif number % 2 != 0 and number < 0:
+            return (f"The given number {number} is odd and negative.")
+        else:
+            return (f"The given number {number} is zero.")
+    except Exception as e:
+        return f"Execption occured {e}"
+
+numbers = [-2,-1,0,1,2]
+for i in numbers:
+    print(findout_even_odd_positive_negative(i))
+```
+
+```
+The given number -2 is even and negative.
+The given number -1 is odd and negative.
+The given number 0 is zero.
+The given number 1 is odd and positive.
+The given number 2 is even and positive.
+```
+
+### 13. Write a nested if then else to print the course fees - check if student choosing bigdata, then fees is 25000, if student choosing spark then fees is 15000, if the student choosing datascience then check if machinelearning then 25000 or if deep learning then 45000 otherwise if both then 25000+25000.
+
+```python
+print()
+
+def get_course_fee(course):
+    '''Purpose: Get the course fee.'''
+
+    try:
+        fee = 0
+
+        # Check if the course is numeric
+        if course.isdigit():
+            course_int = int(course)
+        else:
+            course_int = None
+
+        # Logic
+        if course_int == 1 or course.lower() == "bigdata" :
+            fee = 25000
+            course = "Big Data"
+        elif course_int == 2 or course.lower() == "spark" :
+            fee = 15000
+            course = "Spark"
+        elif course_int == 3 or course.lower() == "datascience" :
+            fee = 70000
+            course = "Data Science"
+        elif course_int == 4 or course.lower() == "machinelearning" :
+            fee = 25000
+            course = "Machine Learning"
+        elif course_int == 5 or course.lower() == "deeplearning" :
+            fee = 45000
+            course = "Deep Learning"
+        elif course_int == 6 or course.lower() == "both" :
+            fee = 70000
+            course = "Machine Learning & Deep Learning"
+        else:
+            pass
+
+        if fee != 0:
+            return f"Course fee is {fee}"
+        else:
+            return "Entered the course is not available."
+    except Exception as e:
+        return f"Exception occured. {e}"
+
+print('''
+1. BigData
+2. Spark
+3. DataScience
+  4. MachineLearning
+  5. DeepLearning
+  6. Both
+''')
+print("Enter the course name or number:")
+course = input()
+print(get_course_fee(course))
+```
+
+```
+1. BigData
+2. Spark
+3. DataScience
+  4. MachineLearning
+  5. DeepLearning
+  6. Both
+
+Enter the course name or number:
+3
+Course fee is 70000
+```
+
+### 14. Check whether the given string is palindrome or not (try to use some function like reverse). For eg: x="madam" and y="madam", if x matches with y then print as "palindrome" else "not a  palindrome".
+```python
+print()
+
+def palindrome_check(word):
+    '''Purpose: To check the entered text/number is plaindrome or not.'''
+    try:
+        reversed_word = ""
+        for i in word:
+            reversed_word = i + reversed_word
+        # OR
+        reversed_word = "".join(reversed(word))
+        print(f"Entered Word: {word}")
+        print(f"Reversed Word: {reversed_word}")
+
+        if word == reversed_word:
+            return True
+        else:
+            return False
+    except Exception as e:
+        return f"Exception occured. {e}"
+
+
+word = "madam"  ##input()
+print(f"Plaindrome check is {palindrome_check(word)}")
+
+```
+
+```
+Entered Word: madam
+Reversed Word: madam
+Plaindrome check is True
+```
+
+### 15. Check whether the x=100 is an integer or string. (try to use some functions like str or upper function etc to execute this use case) or use isinstanceof(variablename,datatype) function.
+
+```python
+print()
+
+def check_string_or_int(x):
+    '''Purpose: Check the entered text is string or int.'''
+    try:
+        if isinstance(x, int):
+            print(f"{x} is an integer.")
+        elif isinstance(x, str):
+            print(f"{x} is a string.")
+
+        # OR
+        if type(x) == int :
+            return (f"{x} is an integer.")
+        elif type(x) == str:
+            return(f"{x} is a string.")
+    except Exception as e:
+        return f"Exception occured. {e}"
+
+x = 'hello'
+print(f"Entered the value {check_string_or_int(x)}")
+x = 100
+print(f"Entered the value {check_string_or_int(x)}")
+
+```
+
+```
+hello is a string.
+Entered the value hello is a string.
+100 is an integer.
+Entered the value 100 is an integer.
+```
+
+### 16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
+```python
+print()
+
+def find_odd_even_numbers(numbers:list):
+    '''purpose: To find out the odd nnumber and even numbers'''
+    try:
+        oddNumbers = ""
+        evenNumbers = ""
+        for i in numbers:
+          if i%2 != 0 :
+              oddNumbers = oddNumbers + str(i) + ","
+          else:
+              evenNumbers = evenNumbers + str(i) + ","
+        return f"Odd numbers: {oddNumbers} Even numbers: {evenNumbers}"
+    except Exception as e:
+        return f"Exception: {e}"
+
+numbers = list(range(5,20))
+print(find_odd_even_numbers(numbers))
+```
+
+```
+Odd numbers: 5,7,9,11,13,15,17,19, Even numbers: 6,8,10,12,14,16,18,
+```
+
+### 17. Write a while loop to loop from 0 till 21 with the increment of 3, the result should be exactly 3,6,9,12,15,18 and store this result in a list
+```python
+print()
+
+def multiple_of_number(maxnumber:int):
+    '''Purpose: Function to produce the multiple of given numbers'''
+    try:
+        x = 0
+        result = []
+        while x < maxnumber :
+            if x%3 == 0 and x !=0:
+                result.append(x)
+            x += 1
+        return  result
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(multiple_of_number(maxnumber=21))
+```
+
+```
+[3, 6, 9, 12, 15, 18]
+```
+
+### 18. Write a for or while loop to print the cube of 4, result should be 4*4*4=64 (initiate some variable outside the loop with 4 and loop through 3 times to achieve the result)
+```python
+print()
+
+def get_cube_value(number:int, cubeNumber:int):
+    '''purpose: get the cube value'''
+    x = 1
+    result = 1
+    while x <= cubeNumber:
+        result = result * number
+        x += 1
+    return result
+
+number = int(input("Enter the number: "))
+cubeNumber = int(input("Enter the cube number: "))
+print("result: ",get_cube_value(number,cubeNumber))
+```
+
+```
+Enter the number:2
+Enter the cube number:3
+result:  8
+```
+
+### 19. Create a list as sal_lst=[10000,20000,30000,10000,15000], loop through the list and add 1000 bonus to the salary and store in another list sal_bonus_lst=[11000,21000,31000,11000,16000] then store the bonus applied salary in another list where sal>11000
+
+```python
+print()
+
+def get_revisied_salary(sal_lst:list):
+    '''purpose: get the salary revisied list'''
+    try:
+        revised_sal_lst = []
+        revised_sal = 0
+        bonus = 1000
+        sal_gt_11000 = []
+
+        for i in sal_lst:
+            revised_sal = i + bonus
+            revised_sal_lst.append(revised_sal)
+            if revised_sal > 11000:
+                sal_gt_11000.append(revised_sal)
+        return revised_sal_lst
+    except Exception as e:
+        return f"Exception: {e}"
+
+sal_lst = [10000,20000,40000,50000]
+print("Salary List: ",sal_lst)
+print("Revised Salary List: ",get_revisied_salary(sal_lst=sal_lst))
+```
+
+### 20. Write a do while loop to print “Inception Technologies” n number of times as per the input you get from the user. Minimum it has to be printed at least one time regardless of the user input.
+
+```python
+print()
+
+def print_text(text:str,nooftimes:int):
+    '''purpose: print text'''
+    try:
+        x = 1
+        text1 = ""
+        if nooftimes <= 0:
+            nooftimes = 1
+
+        while x <= nooftimes:
+            text1 = text1 + "\n" +text
+            x += 1
+        return text1
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(print_text("Hello World!",5))
+```
+
+```
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+```
+
+### 21. From the given list of list of elements produce the following output using nested for loop lst1=[[10,20],[30,40,50],[60,70,80]], calculate the sum of all number, calculate the min value and the max value of all the elements in the lst1.
+```python
+print()
+
+def number_formatting(startNumber:int, incrementNumber:int, reqlist:list):
+    "Purpose: Number formatting"
+
+    try:
+        lst1 = []
+        value =0
+
+        for length in reqlist:
+            x = 1
+            tmpList = []
+            while x <= length:
+                x += 1
+                value = value + 10
+                tmpList.append(value)
+            lst1.append(tmpList)
+
+        print("lst1: ",lst1)
+
+        allNumbers = []
+        for numbers in lst1:
+            items = numbers
+            for item in items:
+                allNumbers.append(item)
+        return allNumbers
+    except Exception as e:
+        return f"Exception: {e}"
+
+startNumber = 10
+reqlist = [2,3,4]
+allNumbers = number_formatting(startNumber=startNumber,incrementNumber=10,reqlist=reqlist)
+print("All numbers: ",allNumbers)
+print("Sum of all numbers: ",sum(allNumbers))
+print("Min value from the list: ",min(allNumbers))
+print("Max value from the list: ",max(allNumbers))
+```
+
+```
+lst1:  [[10, 20], [30, 40, 50], [60, 70, 80, 90]]
+All numbers:  [10, 20, 30, 40, 50, 60, 70, 80, 90]
+Sum of all numbers:  450
+Min value from the list:  10
+Max value from the list:  90
+```
+
+### 22. Create a looping construct to create 3 tables upto 10 values.
+
+```python
+print()
+
+def multiplication_table(tableOf:int,upToMax:int):
+    '''Purpose: Multiplication table'''
+    try:
+        upToSeq=1
+        tbl = ""
+        while upToSeq <= upToMax:
+            tbl = tbl + (f"{upToSeq} * {tableOf} = {upToSeq*tableOf}") + "\n"
+            upToSeq += 1
+        return tbl
+    except Exception as e:
+        return f"Exception: {e}"
+
+result=multiplication_table(tableOf=5,upToMax=5)
+print(result)
+```
+
+## 34. Call the function from step 11 using both positional and keyword arguments.
+```python
+max_of_three(a=2,b=1,c=1000)
+max_of_three(200,1,100)
+```
+
+#35. Write a calculator function that takes three parameters (`int`, `int`, `str`) to perform add/sub/mul/div. Default the 3rd argument to `"add"`.
+```python
+print()
+
+def calculator(numbersList:list,oper:str='add/sub/mul/div'):
+    '''Purpose: Calculator function'''
+    try:
+
+        if oper.lower()== 'add':
+           value = 0
+           for i in numbersList:
+               value = value + i
+        elif oper.lower() == 'mul':
+           value = 1
+           for i in numbersList:
+                value = value * i
+        elif oper.lower() == 'sub':
+           value = 0
+           iCnt = 1
+           for i in numbersList:
+               if iCnt == 1:
+                   value = numbersList[0]
+               else:
+                   value = value - i
+               iCnt = iCnt + 1
+        elif oper.lower() == 'div':
+           value = 1
+           for i in numbersList:
+                value = value / i
+        else:
+            pass
+        return value
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("Addition [5,4,3,2,1] :",calculator(oper='ADD',numbersList=[5,4,3,2,1]))
+print("Subtraction [5,4,3,2,1] :",calculator(oper='SUB',numbersList=[5,4,3,2,1]))
+print("Multiplication [5,4,3,2,1] :",calculator(oper='MUL',numbersList=[5,4,3,2,1]))
+print("Division [5,4,3,2,1] :",calculator(oper='DIV',numbersList=[5,4,3,2,1]))
+```
+"""
+Addition [5,4,3,2,1] : 15
+Subtraction [5,4,3,2,1] : -5
+Multiplication [5,4,3,2,1] : 120
+Division [5,4,3,2,1] : 0.008333333333333333
+"""
+
+#36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
+print()
+
+def calculator2(numbersList:list,oper:str='add/sub/mul/div/all'):
+    '''Purpose: Calculator function'''
+    try:
+
+        result = []
+        if oper.lower() == 'all':
+            oper = ['add','sub','mul','div']
+        else:
+            oper = oper.split('/')
+
+        for oper in oper:
+            if oper.lower()== 'add':
+               value = 0
+               for i in numbersList:
+                   value = value + i
+               result.append(f"Addition: {value}")
+            elif oper.lower() == 'mul':
+               value = 1
+               for i in numbersList:
+                    value = value * i
+               result.append(f"Multiplication: {value}")
+            elif oper.lower() == 'sub':
+               value = 0
+               iCnt = 1
+               for i in numbersList:
+                   if iCnt == 1:
+                       value = numbersList[0]
+                   else:
+                       value = value - i
+                   iCnt = iCnt + 1
+               result.append(f"Subtraction: {value}")
+            elif oper.lower() == 'div':
+               value = 1
+               for i in numbersList:
+                    value = value / i
+               result.append(f"Division: {value}")
+            else:
+                pass
+        return list(result)
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("Addition [5,4,3,2,1] :",calculator2(oper='ADD',numbersList=[5,4,3,2,1]))
+print("Subtraction [5,4,3,2,1] :",calculator2(oper='SUB',numbersList=[5,4,3,2,1]))
+print("Multiplication [5,4,3,2,1] :",calculator2(oper='MUL',numbersList=[5,4,3,2,1]))
+print("Division [5,4,3,2,1] :",calculator2(oper='DIV',numbersList=[5,4,3,2,1]))
+print("All [5,4,3,2,1] :",calculator2(oper='ALL',numbersList=[5,4,3,2,1]))
+print("Add/Sub [5,4,3,2,1] :",calculator2(oper='add/sub',numbersList=[5,4,3,2,1]))
+
+#37. Write a function that accepts a string like `"inception technologies"` and returns:
+"""
+* Capitalized
+* Uppercase
+* Length
+* Word count
+* Ends with “s” (True/False)
+* Replace ‘e’ with ‘a’
+"""
+print()
+
+def word_analysis(inputString:str):
+    "Purpose: Word Analysis"
+    try:
+        result = []
+        result.append(f"Capitalized: {inputString.capitalize()}")
+        result.append(f"Uppercase: {inputString.upper()}")
+        result.append(f"Length: {inputString.__len__()}")
+        result.append(f"Word count: {inputString.split(' ').__len__()}")
+        result.append(f"Ends with 's' True/False: {inputString.endswith('s')}")
+        result.append(f"Replace 'e' with 'a': {inputString.replace('e','a')}")
+        return result
+    except Exception as e:
+        return f"Exception. {e}"
+
+print(word_analysis(inputString="inception technologies"))
+
+"""
+['Capitalized: Inception technologies', 'Uppercase: INCEPTION TECHNOLOGIES', 'Length: 22', 'Word count: 2', "Ends with 's' True/False: True", "Replace 'e' with 'a': incaption tachnologias"]
+"""
+
+#38. Create a `promo` function with three parameters: `amount`, `offer_percent`, and `offer_cap_limit`. Apply the discount logic and return the final amount.
+"""
+* a. Call with all parameters
+* b. Call using default parameter
+* c. Call using arbitrary arguments (`*args`)
+* d. Call using keyword arguments (`**kwargs`)
+"""
+
+def promo1(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
+    """Purpose: Offer discount logic"""
+    try:
+        discount_amt = amount * (offer_percent/100)
+        if discount_amt > offer_cap_limit:
+            discount_amt = offer_cap_limit
+        return discount_amt
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("promo1 a: amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10))
+print("promo1 b: amount=5000,offer_percent=10 => ",promo1(5000,10))
+"""
+promo1 a: amount=50000,offer_percent=10 =>  5000.0
+promo1 b: amount=5000,offer_percent=10 =>  500.0
+"""
+
+def promo2(*args):
+    """Purpose: Offer discount logic"""
+    amount = args[0]
+    offer_percent = args[1]
+    offer_cap_limit = args[2]
+
+    try:
+        discount_amt = amount * (offer_percent/100)
+        if discount_amt > offer_cap_limit:
+            discount_amt = offer_cap_limit
+        return discount_amt
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("promo2 c: amount=3000,offer_percent=10 => ",promo1(3000,10))
+
+def promo3(**kwargs):
+    """Purpose: Offer discount logic"""
+    amount = kwargs["amount"]
+    offer_percent = kwargs["offer_percent"]
+    offer_cap_limit = kwargs["offer_cap_limit"]
+
+    try:
+        discount_amt = amount * (offer_percent/100)
+        if discount_amt > offer_cap_limit:
+            discount_amt = offer_cap_limit
+        return discount_amt
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("promo3 a: amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10,offer_cap_limit=5000))
+
+"""
+promo1 a: amount=50000,offer_percent=10 =>  5000.0
+promo1 b: amount=5000,offer_percent=10 =>  500.0
+promo2 c: amount=3000,offer_percent=10 =>  300.0
+promo3 a: amount=50000,offer_percent=10 =>  5000.0
+"""
+
+#39. Create a lambda function with the logic of lam=amount-(amount*offer_percent) and create a regular function with the above same logic with 4 arguments to Calculate if amount*offer_percent < offer_cap_limit then return lam(amount,offer_percent) else return the amount-offer_cap_limit. Eg. Call this function like promo(1000,.10,200,lam) to ensure this is a higher order function
+lambda_function = lambda amount,offer_percent : amount - (offer_percent/100)
+
+def promo4(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
+    """Purpose: Offer discount logic"""
+    try:
+        discount_amt = lambda_function(amount=amount,offer_percent=offer_percent)
+        if discount_amt > offer_cap_limit:
+            discount_amt = offer_cap_limit
+        return discount_amt
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("promo4 amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10,offer_cap_limit=5000))
+
+"""
+promo4 amount=50000,offer_percent=10 =>  5000.0
+"""
+
+#40. Recreate the function from step 38 entirely as a lambda expression.
+
+promo_lambda_function = lambda amount,offer_percent,offer_cap_limit=100 : (lambda discount_amount : amount - discount_amount if discount_amount < offer_percent else amount - offer_cap_limit)(amount*(offer_percent/100))
+
+print("promo_lambda_function:: amount=50000,offer_percent=10 => ",promo_lambda_function(50000,10,5000))
+
+"""
+promo_lambda_function:: amount=50000,offer_percent=10 =>  45000
+"""
+
 # 🎯 Exception Handling:
 
 # 🎯 OOPS (Object Oriented Programming):
