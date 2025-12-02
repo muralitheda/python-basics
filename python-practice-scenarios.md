@@ -886,16 +886,16 @@ print("name: ",name)
 print("nameList: ",nameList)
 ```
 
-## 32. Given
-```
-    emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
+## 32. Given:
+emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
 
-    Perform:
-    a. Convert the first sublist to a tuple.
-    b. Reverse the first and last name of the second element.
-    c. Convert the entire list into tuples of tuples.
-    d. Calculate the total salary.
-```
+Perform:
+a. Convert the first sublist to a tuple.
+b. Reverse the first and last name of the second element.
+c. Convert the entire list into tuples of tuples.
+d. Calculate the total salary.
+
+
 ```python
 
 print()
