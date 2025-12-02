@@ -1576,6 +1576,203 @@ print("promo_lambda_function:: amount=50000,offer_percent=10 => ",promo_lambda_f
 ```
 promo_lambda_function:: amount=50000,offer_percent=10 =>  45000
 ```
+
 # 🎯 Exception Handling:
 
+## 41. Apply exception handler code in the above usecase number 35 to achieve the followings
+a.  If the calculator function is called with either the first or second argument as non integer values then raise Exception and call the calculator function with the type casted value
+for eg. calc("10",20, "add") in the except block of the exception handler we have to call the same function as calc(int("10"),20, "add") and return the result to the calling environment.
+
+```python
+print()
+
+def calculator3(numbersList:tuple,oper:str='add/sub/mul/div/all'):
+    '''Purpose: Calculator function'''
+    try:
+
+        result = []
+        if oper.lower() == 'all':
+            oper = ['add','sub','mul','div']
+        else:
+            oper = oper.split('/')
+
+        for oper in oper:
+            if oper.lower()== 'add':
+               value = 0
+               for i in numbersList:
+                   value = value + i
+               result.append(f"Addition: {value}")
+            elif oper.lower() == 'mul':
+               value = 1
+               for i in numbersList:
+                    value = value * i
+               result.append(f"Multiplication: {value}")
+            elif oper.lower() == 'sub':
+               value = 0
+               iCnt = 1
+               for i in numbersList:
+                   if iCnt == 1:
+                       value = numbersList[0]
+                   else:
+                       value = value - i
+                   iCnt = iCnt + 1
+               result.append(f"Subtraction: {value}")
+            elif oper.lower() == 'div':
+               value = 1
+               for i in numbersList:
+                    value = value / i
+               result.append(f"Division: {value}")
+            else:
+                return f"[Invalid Operand]"
+        return list(result)
+    except TypeError as e:
+        numbersList2 = []
+        for i in numbersList:
+            item = int(i)
+            numbersList2.append(item)
+        numbersList3 = tuple(numbersList2)
+        return calculator3(oper=oper,numbersList=numbersList3)
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("Addition (5,4,3,2,1) :",calculator3(oper='ADD',numbersList=(5,4,3,2,1)))
+print("Addition ('5','4',3,2,1) :",calculator3(oper='ADD',numbersList=('5','4',3,2,1)))
+```
+
+```
+Addition (5,4,3,2,1) : ['Addition: 15']
+Addition ('5','4',3,2,1) : ['Addition: 15']
+```
+
+## 42. Write an exception handler code to raise exception if the 2nd argument passed is a negative value in the function created in step 38
+```python
+print()
+
+def promo1ext(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
+    """Purpose: Offer discount logic"""
+    try:
+        if amount < 0 or offer_percent < 0 or offer_cap_limit < 0:
+            raise Exception("-> Negative Number Entered")
+        discount_amt = amount * (offer_percent/100)
+        if discount_amt > offer_cap_limit:
+            discount_amt = offer_cap_limit
+        return discount_amt
+    except Exception as e:
+        return f"Exception: {e}"
+
+print("promo1ext a: amount=50000,offer_percent=10 => ",promo1ext(amount=50000,offer_percent=10))
+print("promo1ext b: amount=5000,offer_percent=-10 => ",promo1ext(5000,-10))
+
+```
+
+```
+promo1ext a: amount=50000,offer_percent=10 =>  5000.0
+promo1ext b: amount=5000,offer_percent=-10 =>  Exception: -> Negative Number Entered
+```
+
+## Additional Program #1: FoodApp Promotion Usecase:
+
+```
+FoodApp Promotion
+#Business req: minimum purchase cap (1000), discount percent 10% or max discount amt 200 rupees whichever is lower
+#Scenarios/test cases
+#Scenario1: amount of purchase = 2500, charge amount 2500-200=2300
+#Scenario2: amount of purchase = 1500, charge amount 1500-(1500*.10)= 1500-150 = 1350
+#Scenario3: amount of purchase = 900, charge amount 900 (no eligible offers)
+```
+
+```python
+print()
+
+def foodAppPromo(pur_amt:int, min_pur_amt:int=1000,discount_per:float=0.10,max_discount_amt:int=200):
+    '''purpose: food order promotion'''
+    try:
+        if pur_amt <= min_pur_amt:
+            return f"Sorry. Minmum purchange amount must be {min_pur_amt}."
+        else:
+            discount_amount = pur_amt * discount_per
+            if discount_amount > max_discount_amt:
+                discount_amount = max_discount_amt
+            return f"Final discount amount is {pur_amt-discount_amount} and discount applied {discount_amount}."
+
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(foodAppPromo(pur_amt=2500))
+print(foodAppPromo(pur_amt=1500))
+print(foodAppPromo(pur_amt=900))
+
+```
+
+```
+Final discount amount is 2300 and discount applied 200.
+Final discount amount is 1350.0 and discount applied 150.0.
+Sorry. Minmum purchange amount must be 1000.
+```
+
+## Additional Program #2: Create a method to calculate sal+bonus+incentives for different IT companies using either arbitrary keyword arg function
+```
+#Hewitt/HRworkways..
+#CTS, Infy, HCL calculate sal+bon+inc
+## where CTS give all the 3 components
+## Infy gives only first 2 components
+## HCL gives only first 1 component
+
+#calc_gross_sal(comp='CTS',sal=100000,bon=10,inc=5000) -> 115000
+#calc_gross_sal(comp='INFY',sal=100000,bon=5) -> 105000
+#calc_gross_sal(comp='HCL',sal=100000) -> 100000
+from math import factorial
+```
+
+```python
+print()
+
+def gross_sal_cal(**kwargs):
+    '''purpose: gross salary calculation'''
+    try:
+        company = kwargs.get("comp",None)
+        salary = kwargs.get("sal",0)
+        bonus = kwargs.get("bon",0)
+        incentive = kwargs.get("inc",0)
+
+        gross_salary = 0
+        if company.lower() == 'cts':
+            gross_salary = salary + bonus + incentive
+        elif company.lower() == 'infy':
+            gross_salary = salary + bonus
+        else:
+            gross_salary= salary
+        return gross_salary
+    except Exception as e:
+        return f"Exception: {e}"
+
+print(gross_sal_cal(comp='CTS',sal=100000,bon=1000,inc=5000)) # 106000
+print(gross_sal_cal(comp='INFY',sal=100000,bon=500)) # 100500
+print(gross_sal_cal(comp='HCL',sal=100000)) # 100000
+
+```
+
+## Additional Program #3: Can you create a method called calc_sal_bonus_incentive using closure concepts?
+
+```
+purpose: 
+1.  A closure is a **nested function** that **remembers and accesses** variables from its outer (enclosing) scope.
+2.  It retains access to these variables **even after the outer function has finished execution**, making the data persistent.
+3.  This capability enables **data hiding** and allows the function to maintain state without using global variables or classes.
+```
+
+```python
+def sal_hike (salary:int, hike:int):
+    salaryhigh = salary + hike
+    def bonus(percentage:float):
+        return salaryhigh * percentage
+    def incentives(incentive:float):
+        return salaryhigh + incentive
+    return bonus,incentives # Return both functions as tuple or dictionary
+
+mainout_bouns, mainout_incentives = sal_hike(10000,1000)
+print(f"Salary with Incentive: {mainout_incentives(1000)}")
+print(f"Salary with Bonus: {mainout_bouns(0.10)}")
+
+```
 # 🎯 OOPS (Object Oriented Programming):
