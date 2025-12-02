@@ -19,8 +19,6 @@ print("type(z1)=", type(z1))
 print("z1=", z1)
 ```
 
-### **✅ Output**
-
 ```
 type(z)= <class 'int'>
 z= 1000
