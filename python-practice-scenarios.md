@@ -652,6 +652,276 @@ Evaluate up to how many numbers? 5
 
 # 🎯 Collections: List, Dictionary, Tuple and Set
 
+## 23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
+```python
+print()
+
+rangeList = list(range(2,11))
+print("rangeList: ",rangeList)
+
+#Updating 3rd element with 100
+rangeList[2]=100
+print("updated rangeList: ",rangeList)
+
+#Inserting a new value 100 in the 5th position
+rangeList.insert(4,100)
+print("resized rangeList: ",rangeList)
+```
+
+```
+rangeList:  [2, 3, 4, 5, 6, 7, 8, 9, 10]
+updated rangeList:  [2, 3, 100, 5, 6, 7, 8, 9, 10]
+resized rangeList:  [2, 3, 100, 5, 100, 6, 7, 8, 9, 10]
+```
+
+## 24. Create a tuple of 2 fields eg. ("Inception","Technologies","Pvt","Ltd"), prove immutability and non-resizable nature, access the 2nd and 4th fields and store in another tuple.
+```python
+print()
+
+namesTuple = ("Inception","Technologies","Pvt","Ltd")
+# namesTuple[0]= "The" # Tuples don't support item assignment
+# .append() or .insert() are not available for tuples
+
+namesList = []
+i = 0
+length = len(namesTuple)
+
+for name in namesTuple:
+    if i in (1,3):
+         namesList.append(name)
+    i += 1
+print("filteredNames: ",namesList)
+
+```
+
+```
+filteredNames:  ['Technologies', 'Ltd']
+```
+
+## 25. Convert the list of tuples [("Inception","Technologies"),("Apple","Incorporation")] to list of dictionary type, using for loop as given below [{"Inception":"Technologies"},{"Apple":"Incorporation"}] , once the list of dictionary is arrived print only "Incorporation" by passing "Apple" as a key using dict["Apple"] and dict.get("Apple") and try with dict["Apple1"] and dict.get("Apple1") then find the difference between get and using[] notation.
+```python
+print()
+
+listOfTuples = [("Inception","Technologies"),("Apple","Incorporation")]
+#dictOfTuples = dict(listOfTuples)
+#print("dictOfTuples: ",dictOfTuples)
+
+dictOfTuples = {}
+for list1 in listOfTuples:
+    i = 0
+    key = ""
+    value = ""
+    for element in list1:
+        if i == 0:
+            key = element
+        elif i == 1:
+            value = element
+        else:
+            pass
+        i += 1
+    dictOfTuples[key]=value
+
+print("dictOfTuples: ",dictOfTuples)
+print("dictOfTuples['Apple']: ",dictOfTuples['Apple'])
+print("dictOfTuples['Inception']: ",dictOfTuples['Inception'])
+#print("dictOfTuples['Apple1']: ",dictOfTuples['Apple1'])            # This will throw an error. Alternate is dictOfTuples.get('Apple1').
+#print("dictOfTuples['Inception1']: ",dictOfTuples['Inception1'])    # This will throw an error. Alternate is dictOfTuples.get('Inception1').
+
+print("dictOfTuples.get('Apple'): ",dictOfTuples.get("Apple"))
+print("dictOfTuples.get('Inception'): ",dictOfTuples.get("Inception"))
+print("dictOfTuples.get('Apple1'): ",dictOfTuples.get("Apple1"))
+print("dictOfTuples.get('Inception1'): ",dictOfTuples.get("Inception1"))
+```
+
+```
+dictOfTuples:  {'Inception': 'Technologies', 'Apple': 'Incorporation'}
+dictOfTuples['Apple']:  Incorporation
+dictOfTuples['Inception']:  Technologies
+dictOfTuples.get('Apple'):  Incorporation
+dictOfTuples.get('Inception'):  Technologies
+dictOfTuples.get('Apple1'):  None
+dictOfTuples.get('Inception1'):  None
+```
+
+## 26. Create a list of tuple as given below and delete all duplicate tuples of the list  lst=[("Inceptez","Technologies"),("Apple","Incorporation"),("Inceptez","Technologies"),("Inceptez","Technologies")]
+```python
+
+print()
+
+lst=[("Inception","Technologies"),("Apple","Incorporation"),("Inception","Technologies"),("Inception","Technologies")]
+print("OriginalList: ",lst)
+distinct_set = set(lst)
+print("distinct_set: ",distinct_set)
+distinct_list = list(distinct_set)
+print("distinct_list: ",distinct_list)
+
+"""
+OriginalList:  [('Inception', 'Technologies'), ('Apple', 'Incorporation'), ('Inception', 'Technologies'), ('Inception', 'Technologies')]
+distinct_set:  {('Apple', 'Incorporation'), ('Inception', 'Technologies')}
+distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies')]
+"""
+```
+
+## 27. Append a new tuple `("Intel", "Corp")` to the de-duplicated list.
+```python
+print()
+
+distinct_list.append(("Intel", "Corp"))
+print("distinct_list: ",distinct_list)
+```
+
+```
+distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies'), ('Intel', 'Corp')]
+```
+
+## 28. Convert the lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}] to lst1=["Inception","Apple"] , think about using for loop, list() function, keys function and list append functions to achieve this.
+```python
+
+print()
+
+lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}]
+final_list = []
+for item in lst_dict:
+    for key,value in item.items():
+        final_list.append(key)
+print("final_list: ",final_list)
+```
+
+```
+final_list:  ['Inception', 'Apple']
+```
+
+
+## 29. Create a list of values lst=[10,20,40,30,20], find the first, last values of the list, sort the list in ascending order, sort in descending order, print the minumum and maximum values of the descending sorted list, find the sum of all elements in the list, remove the number 30 and 20 from the list.
+```python
+print()
+
+lst = [10,20,40,30,20]
+print(f"Original List: {lst}")
+
+# 1. Find the first, last values of the list
+length = len(lst)
+print(f"First value: {lst[0]} Last value: {lst[length-1]}")
+
+# 2. Sort the list in ascending order
+lst.sort(reverse=False)
+print(f"Sorted list ascending: ",lst)
+
+# 3. Sort the list in decending order
+lst.sort(reverse=True)
+print(f"Sorted list decending: ",lst)
+
+# 4. Minumum and maximum values of the descending sorted list
+print(f"Minimum value: {min(lst)} Maximum value: {max(lst)}")
+
+# 5. Find the sum of all elements in the list
+print(f"Sum of all the elements: {sum(lst)}")
+
+# 6. Remove the number 30 and 20 from the list
+lst.remove(30)
+lst.remove(20)
+print(f"After remove the number 30 and 20 from the list: {lst}")
+
+```
+
+```
+Original List: [10, 20, 40, 30, 20]
+First value: 10 Last value: 20
+Sorted list ascending:  [10, 20, 20, 30, 40]
+Sorted list decending:  [40, 30, 20, 20, 10]
+Minimum value: 10 Maximum value: 40
+Sum of all the elements: 120
+After remove the number 30 and 20 from the list: [40, 20, 10]
+```
+
+## 30. Perform the same operations from step 29 on a tuple `(10,20,40,30,20)`.
+```python
+print()
+
+lst = (10,20,40,30,20)
+print(f"Original List: {lst}")
+
+# 1. Find the first, last values of the list
+length = len(lst)
+print(f"First value: {lst[0]} Last value: {lst[length-1]}")
+
+# 2. Sort the list in ascending order
+sorted_lst = sorted(lst)
+print(f"sorted_lst ascending: {sorted_lst}")
+
+# 3. Sort the list in decending order
+sorted_lst = sorted(lst,reverse=True)
+print(f"sorted_lst decending: {sorted_lst}")
+
+# 4. Minumum and maximum values of the descending sorted list
+print(f"Min value: {min(sorted_lst)} Max value: {max(sorted_lst)}")
+
+# 5. Find the sum of all elements in the list
+print(f"Sum of all elements: {sum(sorted_lst)}")
+
+# 6. Remove the number 30 and 20 from the list
+sorted_lst.remove(30)
+sorted_lst.remove(20)
+print(f"Final list: {sorted_lst}")
+
+```
+
+```
+Original List: (10, 20, 40, 30, 20)
+First value: 10 Last value: 20
+sorted_lst ascending: [10, 20, 20, 30, 40]
+sorted_lst decending: [40, 30, 20, 20, 10]
+Min value: 10 Max value: 40
+Sum of all elements: 120
+Final list: [40, 20, 10]
+```
+
+## 31. Convert the string `"Inception Technologies Pvt Ltd"` to a list `['Inception', 'Technologies', 'Pvt', 'Ltd']`.
+```
+print()
+
+name = "Inception Technologies Pvt Ltd"
+nameList = name.split(sep=" ")
+print("name: ",name)
+print("nameList: ",nameList)
+```
+
+## 32. Given
+```
+    emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
+
+    Perform:
+    a. Convert the first sublist to a tuple.
+    b. Reverse the first and last name of the second element.
+    c. Convert the entire list into tuples of tuples.
+    d. Calculate the total salary.
+```
+```python
+
+print()
+
+emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
+
+# a. Convert the first sublist to a tuple.
+tupFirstList = tuple(emplstlst[0])
+print(f"First tuple sublist: ",tupFirstList)
+
+# b. Reverse the first and last name of the second element.
+secElement = sorted(emplstlst[1][1],reverse=True)
+print(f"secElement: {secElement}")
+
+# c. Convert the entire list into tuples of tuples.
+emplstlst_tuple = tuple(emplstlst)
+print(f"emplstlst_tuple: {emplstlst_tuple}")
+
+# d. Calculate the total salary.
+sal = 0
+for item in emplstlst:
+    sal = sal + int(item[2])
+
+print(f"Total Sal: {sal}")
+```
+
 # 🎯 Functions:
 
 # 🎯 Exception Handling:
