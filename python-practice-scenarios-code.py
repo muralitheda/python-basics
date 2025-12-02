@@ -1608,6 +1608,26 @@ print(gross_sal_cal(comp='CTS',sal=100000,bon=1000,inc=5000)) # 106000
 print(gross_sal_cal(comp='INFY',sal=100000,bon=500)) # 100500
 print(gross_sal_cal(comp='HCL',sal=100000)) # 100000
 
+## Additional Program #3: Can you create a method called calc_sal_bonus_incentive using closure concepts?
+
+"""
+purpose: 
+1.  A closure is a **nested function** that **remembers and accesses** variables from its outer (enclosing) scope.
+2.  It retains access to these variables **even after the outer function has finished execution**, making the data persistent.
+3.  This capability enables **data hiding** and allows the function to maintain state without using global variables or classes.
+"""
+
+def sal_hike (salary:int, hike:int):
+    salaryhigh = salary + hike
+    def bonus(percentage:float):
+        return salaryhigh * percentage
+    def incentives(incentive:float):
+        return salaryhigh + incentive
+    return bonus,incentives # Return both functions as tuple or dictionary
+
+mainout_bouns, mainout_incentives = sal_hike(10000,1000)
+print(f"Salary with Incentive: {mainout_incentives(1000)}")
+print(f"Salary with Bonus: {mainout_bouns(0.10)}")
 
 #########################################
 ## 🎯 Object-Oriented Programming (OOP)
