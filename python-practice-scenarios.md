@@ -164,7 +164,7 @@ name=Alan Harpor Name=alan harpor
 """
 ```
 
-#8. Demonstrate that variable names cannot start with numbers or contain special characters (except `_`).
+## 8. Demonstrate that variable names cannot start with numbers or contain special characters (except `_`).
 ```python
 print()
 
