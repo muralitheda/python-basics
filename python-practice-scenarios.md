@@ -715,7 +715,7 @@ Evaluate up to how many numbers? 5
 # 🎯 Collections: List, Dictionary, Tuple, and Set:
 ---
 
-#23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
+# 23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
 
 ```python
 rangeList = list(range(2,11))
@@ -735,7 +735,7 @@ resized rangeList:  [2, 3, 100, 5, 100, 6, 7, 8, 9, 10]
 """
 ```
 
-#24. Create a tuple of 2 fields..., prove immutability and non-resizable nature, access the 2nd and 4th fields and store in another tuple.
+# 24. Create a tuple of 2 fields..., prove immutability and non-resizable nature, access the 2nd and 4th fields and store in another tuple.
 
 ```python
 namesTuple = ("Inception","Technologies","Pvt","Ltd")
@@ -754,7 +754,7 @@ filteredNames:  ['Technologies', 'Ltd']
 """
 ```
 
-#25. Convert the list of tuples to list of dicts and access values using [] and get().
+# 25. Convert the list of tuples to list of dicts and access values using [] and get().
 
 ```python
 listOfTuples = [("Inception","Technologies"),("Apple","Incorporation")]
@@ -791,7 +791,7 @@ dictOfTuples.get('Inception1'):  None
 """
 ```
 
-#26. Create a list of tuples and delete duplicate tuples.
+# 26. Create a list of tuples and delete duplicate tuples.
 
 ```python
 lst=[("Inception","Technologies"),("Apple","Incorporation"),
@@ -809,7 +809,7 @@ distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies')]
 """
 ```
 
-#27. Append new tuple ("Intel", "Corp") to the dedup list.
+# 27. Append new tuple ("Intel", "Corp") to the dedup list.
 
 ```python
 distinct_list.append(("Intel", "Corp"))
@@ -819,7 +819,7 @@ distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies'), ('In
 """
 ```
 
-#28. Convert list of dicts to list of keys.
+# 28. Convert list of dicts to list of keys.
 
 ```python
 lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}]
@@ -833,7 +833,7 @@ final_list:  ['Inception', 'Apple']
 """
 ```
 
-#29. Perform list operations.
+# 29. Perform list operations.
 
 ```python
 lst = [10,20,40,30,20]
@@ -866,7 +866,7 @@ After remove the number 30 and 20 from the list: [40, 20, 10]
 """
 ```
 
-#30. Perform same operations on tuple.
+# 30. Perform same operations on tuple.
 
 ```python
 lst = (10,20,40,30,20)
@@ -899,7 +899,7 @@ Final list: [40, 20, 10]
 """
 ```
 
-#31. Convert string to list.
+# 31. Convert string to list.
 
 ```python
 name = "Inception Technologies Pvt Ltd"
@@ -912,7 +912,7 @@ nameList:  ['Inception', 'Technologies', 'Pvt', 'Ltd']
 """
 ```
 
-#32. Perform tuple/list operations on employee list.
+# 32. Perform tuple/list operations on employee list.
 
 ```python
 emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
