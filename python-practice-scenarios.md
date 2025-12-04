@@ -652,12 +652,13 @@ Evaluate up to how many numbers? 5
 
 # 🎯 Collections: List, Dictionary, Tuple and Set
 
-,Feature,Python Example
-1.,A collection is a container data structure. Collection or group of values that stored in a format for managing the complex data efficiently.,"my_collection = [1, 2, 3, 4, 5] # Create a collection (list)"
-2.,It contains zero or more elements.,print(my_collection) # Print the collection with 5 elements  empty_collection = [] # Create an empty collection  print(empty_collection) # Print the empty collection
-3.,Collections provide a higher-level abstraction for working with data.,print(len(my_collection)) # Get the length of the collection  print(max(my_collection)) # Get the maximum value in the collection
-4.,They enable declarative(SQL) programming.,double_values = [x * 2 for x in my_collection] # Declarative programming example  print(double_values) # Print the doubled values
-5.,"With an easy-to-use interface, they eliminate the need to manually iterate or loop through all the elements.",print(sum(my_collection)) # Get the sum of the collection without manual iteration
+| | Feature | Python Example |
+| :--- | :--- | :--- |
+| **1.** | A collection is a **container data structure**. Collection or group of values that stored in a format for managing the complex data efficiently. | `my_collection = [1, 2, 3, 4, 5]` \# Create a collection (list) |
+| **2.** | It contains **zero or more elements**. | `print(my_collection)` \# Print the collection with 5 elements <br> `empty_collection = []` \# Create an empty collection <br> `print(empty_collection)` \# Print the empty collection |
+| **3.** | Collections provide a **higher-level abstraction** for working with data. | `print(len(my_collection))` \# Get the length of the collection <br> `print(max(my_collection))` \# Get the maximum value in the collection |
+| **4.** | They enable **declarative(SQL) programming**. | `double_values = [x * 2 for x in my_collection]` \# Declarative programming example <br> `print(double_values)` \# Print the doubled values |
+| **5.** | With an easy-to-use interface, they **eliminate the need to manually iterate or loop** through all the elements. | `print(sum(my_collection))` \# Get the sum of the collection without manual iteration |
 
 ## 23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
 ```python
