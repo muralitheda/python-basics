@@ -967,6 +967,7 @@ print(f"Total Sal: {sal}") # 22000
 | **15. Nested / Inner Functions** | Function inside another function. | `def outer():`<br>`    def inner(): return "Hi"`<br>`    return inner()`<br>`outer()` |
 
 
+
 ## 33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
 
 ### 11. Write a program to find the greatest of three numbers.
