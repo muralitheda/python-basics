@@ -668,8 +668,8 @@ Evaluate up to how many numbers? 5
 ![](files/img7.jpg)
 
 <details>
-  <summary> Comparision Table </summary>
-  ![](files/img8.png)
+  <summary> Click to view the difference: </summary>
+  <img src="files/img8.png" alt="E2E Diagram">
 </details>
 
 
