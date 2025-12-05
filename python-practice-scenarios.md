@@ -966,7 +966,9 @@ print(f"Total Sal: {sal}") # 22000
 | 14 | Decorator Function | Functions that modify or wrap another function’s behavior. |
 | 15 | Nested / Inner Function | Functions defined entirely inside another function. |
 
-## **1. Built-in Function**
+## ""Examples:**
+
+### **1. Built-in Function**
 
 ```python
 # Real-time use case: Validate password length in login flow
@@ -977,7 +979,7 @@ print("Password length:", length)
 
 
 
-## **2. User-defined Function**
+### **2. User-defined Function**
 
 ```python
 # Real-time use case: Billing system to calculate discount
@@ -989,7 +991,7 @@ print(calc_discount(1000, 10))
 
 
 
-## **3. Lambda (Anonymous) Function**
+### **3. Lambda (Anonymous) Function**
 
 ```python
 # Real-time use case: Data transformation in ETL pipelines
@@ -999,7 +1001,7 @@ print(square(9))
 
 
 
-## **4. Recursive Function**
+### **4. Recursive Function**
 
 ```python
 # Real-time use case: Directory scanning / tree traversal
@@ -1013,7 +1015,7 @@ print(factorial(6))
 
 
 
-## **5. Higher-Order Function**
+### **5. Higher-Order Function**
 
 ```python
 # Real-time use case: Data cleaning using map/filter functions
@@ -1027,7 +1029,7 @@ print(result)
 
 
 
-## **6. Generator Function**
+### **6. Generator Function**
 
 ```python
 # Real-time use case: Streaming log file reading / large dataset iteration
@@ -1043,7 +1045,7 @@ print(next(g))
 
 
 
-## **7. Async / Coroutine Function**
+### **7. Async / Coroutine Function**
 
 ```python
 # Real-time use case: Making async API calls (e.g., microservices)
@@ -1056,7 +1058,7 @@ print(asyncio.run(fetch_data()))
 ```
 
 
-## **8. Instance Method**
+### **8. Instance Method**
 
 ```python
 # Real-time use case: Object-oriented models (Car, Employee, Customer)
@@ -1069,7 +1071,7 @@ c.start()
 ```
 
 
-## **9. Static Method**
+### **9. Static Method**
 
 ```python
 # Real-time use case: Utility functions like unit conversion
@@ -1082,7 +1084,7 @@ print(MathOps.add(5, 7))
 ```
 
 
-## **10. Class Method**
+### **10. Class Method**
 
 ```python
 # Real-time use case: Creating objects from file/db records
@@ -1096,7 +1098,7 @@ class Employee:
 ```
 
 
-## **11. Dunder / Magic Method**
+### **11. Dunder / Magic Method**
 
 ```python
 # Real-time use case: Better logging/printing in enterprise apps
@@ -1109,7 +1111,7 @@ print(p)
 ```
 
 
-## **12. Partial Function**
+### **12. Partial Function**
 
 ```python
 # Real-time use case: Pre-configured ETL helper functions
@@ -1119,7 +1121,7 @@ power_of_2 = partial(pow, 2)
 print(power_of_2(5))
 ```
 
-## **13. Callback Function**
+### **13. Callback Function**
 
 ```python
 # Real-time use case: Notification after an async task completes
@@ -1132,7 +1134,7 @@ def execute(callback):
 execute(notify)
 ```
 
-## **14. Decorator Function**
+### **14. Decorator Function**
 
 ```python
 # Real-time use case: Logging, authentication, auditing wrappers
@@ -1151,7 +1153,7 @@ process()
 ```
 
 
-## **15. Nested / Inner Function**
+### **15. Nested / Inner Function**
 
 ```python
 # Real-time use case: Helper logic hidden within outer function
