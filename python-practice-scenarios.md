@@ -948,127 +948,24 @@ print(f"Total Sal: {sal}") # 22000
 
 # 🎯 Functions:
 
-| Function Type | Description | Example (Multi-line Code + Call) |
-|--------------|-------------|----------------------------------|
-| **1. Built-in Functions** | Predefined by Python. | ```python
-result = len("hello")
-print(result)
-``` |
-| **2. User-defined Functions** | Created by the programmer. | ```python
-def add(a, b):
-    return a + b
+| Function Type | Description | Example (Code + Calling) |
+|--------------|-------------|---------------------------|
+| **1. Built-in Function** | Predefined by Python. | <pre>result = len("hello")\nprint(result)</pre> |
+| **2. User-defined Function** | Created by programmer. | <pre>def add(a, b):\n    return a + b\n\nprint(add(5, 10))</pre> |
+| **3. Lambda Function** | One-line anonymous function. | <pre>square = lambda x: x * x\nprint(square(4))</pre> |
+| **4. Recursive Function** | Calls itself. | <pre>def fact(n):\n    if n == 0:\n        return 1\n    return n * fact(n-1)\n\nprint(fact(5))</pre> |
+| **5. Higher-Order Function** | Takes/returns another function. | <pre>def upper(x): return x.upper()\nprint(list(map(upper, ["a","b"])))</pre> |
+| **6. Generator Function** | Uses `yield`. | <pre>def gen():\n    yield 1\n    yield 2\n\ng = gen()\nprint(next(g))</pre> |
+| **7. Async Function** | Uses `async/await`. | <pre>import asyncio\nasync def hi(): return "Hi"\nprint(asyncio.run(hi()))</pre> |
+| **8. Instance Method** | Uses `self` inside class. | <pre>class A:\n    def show(self): print("Hi")\n\nA().show()</pre> |
+| **9. Static Method** | No `self`. | <pre>class A:\n    @staticmethod\n    def info(): return "OK"\n\nprint(A.info())</pre> |
+| **10. Class Method** | Uses `cls`. | <pre>class A:\n    @classmethod\n    def build(cls): return cls()\n\nA.build()</pre> |
+| **11. Magic/Dunder Method** | Special methods like `__str__`. | <pre>class A:\n    def __str__(self): return "Obj"\n\nprint(str(A()))</pre> |
+| **12. Partial Function** | Creates pre-filled function. | <pre>from functools import partial\npow2 = partial(pow, 2)\nprint(pow2(5))</pre> |
+| **13. Callback Function** | Passed to another function. | <pre>def hi(): print("Hi")\ndef call(f): f()\ncall(hi)</pre> |
+| **14. Decorator Function** | Wraps another function. | <pre>def deco(f):\n    def wrap():\n        print("Before")\n        f()\n        print("After")\n    return wrap\n\n@deco\ndef hello(): print("Hello")\n\nhello()</pre> |
+| **15. Nested Function** | Function inside another function. | <pre>def outer():\n    def inner(): print("Hi")\n    inner()\n\nouter()</pre> |
 
-print(add(10, 20))
-``` |
-| **3. Lambda (Anonymous) Function** | One-line unnamed function. | ```python
-square = lambda x: x * x
-print(square(5))
-``` |
-| **4. Recursive Function** | Calls itself. | ```python
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-print(factorial(5))
-``` |
-| **5. Higher-Order Function** | Takes/returns another function. | ```python
-def to_upper(text):
-    return text.upper()
-
-words = ["a", "b", "c"]
-result = list(map(to_upper, words))
-print(result)
-``` |
-| **6. Generator Function** | Uses `yield`, returns values lazily. | ```python
-def number_gen():
-    yield 1
-    yield 2
-    yield 3
-
-g = number_gen()
-print(next(g))
-print(next(g))
-print(next(g))
-``` |
-| **7. Async / Coroutine Function** | Works asynchronously. | ```python
-import asyncio
-
-async def hello():
-    return "Hi async"
-
-print(asyncio.run(hello()))
-``` |
-| **8. Method Function (Instance Method)** | Function inside a class using `self`. | ```python
-class Person:
-    def greet(self):
-        print("Hello!")
-
-p = Person()
-p.greet()
-``` |
-| **9. Static Method** | No `self`; behaves like plain function in class. | ```python
-class Math:
-    @staticmethod
-    def add(a, b):
-        return a + b
-
-print(Math.add(5, 7))
-``` |
-| **10. Class Method** | Receives class (`cls`) instead of object. | ```python
-class Example:
-    @classmethod
-    def show_class(cls):
-        print("Class method called")
-
-Example.show_class()
-``` |
-| **11. Magic / Dunder Method** | Special Python methods like `__str__`. | ```python
-class Item:
-    def __str__(self):
-        return "This is an Item"
-
-obj = Item()
-print(str(obj))
-``` |
-| **12. Partial Function** | Fixes some arguments with `partial()`. | ```python
-from functools import partial
-
-power_of_2 = partial(pow, 2)
-print(power_of_2(5))
-``` |
-| **13. Callback Function** | Passed as a function to another function. | ```python
-def notify():
-    print("Callback executed")
-
-def trigger(func):
-    func()
-
-trigger(notify)
-``` |
-| **14. Decorator Function** | Modifies another function’s behavior. | ```python
-def decorator(func):
-    def wrapper():
-        print("Before")
-        func()
-        print("After")
-    return wrapper
-
-@decorator
-def greet():
-    print("Hello!")
-
-greet()
-``` |
-| **15. Nested / Inner Function** | Function inside another function. | ```python
-def outer():
-    def inner():
-        print("Inner says Hi")
-    inner()
-
-outer()
-``` |
 
 
 ## 33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
