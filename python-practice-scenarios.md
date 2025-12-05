@@ -667,6 +667,12 @@ Evaluate up to how many numbers? 5
 
 ![](files/img7.jpg)
 
+<details>
+  <summary> Comparision Table </summary>
+  <img src="files/img8.jpg" alt="Diagram">
+</details>
+
+
 ## 23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
 ```python
 print()
