@@ -948,8 +948,8 @@ print(f"Total Sal: {sal}") # 22000
 
 # 🎯 Functions:
 
-| Function Type | Description | Sample Code |
-|--------------|-------------|-------------|
+| Function Type | Description |
+|--------------|-------------|
 | **1. Built-in Function** | Predefined Python functions available without import. | 
 
 ```python
