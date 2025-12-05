@@ -948,184 +948,149 @@ print(f"Total Sal: {sal}") # 22000
 
 # 🎯 Functions:
 
-| Function Type | Description | Example + How to Call |
-|--------------|-------------|------------------------|
-| **1. Built-in Functions** | Already available in Python. | `len("hi")` → **Output:** 2 |
-| **2. User-defined Functions** | Function created by user. | `def add(a,b): return a+b`<br>`add(2,3)` |
-| **3. Lambda (Anonymous) Functions** | Small one-line unnamed functions. | `square = lambda x: x*x`<br>`square(5)` |
-| **4. Recursive Functions** | A function calling itself. | `def fact(n): return 1 if n==0 else n*fact(n-1)`<br>`fact(5)` |
-| **5. Higher-Order Functions** | Accepts/returns another function. | `list(map(str,[1,2,3]))` |
-| **6. Generator Functions** | Yield values one at a time. | `def gen(): yield 1`<br>`next(gen())` |
-| **7. Async (Coroutine) Functions** | Runs asynchronously. | `async def f(): return "OK"`<br>`await f()` |
-| **8. Method Functions** | Functions inside a class using `self`. | `class A: def show(self): print("Hi")`<br>`A().show()` |
-| **9. Static Methods** | No `self`; behaves like normal function in class. | `class A: @staticmethod def info(): return "I"`<br>`A.info()` |
-| **10. Class Methods** | Receives class (`cls`) as first argument. | `class A: @classmethod def create(cls): return cls()`<br>`A.create()` |
-| **11. Magic / Dunder Methods** | Special functions starting & ending with `__`. | `class A: def __str__(self): return "A"`<br>`str(A())` |
-| **12. Partial Functions** | Pre-fills arguments using `partial`. | `from functools import partial`<br>`power2 = partial(pow, 2)`<br>`power2(5)` |
-| **13. Callback Functions** | Function passed to another function. | `def show(): print("Hi")`<br>`def call(f): f()`<br>`call(show)` |
-| **14. Decorator Functions** | Modify behavior of other functions. | `def deco(f):`<br>`    def wrap(): return f()+"!"`<br>`    return wrap`<br>`@deco`<br>`def msg(): return "Hi"`<br>`msg()` |
-| **15. Nested / Inner Functions** | Function inside another function. | `def outer():`<br>`    def inner(): return "Hi"`<br>`    return inner()`<br>`outer()` |
-
-## Code Examples 
-
-### **1. Built-in Function**
+| Function Type | Description | Sample Code |
+|--------------|-------------|-------------|
+| **1. Built-in Function** | Predefined Python functions available without import. | 
 
 ```python
-result = len("hello")
-print(result)
-```
+# Real-time use case: Validating password length in a login system
+password = "MySecret123"
+length = len(password)
+print("Password length:", length)
+``` 
 
-### **2. User-defined Function**
-
+| **2. User-defined Function** | Custom functions created by developers. | 
 ```python
-def add(a, b):
-    return a + b
+# Real-time use case: Billing system calculating discount
+def calc_discount(price, discount):
+    return price - (price * discount / 100)
 
-print(add(10, 20))
-```
-
-### **3. Lambda Function**
-
+print(calc_discount(1000, 10))
+``` 
+| **3. Lambda (Anonymous) Function** | A one-line small anonymous function. | 
 ```python
+# Real-time use case: Filtering data in ETL pipelines
 square = lambda x: x * x
-print(square(5))
-```
-
-### **4. Recursive Function**
-
-```python
+print(square(8))
+``` |
+| **4. Recursive Function** | A function that calls itself until a condition is met. | ```python
+# Real-time use case: Directory/folder structure scanning
 def factorial(n):
     if n == 0:
         return 1
     return n * factorial(n - 1)
 
-print(factorial(5))
-```
-
-### **5. Higher-Order Function**
-
-```python
-def upper(x):
+print(factorial(6))
+``` |
+| **5. Higher-Order Function** | Takes/returns another function. | ```python
+# Real-time use case: Data cleaning pipeline (map, filter)
+def to_upper(x):
     return x.upper()
 
-print(list(map(upper, ["a", "b"])))
-```
+names = ["ram", "sam", "nikhil"]
+result = list(map(to_upper, names))
+print(result)
+``` |
+| **6. Generator Function** | Uses `yield` to return items one at a time. | ```python
+# Real-time use case: Generating streaming IDs or reading large logs
+def generate_ids():
+    for i in range(1, 4):
+        yield i
 
-### **6. Generator Function**
-
-```python
-def gen_numbers():
-    yield 1
-    yield 2
-    yield 3
-
-g = gen_numbers()
+g = generate_ids()
 print(next(g))
 print(next(g))
 print(next(g))
-```
-
-### **7. Async Function**
-
-```python
+``` |
+| **7. Async / Coroutine Function** | Non-blocking code using async/await. | ```python
+# Real-time use case: Making async API calls in microservices
 import asyncio
 
-async def async_hi():
-    return "Hello async"
+async def fetch_data():
+    return "Data Received"
 
-print(asyncio.run(async_hi()))
-```
+print(asyncio.run(fetch_data()))
+``` |
+| **8. Instance Method** | A method that operates on object attributes. | ```python
+# Real-time use case: Car object starting engine
+class Car:
+    def start(self):
+        print("Car started")
 
-### **8. Instance Method**
-
-```python
-class A:
-    def show(self):
-        print("Hello from instance method")
-
-A().show()
-```
-
-### **9. Static Method**
-
-```python
-class Math:
+c = Car()
+c.start()
+``` |
+| **9. Static Method** | A class method that doesn't access class or object data. | ```python
+# Real-time use case: Utility function for unit conversions
+class MathOps:
     @staticmethod
     def add(a, b):
         return a + b
 
-print(Math.add(2, 3))
-```
-
-### **10. Class Method**
-
-```python
-class Person:
+print(MathOps.add(5, 7))
+``` |
+| **10. Class Method** | Method that uses the class instead of the object. | ```python
+# Real-time use case: Creating objects from external sources (files, DB)
+class Employee:
     @classmethod
-    def create(cls):
-        return cls()
+    def from_string(cls, data):
+        name, salary = data.split(",")
+        return cls(name, salary)
 
-Person.create()
-```
-
-### **11. Magic / Dunder Method**
-
-```python
-class Item:
+# Example call (constructor not shown here)
+# Employee.from_string("Murali,50000")
+``` |
+| **11. Dunder (Magic) Method** | Special internal-use methods like `__str__`. | ```python
+# Real-time use case: Showing meaningful object details in logs
+class Product:
     def __str__(self):
-        return "I am an Item"
+        return "Product Object"
 
-print(str(Item()))
-```
-
-### **12. Partial Function**
-
-```python
+p = Product()
+print(p)
+``` |
+| **12. Partial Function** | Pre-defines some function arguments. | ```python
+# Real-time use case: Preconfigured ETL functions
 from functools import partial
 
 power_of_2 = partial(pow, 2)
-print(power_of_2(5))
-```
+print(power_of_2(4))
+``` |
+| **13. Callback Function** | A function passed to another function and called later. | ```python
+# Real-time use case: UI events, async task completion notification
+def notify():
+    print("Task Completed!")
 
-### **13. Callback Function**
+def execute(callback):
+    callback()
 
-```python
-def hello():
-    print("Hello")
-
-def trigger(f):
-    f()
-
-trigger(hello)
-```
-
-### **14. Decorator Function**
-
-```python
+execute(notify)
+``` |
+| **14. Decorator Function** | Modifies or enhances another function’s behavior. | ```python
+# Real-time use case: Logging, authentication, auditing
 def log(func):
     def wrapper():
-        print("Before")
+        print("Before Execution")
         func()
-        print("After")
+        print("After Execution")
     return wrapper
 
 @log
-def greet():
-    print("Hi")
+def process():
+    print("Processing...")
 
-greet()
-```
-
-### **15. Nested Function**
-
-```python
+process()
+``` |
+| **15. Nested / Inner Function** | Function defined inside another function. | ```python
+# Real-time use case: Hiding helper logic inside main function
 def outer():
     def inner():
-        print("Inner called")
+        print("Inner Called")
     inner()
 
 outer()
-```
+``` |
+
 
 
 ## 33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
