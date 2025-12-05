@@ -3,6 +3,8 @@
 
 # 🎯 Variables:
 
+![img.png](files/img5.png)
+
 ## 1. Create two variables `x = 100` and `y = 10`, find their multiplication and division, and store the results in variables `z` and `z1`.
 ```python
 x = 100
@@ -300,6 +302,7 @@ Assignment Operators Examples:
 ```
 
 # 🎯 Conditional Structures:
+![](files/img6.png)
 
 ## 11. Write a program to find the greatest of three numbers.
 ```python
