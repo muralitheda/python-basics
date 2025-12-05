@@ -665,6 +665,8 @@ Evaluate up to how many numbers? 5
 | **4.** | They enable **declarative(SQL) programming**. | `double_values = [x * 2 for x in my_collection]` \# Declarative programming example <br> `print(double_values)` \# Print the doubled values |
 | **5.** | With an easy-to-use interface, they **eliminate the need to manually iterate or loop** through all the elements. | `print(sum(my_collection))` \# Get the sum of the collection without manual iteration |
 
+![](files/img7.jpg)
+
 ## 23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
 ```python
 print()
