@@ -948,23 +948,234 @@ print(f"Total Sal: {sal}") # 22000
 
 # 🎯 Functions:
 
-| Function Type | Description | Example (Code + Calling) |
-|--------------|-------------|---------------------------|
-| **1. Built-in Function** | Predefined by Python. | <pre>result = len("hello")\nprint(result)</pre> |
-| **2. User-defined Function** | Created by programmer. | <pre>def add(a, b):\n    return a + b\n\nprint(add(5, 10))</pre> |
-| **3. Lambda Function** | One-line anonymous function. | <pre>square = lambda x: x * x\nprint(square(4))</pre> |
-| **4. Recursive Function** | Calls itself. | <pre>def fact(n):\n    if n == 0:\n        return 1\n    return n * fact(n-1)\n\nprint(fact(5))</pre> |
-| **5. Higher-Order Function** | Takes/returns another function. | <pre>def upper(x): return x.upper()\nprint(list(map(upper, ["a","b"])))</pre> |
-| **6. Generator Function** | Uses `yield`. | <pre>def gen():\n    yield 1\n    yield 2\n\ng = gen()\nprint(next(g))</pre> |
-| **7. Async Function** | Uses `async/await`. | <pre>import asyncio\nasync def hi(): return "Hi"\nprint(asyncio.run(hi()))</pre> |
-| **8. Instance Method** | Uses `self` inside class. | <pre>class A:\n    def show(self): print("Hi")\n\nA().show()</pre> |
-| **9. Static Method** | No `self`. | <pre>class A:\n    @staticmethod\n    def info(): return "OK"\n\nprint(A.info())</pre> |
-| **10. Class Method** | Uses `cls`. | <pre>class A:\n    @classmethod\n    def build(cls): return cls()\n\nA.build()</pre> |
-| **11. Magic/Dunder Method** | Special methods like `__str__`. | <pre>class A:\n    def __str__(self): return "Obj"\n\nprint(str(A()))</pre> |
-| **12. Partial Function** | Creates pre-filled function. | <pre>from functools import partial\npow2 = partial(pow, 2)\nprint(pow2(5))</pre> |
-| **13. Callback Function** | Passed to another function. | <pre>def hi(): print("Hi")\ndef call(f): f()\ncall(hi)</pre> |
-| **14. Decorator Function** | Wraps another function. | <pre>def deco(f):\n    def wrap():\n        print("Before")\n        f()\n        print("After")\n    return wrap\n\n@deco\ndef hello(): print("Hello")\n\nhello()</pre> |
-| **15. Nested Function** | Function inside another function. | <pre>def outer():\n    def inner(): print("Hi")\n    inner()\n\nouter()</pre> |
+```html
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th>Function Type</th>
+<th>Description</th>
+<th>Example (Code + Calling)</th>
+</tr>
+
+<tr>
+<td><b>Built-in Function</b></td>
+<td>Python's inbuilt functions</td>
+<td>
+<pre>
+result = len("hello")
+print(result)
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>User-defined Function</b></td>
+<td>Function created by user</td>
+<td>
+<pre>
+def add(a, b):
+    return a + b
+
+print(add(10, 20))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Lambda Function</b></td>
+<td>Anonymous one-line function</td>
+<td>
+<pre>
+square = lambda x: x * x
+print(square(4))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Recursive Function</b></td>
+<td>Function calling itself</td>
+<td>
+<pre>
+def fact(n):
+    if n == 0:
+        return 1
+    return n * fact(n - 1)
+
+print(fact(5))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Higher-order Function</b></td>
+<td>Takes/returns another function</td>
+<td>
+<pre>
+def cap(x):
+    return x.upper()
+
+print(list(map(cap, ["a", "b"])))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Generator Function</b></td>
+<td>Uses yield</td>
+<td>
+<pre>
+def gen():
+    yield 1
+    yield 2
+
+g = gen()
+print(next(g))
+print(next(g))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Async Function</b></td>
+<td>Asynchronous execution</td>
+<td>
+<pre>
+import asyncio
+
+async def hello():
+    return "Hi"
+
+print(asyncio.run(hello()))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Instance Method</b></td>
+<td>Method using self</td>
+<td>
+<pre>
+class A:
+    def show(self):
+        print("Hi")
+
+A().show()
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Static Method</b></td>
+<td>No self parameter</td>
+<td>
+<pre>
+class Math:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+print(Math.add(3, 5))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Class Method</b></td>
+<td>Receives cls</td>
+<td>
+<pre>
+class A:
+    @classmethod
+    def build(cls):
+        return cls()
+
+A.build()
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Magic/Dunder Method</b></td>
+<td>Special method like __str__</td>
+<td>
+<pre>
+class A:
+    def __str__(self):
+        return "Object A"
+
+print(str(A()))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Partial Function</b></td>
+<td>Pre-fills arguments</td>
+<td>
+<pre>
+from functools import partial
+
+pow2 = partial(pow, 2)
+print(pow2(5))
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Callback Function</b></td>
+<td>Passed into another function</td>
+<td>
+<pre>
+def hello():
+    print("Hello")
+
+def call(f):
+    f()
+
+call(hello)
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Decorator Function</b></td>
+<td>Wraps another function</td>
+<td>
+<pre>
+def deco(func):
+    def wrap():
+        print("Before")
+        func()
+        print("After")
+    return wrap
+
+@deco
+def hi():
+    print("Hi")
+
+hi()
+</pre>
+</td>
+</tr>
+
+<tr>
+<td><b>Nested Function</b></td>
+<td>Function inside another</td>
+<td>
+<pre>
+def outer():
+    def inner():
+        print("Inner")
+    inner()
+
+outer()
+</pre>
+</td>
+</tr>
+
+</table>
+
+```
 
 
 
