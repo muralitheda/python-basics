@@ -966,7 +966,7 @@ print(f"Total Sal: {sal}") # 22000
 | 14 | Decorator Function | Functions that modify or wrap another function’s behavior. |
 | 15 | Nested / Inner Function | Functions defined entirely inside another function. |
 
-## ""Examples:**
+## **Examples:**
 
 ### **1. Built-in Function**
 
