@@ -469,6 +469,8 @@ hello is a string.
 
 # 🎯 Control Statements:
 
+![](files/img7.jpeg)
+
 ## 16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
 ```python
 print()
