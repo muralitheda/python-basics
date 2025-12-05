@@ -948,24 +948,127 @@ print(f"Total Sal: {sal}") # 22000
 
 # 🎯 Functions:
 
-| Function Type | Description | Example + How to Call |
-|--------------|-------------|------------------------|
-| **1. Built-in Functions** | Already available in Python. | `len("hi")` → **Output:** 2 |
-| **2. User-defined Functions** | Function created by user. | `def add(a,b): return a+b`<br>`add(2,3)` |
-| **3. Lambda (Anonymous) Functions** | Small one-line unnamed functions. | `square = lambda x: x*x`<br>`square(5)` |
-| **4. Recursive Functions** | A function calling itself. | `def fact(n): return 1 if n==0 else n*fact(n-1)`<br>`fact(5)` |
-| **5. Higher-Order Functions** | Accepts/returns another function. | `list(map(str,[1,2,3]))` |
-| **6. Generator Functions** | Yield values one at a time. | `def gen(): yield 1`<br>`next(gen())` |
-| **7. Async (Coroutine) Functions** | Runs asynchronously. | `async def f(): return "OK"`<br>`await f()` |
-| **8. Method Functions** | Functions inside a class using `self`. | `class A: def show(self): print("Hi")`<br>`A().show()` |
-| **9. Static Methods** | No `self`; behaves like normal function in class. | `class A: @staticmethod def info(): return "I"`<br>`A.info()` |
-| **10. Class Methods** | Receives class (`cls`) as first argument. | `class A: @classmethod def create(cls): return cls()`<br>`A.create()` |
-| **11. Magic / Dunder Methods** | Special functions starting & ending with `__`. | `class A: def __str__(self): return "A"`<br>`str(A())` |
-| **12. Partial Functions** | Pre-fills arguments using `partial`. | `from functools import partial`<br>`power2 = partial(pow, 2)`<br>`power2(5)` |
-| **13. Callback Functions** | Function passed to another function. | `def show(): print("Hi")`<br>`def call(f): f()`<br>`call(show)` |
-| **14. Decorator Functions** | Modify behavior of other functions. | `def deco(f):`<br>`    def wrap(): return f()+"!"`<br>`    return wrap`<br>`@deco`<br>`def msg(): return "Hi"`<br>`msg()` |
-| **15. Nested / Inner Functions** | Function inside another function. | `def outer():`<br>`    def inner(): return "Hi"`<br>`    return inner()`<br>`outer()` |
+| Function Type | Description | Example (Multi-line Code + Call) |
+|--------------|-------------|----------------------------------|
+| **1. Built-in Functions** | Predefined by Python. | ```python
+result = len("hello")
+print(result)
+``` |
+| **2. User-defined Functions** | Created by the programmer. | ```python
+def add(a, b):
+    return a + b
 
+print(add(10, 20))
+``` |
+| **3. Lambda (Anonymous) Function** | One-line unnamed function. | ```python
+square = lambda x: x * x
+print(square(5))
+``` |
+| **4. Recursive Function** | Calls itself. | ```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+``` |
+| **5. Higher-Order Function** | Takes/returns another function. | ```python
+def to_upper(text):
+    return text.upper()
+
+words = ["a", "b", "c"]
+result = list(map(to_upper, words))
+print(result)
+``` |
+| **6. Generator Function** | Uses `yield`, returns values lazily. | ```python
+def number_gen():
+    yield 1
+    yield 2
+    yield 3
+
+g = number_gen()
+print(next(g))
+print(next(g))
+print(next(g))
+``` |
+| **7. Async / Coroutine Function** | Works asynchronously. | ```python
+import asyncio
+
+async def hello():
+    return "Hi async"
+
+print(asyncio.run(hello()))
+``` |
+| **8. Method Function (Instance Method)** | Function inside a class using `self`. | ```python
+class Person:
+    def greet(self):
+        print("Hello!")
+
+p = Person()
+p.greet()
+``` |
+| **9. Static Method** | No `self`; behaves like plain function in class. | ```python
+class Math:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+print(Math.add(5, 7))
+``` |
+| **10. Class Method** | Receives class (`cls`) instead of object. | ```python
+class Example:
+    @classmethod
+    def show_class(cls):
+        print("Class method called")
+
+Example.show_class()
+``` |
+| **11. Magic / Dunder Method** | Special Python methods like `__str__`. | ```python
+class Item:
+    def __str__(self):
+        return "This is an Item"
+
+obj = Item()
+print(str(obj))
+``` |
+| **12. Partial Function** | Fixes some arguments with `partial()`. | ```python
+from functools import partial
+
+power_of_2 = partial(pow, 2)
+print(power_of_2(5))
+``` |
+| **13. Callback Function** | Passed as a function to another function. | ```python
+def notify():
+    print("Callback executed")
+
+def trigger(func):
+    func()
+
+trigger(notify)
+``` |
+| **14. Decorator Function** | Modifies another function’s behavior. | ```python
+def decorator(func):
+    def wrapper():
+        print("Before")
+        func()
+        print("After")
+    return wrapper
+
+@decorator
+def greet():
+    print("Hello!")
+
+greet()
+``` |
+| **15. Nested / Inner Function** | Function inside another function. | ```python
+def outer():
+    def inner():
+        print("Inner says Hi")
+    inner()
+
+outer()
+``` |
 
 
 ## 33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
