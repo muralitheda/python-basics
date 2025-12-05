@@ -925,22 +925,25 @@ emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
 
 # a. Convert the first sublist to a tuple.
 tupFirstList = tuple(emplstlst[0])
-print(f"First tuple sublist: ",tupFirstList)
+print(f"First tuple sublist: ",tupFirstList) # ('1', ('Arun', 'Kumar'), '10000')
 
 # b. Reverse the first and last name of the second element.
 secElement = sorted(emplstlst[1][1],reverse=True)
-print(f"secElement: {secElement}")
+print(f"secElement: {secElement}") # ['Mohan', 'Bala']
 
 # c. Convert the entire list into tuples of tuples.
-emplstlst_tuple = tuple(emplstlst)
-print(f"emplstlst_tuple: {emplstlst_tuple}")
+emplstlst_tuple = []
+for i in emplstlst:
+    emplstlst_tuple.append(tuple(i))
+emplstlst_tuple = tuple(emplstlst_tuple)
+print(f"emplstlst_tuple: {emplstlst_tuple}") # (('1', ('Arun', 'Kumar'), '10000'), ('2', ('Bala', 'Mohan'), '12000'))
 
 # d. Calculate the total salary.
 sal = 0
 for item in emplstlst:
     sal = sal + int(item[2])
 
-print(f"Total Sal: {sal}")
+print(f"Total Sal: {sal}") # 22000
 ```
 
 # 🎯 Functions:
