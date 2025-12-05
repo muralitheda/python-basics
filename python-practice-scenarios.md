@@ -669,7 +669,7 @@ Evaluate up to how many numbers? 5
 
 <details>
   <summary> Comparision Table </summary>
-  <img src="files/img8.jpg" alt="Diagram">
+  ![](files/img8.png)
 </details>
 
 
