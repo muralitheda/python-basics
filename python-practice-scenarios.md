@@ -971,6 +971,7 @@ print(f"Total Sal: {sal}") # 22000
 ### **1. Built-in Function**
 
 ```python
+# Predefined Python functions available without importing anything.
 # Real-time use case: Validate password length in login flow
 password = "MySecret123"
 length = len(password)
@@ -982,6 +983,7 @@ print("Password length:", length)
 ### **2. User-defined Function**
 
 ```python
+# Functions created by programmers for reusable logic.
 # Real-time use case: Billing system to calculate discount
 def calc_discount(price, discount):
     return price - (price * discount / 100)
@@ -994,6 +996,7 @@ print(calc_discount(1000, 10))
 ### **3. Lambda (Anonymous) Function**
 
 ```python
+# One-line anonymous functions used for short operations.
 # Real-time use case: Data transformation in ETL pipelines
 square = lambda x: x * x
 print(square(9))
@@ -1004,6 +1007,7 @@ print(square(9))
 ### **4. Recursive Function**
 
 ```python
+# A function that calls itself until a stopping condition is met.
 # Real-time use case: Directory scanning / tree traversal
 def factorial(n):
     if n == 0:
@@ -1018,6 +1022,7 @@ print(factorial(6))
 ### **5. Higher-Order Function**
 
 ```python
+# Functions that accept or return other functions.
 # Real-time use case: Data cleaning using map/filter functions
 def to_upper(x):
     return x.upper()
@@ -1032,6 +1037,7 @@ print(result)
 ### **6. Generator Function**
 
 ```python
+# Functions that yield values one at a time using yield.
 # Real-time use case: Streaming log file reading / large dataset iteration
 def generate_ids():
     for i in range(1, 4):
@@ -1048,6 +1054,7 @@ print(next(g))
 ### **7. Async / Coroutine Function**
 
 ```python
+# Functions that run asynchronously using async and await.
 # Real-time use case: Making async API calls (e.g., microservices)
 import asyncio
 
@@ -1061,6 +1068,7 @@ print(asyncio.run(fetch_data()))
 ### **8. Instance Method**
 
 ```python
+# Methods that operate on object data using self.
 # Real-time use case: Object-oriented models (Car, Employee, Customer)
 class Car:
     def start(self):
@@ -1074,6 +1082,7 @@ c.start()
 ### **9. Static Method**
 
 ```python
+# Class-level methods that do not depend on object or class state.
 # Real-time use case: Utility functions like unit conversion
 class MathOps:
     @staticmethod
@@ -1087,6 +1096,7 @@ print(MathOps.add(5, 7))
 ### **10. Class Method**
 
 ```python
+# Methods that operate on the class using cls.
 # Real-time use case: Creating objects from file/db records
 class Employee:
     @classmethod
@@ -1101,6 +1111,7 @@ class Employee:
 ### **11. Dunder / Magic Method**
 
 ```python
+# Special Python methods used internally (e.g., __str__).
 # Real-time use case: Better logging/printing in enterprise apps
 class Product:
     def __str__(self):
@@ -1114,6 +1125,7 @@ print(p)
 ### **12. Partial Function**
 
 ```python
+# Functions with pre-filled arguments using functools.partial.
 # Real-time use case: Pre-configured ETL helper functions
 from functools import partial
 
@@ -1124,6 +1136,7 @@ print(power_of_2(5))
 ### **13. Callback Function**
 
 ```python
+# Functions passed as arguments and executed by another function.
 # Real-time use case: Notification after an async task completes
 def notify():
     print("Task Completed!")
@@ -1137,6 +1150,7 @@ execute(notify)
 ### **14. Decorator Function**
 
 ```python
+# Functions that modify or wrap another function’s behavior.
 # Real-time use case: Logging, authentication, auditing wrappers
 def log(func):
     def wrapper():
@@ -1156,6 +1170,7 @@ process()
 ### **15. Nested / Inner Function**
 
 ```python
+# Functions defined entirely inside another function.
 # Real-time use case: Helper logic hidden within outer function
 def outer():
     def inner():
