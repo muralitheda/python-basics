@@ -1917,6 +1917,8 @@ promo_lambda_function:: amount=50000,offer_percent=10 =>  45000
 
 # 🎯 Exception Handling:
 
+![](files/img9.png)
+
 ## 41. Apply exception handler code in the above usecase number 35 to achieve the followings
 a.  If the calculator function is called with either the first or second argument as non integer values then raise Exception and call the calculator function with the type casted value
 for eg. calc("10",20, "add") in the except block of the exception handler we have to call the same function as calc(int("10"),20, "add") and return the result to the calling environment.
