@@ -2117,6 +2117,30 @@ print(f"Salary with Bonus: {mainout_bouns(0.10)}")
 ```
 # 🎯 OOPS (Object Oriented Programming):
 
+| **S.No** | **Concept**                  | **Description**                               | **Example (Clean, No \n)**                                        |
+| -------- | ---------------------------- | --------------------------------------------- | ----------------------------------------------------------------- |
+| **1**    | **Class**                    | Blueprint for creating objects.               | `class Person: pass`                                              |
+| **2**    | **Object**                   | Instance created from a class.                | `p = Person()`                                                    |
+| **3**    | **Constructor (`__init__`)** | Initializes instance on object creation.      | `def __init__(self, name, age): self.name = name; self.age = age` |
+| **4**    | **Instance Variables**       | Unique to each object.                        | `self.salary = 50000`                                             |
+| **5**    | **Class Variables**          | Shared across all objects.                    | `company = "Infosys"`                                             |
+| **6**    | **Instance Method**          | Works on object data.                         | `def details(self): return f"{self.name} - {self.age}"`           |
+| **7**    | **Class Method**             | Works on class-level data.                    | `@classmethod def info(cls): return cls.company`                  |
+| **8**    | **Static Method**            | Utility method without self/cls.              | `@staticmethod def is_adult(age): return age >= 18`               |
+| **9**    | **Encapsulation**            | Hiding internal data with private variables.  | `self.__pin = 1234`                                               |
+| **10**   | **Abstraction**              | Hiding implementation using abstract classes. | `class Payment(ABC): @abstractmethod def pay(self): pass`         |
+| **11**   | **Single Inheritance**       | One parent class.                             | `class Employee(Person): pass`                                    |
+| **12**   | **Multiple Inheritance**     | Inherits from multiple parents.               | `class Manager(Person, Admin): pass`                              |
+| **13**   | **Multilevel Inheritance**   | Parent → Child → Grandchild.                  | `class Intern(Employee): pass`                                    |
+| **14**   | **Polymorphism**             | Same method → different behavior.             | `animal.speak()` (Dog/Cat)                                        |
+| **15**   | **Method Overriding**        | Child redefines parent method.                | `def speak(self): return "Bark"`                                  |
+| **16**   | **Magic / Dunder Methods**   | Special behavior methods.                     | `def __str__(self): return self.name`                             |
+| **17**   | **Composition**              | Strong “has-a” relationship.                  | `self.engine = Engine()`                                          |
+| **18**   | **Aggregation**              | Weak “has-a” relationship.                    | `emp = Employee(dept_obj)`                                        |
+| **19**   | **Operator Overloading**     | Custom operator behavior.                     | `def __add__(self, other): return self.salary + other.salary`     |
+| **20**   | **Private Members**          | Restricted access using `__`.                 | `self.__bank_balance = 90000`                                     |
+
+
 ## 43. Create a package named `python.usecases`.
 ```
 python
