@@ -1126,11 +1126,23 @@ print(p)
 
 ```python
 # Functions with pre-filled arguments using functools.partial.
-# Real-time use case: Pre-configured ETL helper functions
+# Real-time use case: Logging with a Predefined Prefix. Imagine you want to log messages with different tags like INFO, ERROR, DEBUG.
+
+# Without Partial Function:
+def log_messages(msg1,msg2,tag):
+    print(f"[{tag}] {msg1} {msg2}")
+
+log_messages("2025-12-07 01:05:02","Job started","INFO")
+log_messages("2025-12-07 02:05:02","Job completed with errors","ERROR")
+
+# With Partial to simplify:
 from functools import partial
 
-power_of_2 = partial(pow, 2)
-print(power_of_2(5))
+info_log = partial(log_messages, tag="INFO")
+error_log = partial(log_messages, tag="ERROR")
+
+info_log("2025-12-07 01:05:02","Application started....")
+error_log("2025-12-07 02:05:02","Application crashed....")
 ```
 
 ### **13. Callback Function**
