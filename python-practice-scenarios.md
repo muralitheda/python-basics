@@ -1070,12 +1070,13 @@ print(asyncio.run(fetch_data()))
 ```python
 # Methods that operate on object data using self.
 # Real-time use case: Object-oriented models (Car, Employee, Customer)
-class Car:
-    def start(self):
-        print("Car started")
 
-c = Car()
-c.start()
+class Person:
+    def instance_method(self):
+        return "I am an instance method"
+    
+p = Person()
+p.instance_method()
 ```
 
 
@@ -1084,12 +1085,13 @@ c.start()
 ```python
 # Class-level methods that do not depend on object or class state.
 # Real-time use case: Utility functions like unit conversion
-class MathOps:
+
+class Person:
     @staticmethod
-    def add(a, b):
+    def static_method(a, b):
         return a + b
 
-print(MathOps.add(5, 7))
+Person.static_method(10, 20)
 ```
 
 
@@ -1098,13 +1100,14 @@ print(MathOps.add(5, 7))
 ```python
 # Methods that operate on the class using cls.
 # Real-time use case: Creating objects from file/db records
-class Employee:
-    @classmethod
-    def from_string(cls, data):
-        name, salary = data.split(",")
-        return cls(name, salary)
+class Person:
+    population = 0
 
-# Employee.from_string("Murali,50000")
+    @classmethod
+    def class_method(cls):
+        return f"Total Persons = {cls.population}"
+
+Person.class_method()
 ```
 
 
