@@ -1039,14 +1039,21 @@ print(result)
 ```python
 # Functions that yield values one at a time using yield.
 # Real-time use case: Streaming log file reading / large dataset iteration
+
 def generate_ids():
     for i in range(1, 4):
         yield i
 
 g = generate_ids()
-print(next(g))
-print(next(g))
-print(next(g))
+
+try:
+    print(next(g))
+    print(next(g))
+    print(next(g))
+    print(next(g))  # will raise
+except StopIteration:
+    print("Generator is exhausted")
+
 ```
 
 
