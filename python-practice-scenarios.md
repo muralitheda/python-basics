@@ -1112,13 +1112,58 @@ class Employee:
 
 ```python
 # Special Python methods used internally (e.g., __str__).
+# Python automatically calls these methods in specific situations (object creation, printing, comparisons, math operations, truth checks, iteration, etc.)
 # Real-time use case: Better logging/printing in enterprise apps
-class Product:
-    def __str__(self):
-        return "Product Object"
 
-p = Product()
-print(p)
+class Person:
+    def __init__(self, name, age, salary):
+        """Called automatically when creating a new Person object"""
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    def __str__(self):
+        """Called when printing the object (user-friendly output)"""
+        return f"Person(name={self.name}, age={self.age})"
+
+    def __repr__(self):
+        """Developer-friendly representation used in debugging"""
+        return f"Person('{self.name}', {self.age}, {self.salary})"
+
+    def __len__(self):
+        """Defines behavior of len(person) — here we treat age as 'length'"""
+        return self.age
+
+    def __add__(self, other):
+        """Add salaries of two Person objects"""
+        return self.salary + other.salary
+
+    def __eq__(self, other):
+        """Compare two Person objects based on name & age"""
+        return self.name == other.name and self.age == other.age
+
+    def __bool__(self):
+        """Person is 'True' if salary > 0"""
+        return self.salary > 0
+
+    def __call__(self, greeting):
+        """Make the person object act like a function"""
+        return f"{greeting}, I am {self.name}"
+
+
+p1 = Person("Murali", 28, 50000)   # __init__
+print(p1)                          # __str__
+p1                                 # __repr__ (IT WORKS ONLY IN REPL/ITERATIVE MODE NOT IN SCRIPTS)
+print(len(p1))                     # __len__
+p2 = Person("Krishna", 30, 60000)
+total_salary = p1 + p2             # __add__ => Overload + operator
+print(total_salary)
+p3 = Person("Murali", 28, 70000)
+print(p1 == p3)                    # __eq__
+if p1:                             # __bool__
+    print("Valid employee")
+print(p1("Hello"))                 # __call__ => Make object behave like a function
+
 ```
 
 
