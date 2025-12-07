@@ -1059,9 +1059,23 @@ print(next(g))
 import asyncio
 
 async def fetch_data():
-    return "Data Received"
+    await asyncio.sleep(3)
+    return "Data Ready"
 
-print(asyncio.run(fetch_data()))
+async def process_data():
+    await asyncio.sleep(1)
+    return "Processing Complete"
+
+async def main():
+    # Run concurrently
+    result1, result2 = await asyncio.gather(
+        fetch_data(),
+        process_data()
+    )
+    print(result1, result2)
+
+asyncio.run(main())
+
 ```
 
 
