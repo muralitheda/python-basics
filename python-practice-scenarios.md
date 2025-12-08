@@ -948,23 +948,24 @@ print(f"Total Sal: {sal}") # 22000
 
 # 🎯 Functions:
 
-| S.No | Function Type | Description |
-|------|---------------|-------------|
-| 1 | Built-in Function | Predefined Python functions available without importing anything. |
-| 2 | User-defined Function | Functions created by programmers for reusable logic. |
-| 3 | Lambda (Anonymous) Function | One-line anonymous functions used for short operations. |
-| 4 | Recursive Function | A function that calls itself until a stopping condition is met. |
-| 5 | Higher-Order Function | Functions that accept or return other functions. |
-| 6 | Generator Function | Functions that yield values one at a time using `yield`. |
-| 7 | Async / Coroutine Function | Functions that run asynchronously using `async` and `await`. |
-| 8 | Instance Method | Methods that operate on object data using `self`. |
-| 9 | Static Method | Class-level methods that do not depend on object or class state. |
-| 10 | Class Method | Methods that operate on the class using `cls`. |
-| 11 | Dunder / Magic Method | Special Python methods used internally (e.g., `__str__`). |
-| 12 | Partial Function | Functions with pre-filled arguments using `functools.partial`. |
-| 13 | Callback Function | Functions passed as arguments and executed by another function. |
-| 14 | Decorator Function | Functions that modify or wrap another function’s behavior. |
-| 15 | Nested / Inner Function | Functions defined entirely inside another function. |
+| S.No | Function Type               | Description                                                                             |
+|------|-----------------------------|-----------------------------------------------------------------------------------------|
+| 1    | Built-in Function           | Predefined Python functions available without importing anything.                       |
+| 2    | User-defined Function       | Functions created by programmers for reusable logic.                                    |
+| 3    | Lambda (Anonymous) Function | One-line anonymous functions used for short operations.                                 |
+| 4    | Recursive Function          | A function that calls itself until a stopping condition is met.                         |
+| 5    | Higher-Order Function       | Functions that accept or return other functions.                                        |
+| 6    | Generator Function          | Functions that yield values one at a time using `yield`.                                |
+| 7    | Async / Coroutine Function  | Functions that run asynchronously using `async` and `await`.                            |
+| 8    | Instance Method             | Methods that operate on object data using `self`.                                       |
+| 9    | Static Method               | Class-level methods that do not depend on object or class state.                        |
+| 10   | Class Method                | Methods that operate on the class using `cls`.                                          |
+| 11   | Dunder / Magic Method       | Special Python methods used internally (e.g., `__str__`).                               |
+| 12   | Partial Function            | Functions with pre-filled arguments using `functools.partial`.                          |
+| 13   | Callback Function           | Functions passed as arguments and executed by another function.                         |
+| 14   | Decorator Function          | Functions that modify or wrap another function’s behavior.                              |
+| 15   | Nested / Inner Function     | Functions defined entirely inside another function.                                     |
+| 16   | Closure Function            | Nested function that remembers and accesses variables from its outer (enclosing) scope. |
 
 ## **Examples:**
 
