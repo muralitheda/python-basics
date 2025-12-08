@@ -1113,9 +1113,7 @@ async def main():
     print(result1, result2)
 
 start = asyncio.get_event_loop().time()
-
 asyncio.run(main())
-
 end = asyncio.get_event_loop().time()
 
 print(f"Total Time = {end - start:.2f} sec")   # ~3 seconds
