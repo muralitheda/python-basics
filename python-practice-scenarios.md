@@ -1094,15 +1094,15 @@ asyncio.gather() → runs multiple async tasks together
 asyncio.run() → starts the event loop and runs everything
 """
 
-import asyncio
+import asyncio,time
 
 async def fetch_data():
-    await asyncio.sleep(3)
-    return "Data Ready"
+    await asyncio.sleep(5)
+    return f"Data Ready at {time.strftime('%X %x %Z')}."
 
 async def process_data():
     await asyncio.sleep(1)
-    return "Processing Complete"
+    return f"Processing Complete at {time.strftime('%X %x %Z')}."
 
 async def main():
     # Run concurrently
@@ -1112,11 +1112,12 @@ async def main():
     )
     print(result1, result2)
 
-start = asyncio.get_event_loop().time()
-asyncio.run(main())
-end = asyncio.get_event_loop().time()
+#start = asyncio.get_event_loop().time()
 
-print(f"Total Time = {end - start:.2f} sec")   # ~3 seconds
+asyncio.run(main()) # Data Ready at 07:50:45 12/08/25 IST. Processing Complete at 07:50:41 12/08/25 IST.
+
+#end = asyncio.get_event_loop().time()
+#print(f"Total Time = {end - start:.2f} sec")   # ~3 seconds
 
 """
 What asyncio.gather() does:
