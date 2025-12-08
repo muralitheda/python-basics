@@ -1024,12 +1024,33 @@ print(factorial(6))
 ```python
 # Functions that accept or return other functions.
 # Real-time use case: Data cleaning using map/filter functions
+
+#Type 1:HOF is a function which takes another function as an input
 def to_upper(x):
     return x.upper()
 
 names = ["ram", "sam", "nikhil"]
 result = list(map(to_upper, names))
 print(result)
+
+#Type 2:HOF is a function that return another function as a return type. Also called Partial or Currying function.
+def remote(a):
+    if a == 'power':
+        return 'switch off/on'
+    if a == 'settings':
+        def settings(x):
+            if (x =='audio'):
+                return 'Audio option selected.'
+            elif (x=='video'):
+                return 'Video option selected'
+            else:
+                return 'Invalid option.';
+        return settings
+
+print(remote('power'))     #switch off/on
+print(remote('settings'))  # <function remote.<locals>.settings at 0x1026d7740>
+print(remote('settings')('audio')) #Audio option selected.
+print(remote('settings')('color')) #Invalid option.
 ```
 
 
