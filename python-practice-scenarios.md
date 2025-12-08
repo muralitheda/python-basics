@@ -1019,7 +1019,7 @@ print(factorial(6))
 
 
 
-### **5. Higher-Order Function**
+### **5. `Higher-Order` Function**
 
 ```python
 # Functions that accept or return other functions.
@@ -1282,6 +1282,24 @@ def outer():
 outer()
 ```
 
+### **16. `Closure` Function**
+purpose: 
+1.  A closure is a **nested function** that **remembers and accesses** variables from its outer (enclosing) scope.
+2.  It retains access to these variables **even after the outer function has finished execution**, making the data persistent.
+3.  This capability enables **data hiding** and allows the function to maintain state without using global variables or classes.
+
+```python
+def sal_hike(sal,hike):
+    salhike=sal+hike
+    def incentives(incentive):
+        return salhike+incentive
+    return incentives
+
+mainout = sal_hike(20000,2000) #salhike = 22000 and return incentives function
+print(mainout(1000)) # now calling incentives and salhike persistent value will be recused
+#or
+print(sal_hike(20000,2000) (1000)) #23000
+```
 
 ## 33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
 
