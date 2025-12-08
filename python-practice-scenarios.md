@@ -1080,11 +1080,20 @@ except StopIteration:
 
 
 
-### **7. Async / Coroutine Function**
+### **7. `Async / Coroutine` Function**
 
 ```python
 # Functions that run asynchronously using async and await.
 # Real-time use case: Making async API calls (e.g., microservices)
+
+"""
+It shows how two functions run at the same time (concurrently) using:
+async → defines an asynchronous function
+await → pauses only that function, not the whole program
+asyncio.gather() → runs multiple async tasks together
+asyncio.run() → starts the event loop and runs everything
+"""
+
 import asyncio
 
 async def fetch_data():
@@ -1103,7 +1112,26 @@ async def main():
     )
     print(result1, result2)
 
+start = asyncio.get_event_loop().time()
+
 asyncio.run(main())
+
+end = asyncio.get_event_loop().time()
+
+print(f"Total Time = {end - start:.2f} sec")   # ~3 seconds
+
+"""
+What asyncio.gather() does:
+    1. Starts fetch_data() and process_data() at the same time
+    2. Does NOT wait for one to finish before starting the other
+    3. Waits until both are complete
+    
+⏳Timings:
+    fetch_data → 3 seconds
+    process_data → 1 second
+    
+Since they run concurrently, total time = 3 seconds (the longest one)
+"""
 
 ```
 
