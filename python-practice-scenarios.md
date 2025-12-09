@@ -2207,6 +2207,430 @@ print(f"Salary with Bonus: {mainout_bouns(0.10)}")
 | **19**   | **Operator Overloading**     | Custom operator behavior.                     | `def __add__(self, other): return self.salary + other.salary`     |
 | **20**   | **Private Members**          | Restricted access using `__`.                 | `self.__bank_balance = 90000`                                     |
 
+---
+### **1️⃣ Class – Blueprint for objects**
+
+```python
+# NOTE: Classes act as templates for creating objects in real systems.
+# Real-time: A "User" class in an application.
+
+class Person:
+    pass  # Empty class – acts as a blueprint
+
+p = Person()
+print(p)
+
+# Notes:
+# - 'Person()' creates a new object in memory.
+# - Even without attributes, a class can still create objects.
+```
+
+---
+
+### **2️⃣ Object – Instance created from a class**
+
+```python
+# Real-time: Creating multiple users from a User class.
+
+class Car:
+    pass
+
+c1 = Car()
+c2 = Car()
+
+print(id(c1), id(c2))
+
+# Notes:
+# - Each object gets a unique memory address.
+# - Two objects of same class can hold different data later.
+```
+
+---
+
+### **3️⃣ Constructor (**init**) – Initializes objects**
+
+```python
+# Real-time: Creating a user with name & age in signup form.
+
+class Person:
+    def __init__(self, name, age):
+        # NOTE: Assigning instance variables
+        self.name = name
+        self.age = age
+
+p = Person("Murali", 30)
+print(p.name, p.age)
+
+# Notes:
+# - __init__ runs automatically during object creation.
+# - Good place to initialize default values.
+```
+
+---
+
+### **4️⃣ Instance Variables – Unique per object**
+
+```python
+# Real-time: Each employee has a different salary.
+
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary  # Instance variable
+
+emp = Employee("John", 80000)
+print(emp.salary)
+
+# Notes:
+# - Each object stores its own salary.
+# - Changing one object’s salary won't affect others.
+```
+
+---
+
+### **5️⃣ Class Variables – Shared across all objects**
+
+```python
+# Real-time: Same company name for all employees.
+
+class Employee:
+    company = "Infosys"  # Class variable
+
+emp1 = Employee()
+emp2 = Employee()
+
+print(emp1.company, emp2.company)
+
+# Notes:
+# - Changing company at class-level affects all objects.
+```
+
+---
+
+### **6️⃣ Instance Method**
+
+```python
+# Real-time: Displaying user profile.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def details(self):
+        return f"{self.name} - {self.age}"
+
+p = Person("Ajay", 28)
+print(p.details())
+
+# Notes:
+# - Instance methods always take 'self'.
+```
+
+---
+
+### **7️⃣ Class Method**
+
+```python
+# Real-time: Fetch company policy for all employees.
+
+class Employee:
+    company = "Infosys"
+
+    @classmethod
+    def get_company(cls):
+        return cls.company
+
+print(Employee.get_company())
+
+# Notes:
+# - Works on class-level data (cls).
+```
+
+---
+
+### **8️⃣ Static Method**
+
+```python
+# Real-time: Utility validation method.
+
+class Utils:
+    @staticmethod
+    def is_adult(age):
+        return age >= 18
+
+print(Utils.is_adult(20))
+
+# Notes:
+# - No self or cls required.
+# - Used for helper/utility logic.
+```
+
+---
+
+### **9️⃣ Encapsulation – Private Variables**
+
+```python
+# Real-time: ATM machine hides PIN internally.
+
+class Bank:
+    def __init__(self):
+        self.__pin = 1234  # private variable
+
+b = Bank()
+print(b._Bank__pin)   # Accessing via name-mangling
+
+# Notes:
+# - Python uses name-mangling to protect private members.
+```
+
+---
+
+### **1️⃣0️⃣ Abstraction – Using abstract classes with default behavior**
+
+```python
+# Real-time: Payment gateway base class with common logic.
+
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self):
+        print("Common validation happens here...")
+
+class UPI(Payment):
+    def pay(self):
+        super().pay()  # calling base (optional)
+        return "Paid via UPI"
+
+p = UPI()
+print(p.pay())
+
+# Notes:
+# - Abstract classes force children to implement certain methods.
+# - Base class CAN contain common logic.
+```
+
+---
+
+### **1️⃣1️⃣ Single Inheritance**
+
+```python
+# Real-time: Employee inherits basic person properties.
+
+class Person:
+    def greet(self):
+        return "Hello!"
+
+class Employee(Person):
+    pass
+
+e = Employee()
+print(e.greet())
+
+# Notes:
+# - Child inherits all parent methods.
+```
+
+---
+
+### **1️⃣2️⃣ Multiple Inheritance**
+
+```python
+# Real-time: Manager inherits behaviour from Person & Admin.
+
+class Person:
+    def greet(self):
+        return "Hi"
+
+class Admin:
+    def access(self):
+        return "Admin Access Granted"
+
+class Manager(Person, Admin):
+    pass
+
+m = Manager()
+print(m.greet(), m.access())
+
+# Notes:
+# - Python resolves order using MRO (Method Resolution Order).
+```
+
+---
+
+### **1️⃣3️⃣ Multilevel Inheritance**
+
+```python
+# Real-time: Intern → Employee → Person.
+
+class Person:
+    pass
+
+class Employee(Person):
+    pass
+
+class Intern(Employee):
+    pass
+
+i = Intern()
+print(isinstance(i, Person))
+
+# Notes:
+# - Features propagate from grandparent → parent → child.
+```
+
+---
+
+### **1️⃣4️⃣ Polymorphism**
+
+```python
+# Real-time: speak() behaves differently for different animals.
+
+class Dog:
+    def speak(self):
+        return "Bark"
+
+class Cat:
+    def speak(self):
+        return "Meow"
+
+for animal in (Dog(), Cat()):
+    print(animal.speak())
+
+# Notes:
+# - Same method name, different behavior.
+```
+
+---
+
+### **1️⃣5️⃣ Method Overriding**
+
+```python
+# Real-time: Child modifies parent behavior.
+
+class Vehicle:
+    def move(self):
+        return "Vehicle moves"
+
+class Car(Vehicle):
+    def move(self):
+        return "Car drives"
+
+print(Car().move())
+
+# Notes:
+# - Parent method is replaced in child class.
+```
+
+---
+
+### **1️⃣6️⃣ Magic / Dunder Methods**
+
+```python
+# Real-time: __str__ improves readability in logs/APIs.
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"Person({self.name})"
+
+print(Person("Murali"))
+
+# Notes:
+# - __str__ defines human-readable representation.
+```
+
+---
+
+### **1️⃣7️⃣ Composition – Strong HAS-A**
+
+```python
+# Real-time: Car has an Engine.
+
+class Engine:
+    def start(self):
+        return "Engine started"
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()
+
+car = Car()
+print(car.engine.start())
+
+# Notes:
+# - Car owns Engine strongly (cannot exist without it).
+```
+
+---
+
+### **1️⃣8️⃣ Aggregation – Weak HAS-A**
+
+```python
+# Real-time: Employee belongs to a Department (Dept exists independently).
+
+class Department:
+    pass
+
+class Employee:
+    def __init__(self, dept):
+        self.dept = dept
+
+d = Department()
+e = Employee(d)
+
+print(e.dept)
+
+# Notes:
+# - Dept exists even if Employee is deleted.
+```
+
+---
+
+### **1️⃣9️⃣ Operator Overloading**
+
+```python
+# Real-time: Adding salaries of two employees.
+
+class Employee:
+    def __init__(self, salary):
+        self.salary = salary
+
+    def __add__(self, other):
+        return self.salary + other.salary
+
+e1 = Employee(50000)
+e2 = Employee(30000)
+print(e1 + e2)
+
+# Notes:
+# - __add__ changes behavior of + operator.
+```
+
+---
+
+### **2️⃣0️⃣ Private Members**
+
+```python
+# Real-time: Bank hides customer balance.
+
+class Account:
+    def __init__(self):
+        self.__balance = 5000
+
+a = Account()
+print(a._Account__balance)
+
+# Notes:
+# - Private members use name-mangling.
+# - Cannot be accessed directly as a.__balance.
+```
+
+---
+
 
 ## 43. Create a package named `python.usecases`.
 ```
