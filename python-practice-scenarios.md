@@ -2548,21 +2548,42 @@ print(Person("Murali"))
 ### **1️⃣7️⃣ Composition – Strong HAS-A**
 
 ```python
-# Real-time: Car has an Engine.
+# Composition Example: Strong HAS-A Relationship
+# Real-time: A Car OWNS the Engine. Engine cannot exist without the Car.
 
 class Engine:
+    def __init__(self, horsepower):
+        self.horsepower = horsepower
+
     def start(self):
-        return "Engine started"
+        return f"Engine with {self.horsepower} HP started."
+
 
 class Car:
-    def __init__(self):
-        self.engine = Engine()
+    def __init__(self, brand, horsepower):
+        self.brand = brand
 
-car = Car()
-print(car.engine.start())
+        # NOTE:
+        # - Car CREATES the Engine internally.
+        # - Engine lifecycle is tied to the Car.
+        # - If Car is deleted, Engine is deleted too.
+        self.engine = Engine(horsepower)
 
-# Notes:
-# - Car owns Engine strongly (cannot exist without it).
+    def drive(self):
+        return f"{self.brand} is driving. {self.engine.start()}"
+
+
+# Car creates the Engine — strong composition
+car = Car("Tesla", 500)
+
+print(car.drive())
+print(car.engine.start())   # Accessible because engine belongs to car
+
+"""
+Tesla is driving. Engine with 500 HP started.
+Engine with 500 HP started.
+"""
+
 ```
 
 ---
