@@ -2570,22 +2570,46 @@ print(car.engine.start())
 ### **1️⃣8️⃣ Aggregation – Weak HAS-A**
 
 ```python
-# Real-time: Employee belongs to a Department (Dept exists independently).
+# Aggregation Example: Weak HAS-A Relationship
+# Real-time: Employee "uses" a Department object, 
+# but Department can exist independently (even without employees).
 
 class Department:
-    pass
+    def __init__(self, dept_name, location):
+        self.dept_name = dept_name
+        self.location = location
+
+    def info(self):
+        return f"Department: {self.dept_name} ({self.location})"
+
 
 class Employee:
-    def __init__(self, dept):
+    def __init__(self, name, dept):
+        # NOTE:
+        # - We are NOT creating the Department here.
+        # - We are REUSING an already existing Department object.
+        #   This is Aggregation.
+        self.name = name
         self.dept = dept
 
-d = Department()
-e = Employee(d)
+    def details(self):
+        return f"{self.name} works in {self.dept.dept_name}"
 
-print(e.dept)
 
-# Notes:
-# - Dept exists even if Employee is deleted.
+# Department created independently
+dept_it = Department("IT", "Japan")
+
+# Employee "has" a department, but does not own its lifecycle
+emp = Employee("Jack", dept_it)
+
+print(emp.details())
+print(dept_it.info())    # Department still works independently
+
+"""
+Jack works in IT
+Department: IT (Japan)
+"""
+
 ```
 
 ---
