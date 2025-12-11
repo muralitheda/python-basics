@@ -2485,21 +2485,42 @@ print(isinstance(i, Person))
 ### **1️⃣4️⃣ Polymorphism**
 
 ```python
-# Real-time: speak() behaves differently for different animals.
+# Real-time: fly() behaves differently for different objects.
+# The foundational classes
 
-class Dog:
-    def speak(self):
-        return "Bark"
+class Eagle:
+    """An object that knows how to 'fly' and 'hunt'."""
+    def fly(self):
+        return "The Eagle soars high."
 
-class Cat:
-    def speak(self):
-        return "Meow"
+    def hunt(self):
+        return "The Eagle spots its prey."
 
-for animal in (Dog(), Cat()):
-    print(animal.speak())
+class JetPlane:
+    """A completely different object that also knows how to 'fly'."""
+    def fly(self):
+        return "The JetPlane breaks the sound barrier."
 
-# Notes:
-# - Same method name, different behavior.
+    def land(self):
+        return "The JetPlane touches down."
+
+
+# The Polymorphic Function
+def make_it_fly(flying_object):
+    """
+    This function accepts ANY object, as long as that object
+    implements a 'fly()' method.
+    """
+    print(flying_object.fly())
+
+# --- Demonstration ---
+
+eagle = Eagle()
+jet = JetPlane()
+
+print("--- Calling the polymorphic function 'make_it_fly()' ---")
+make_it_fly(eagle)  # The function works with an Eagle object
+make_it_fly(jet)    # The SAME function works with a JetPlane object
 ```
 
 ---
@@ -2507,6 +2528,7 @@ for animal in (Dog(), Cat()):
 ### **1️⃣5️⃣ Method Overriding**
 
 ```python
+# Real-time: Child modifies parent behavior.
 
 class Animal:
     """
