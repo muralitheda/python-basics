@@ -2437,24 +2437,66 @@ print(e.greet())
 ### **1️⃣2️⃣ Multiple Inheritance**
 
 ```python
-# Real-time: Manager inherits behaviour from Person & Admin.
+# Real-time: Intern inherits behaviour from Student & Employee.
 
-class Person:
-    def greet(self):
-        return "Hi"
+class Student:
+    """
+    Parent 1: Defines academic functionality and attributes.
+    """
+    def __init__(self, school_name):
+        self.school_name = school_name
+    
+    def study(self):
+        return f"Student: Actively studying at {self.school_name}."
 
-class Admin:
-    def access(self):
-        return "Admin Access Granted"
+class Employee:
+    """
+    Parent 2: Defines professional functionality and attributes.
+    """
+    def __init__(self, employee_id):
+        self.employee_id = employee_id
+        
+    def work(self):
+        return f"Employee: Performing duties with ID {self.employee_id}."
 
-class Manager(Person, Admin):
-    pass
+class Intern(Student, Employee):
+    """
+    Child Class: Inherits ALL features from both Student and Employee.
+    """
+    def __init__(self, school_name, employee_id, intern_name):
+        # 1. Initialize the first parent (Student) explicitly
+        Student.__init__(self, school_name) 
+        
+        # 2. Initialize the second parent (Employee) explicitly
+        Employee.__init__(self, employee_id)
+        
+        # 3. Initialize its own unique attribute
+        self.intern_name = intern_name
 
-m = Manager()
-print(m.greet(), m.access())
+    def daily_role_check(self):
+        print(f"--- Intern Profile: {self.intern_name} ---")
+        
+        # Calls method from Parent 1 (Student)
+        print(f"Role 1: {self.study()}") 
+        
+        # Calls method from Parent 2 (Employee)
+        print(f"Role 2: {self.work()}")
+        
+        return "The Intern fulfills both academic and professional requirements."
 
-# Notes:
-# - Python resolves order using MRO (Method Resolution Order).
+# --- Demonstration ---
+
+new_hybrid = Intern(
+    school_name="Tech University", 
+    employee_id="INT2026", 
+    intern_name="Jamie Doe"
+)
+
+print(new_hybrid.daily_role_check())
+
+print("\n--- Direct Attribute Access ---")
+print(f"School Name (from Student): {new_hybrid.school_name}")
+print(f"Employee ID (from Employee): {new_hybrid.employee_id}")
 ```
 
 ---
