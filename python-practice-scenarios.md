@@ -1,62 +1,47 @@
 # Python Programming
 
+#########################################
+## 🎯 Variables
+#########################################
 
-# 🎯 Variables:
-
-![img.png](files/img5.png)
-
-## 1. Create two variables `x = 100` and `y = 10`, find their multiplication and division, and store the results in variables `z` and `z1`.
-```python
+#1. Create two variables `x = 100` and `y = 10`, find their multiplication and division, and store the results in variables `z` and `z1`.
 x = 100
 y = 10
 z = x * y
 z1 = x / y
 print("type(z):",type(z), "z:",z)
 print("type(z1):", type(z1), "z1:", z1)
-```
 
-```
+"""
 type(z): <class 'int'> z: 1000
 type(z1): <class 'float'> z1: 10.0
-```
+"""
 
-
-## 2. Create a variable `a = 2000`, divide `a` by `y` (from step 1), and reassign `a` with the divided result.
-
-```python
-
+#2. Create a variable `a = 2000`, divide `a` by `y` (from step 1), and reassign `a` with the divided result.
 print()
 
 a = 2000
 a = a / y
 print("type(a):",type(a),"a:",a)
-```
 
-```
+"""
 type(a): <class 'float'> a: 200.0
-```
+"""
 
-## 3. Prove Python is dynamically typed by creating `x: int = 100`, then assigning `y = str(x)` and printing the types of `x` and `y`.
-```python
+#3. Prove Python is dynamically typed by creating `x: int = 100`, then assigning `y = str(x)` and printing the types of `x` and `y`.
 print()
 
 x: int = 100
 y = str(x)
 print("type(x):",type(x))
 print("type(y):",type(y))
-```
 
-```
+"""
 type(x): <class 'int'>
 type(y): <class 'str'>
-```
+"""
 
-
-
-
-## 4. Demonstrate Python’s dynamic inference feature with an example showing automatic datatype detection.
-```python
-
+#4. Demonstrate Python’s dynamic inference feature with an example showing automatic datatype detection.
 print()
 
 code = 100
@@ -91,8 +76,7 @@ code = True
 print("code=",code)
 print("type(code)=",type(code))
 
-```
-```
+"""
 code= 100
 type(code)= <class 'int'>
 
@@ -116,11 +100,9 @@ type(code)= <class 'dict'>
 
 code= True
 type(code)= <class 'bool'>
-```
+"""
 
-## 5. Prove Python is a strongly typed language using incompatible type operations.
-```python
-
+#5. Prove Python is a strongly typed language using incompatible type operations.
 print()
 
 name = "Alan Harpor"
@@ -131,16 +113,14 @@ print("age=",age,"type(age)=",type(age))
 
 #concatenate string + number is not possible
 #concate_name_age = name + age # strongly typed
-```
 
-```
+"""
 name= Alan Harpor type(name)= <class 'str'>
 age= 40 type(age)= <class 'int'>
 TypeError: can only concatenate str (not "int") to str
-```
+"""
 
-## 6. Create variables `a, b, c, d` assigned with values `10, 20, 30, 40` respectively.
-```python
+#6. Create variables `a, b, c, d` assigned with values `10, 20, 30, 40` respectively.
 print()
 
 a = 10
@@ -153,37 +133,30 @@ print(f"a={a} b={b} c={c} d={d}")
 
 a,b,c,d = 10,20,30,40
 print(f"a={a} b={b} c={c} d={d}")
-```
 
-## 7. Prove that Python variable names are case-sensitive.
-```python
+#7. Prove that Python variable names are case-sensitive.
 print()
 
 name = "Alan Harpor"
 Name = "alan harpor"
 print(f"name={name} | Name={Name}")
-```
 
-```
+"""
 name=Alan Harpor Name=alan harpor
-```
+"""
 
-## 8. Demonstrate that variable names cannot start with numbers or contain special characters (except `_`).
-```python
+#8. Demonstrate that variable names cannot start with numbers or contain special characters (except `_`).
 print()
 
 _number = 100  # valid
 number_ = 100  # valid
-```
-
-```
+"""
 1number = 100  # not valid
 $number = 100  # not valid
 num$ber = 100  # not valid
-```
+"""
 
-## 9. Show examples of using single, double, and triple quotes in Python.
-```python
+#9. Show examples of using single, double, and triple quotes in Python.
 print()
 
 name = 'I cant wait'
@@ -195,18 +168,16 @@ can't
 wait
 """
 print(name)
-```
 
-```
+"""
 I cant wait
 I can't wait
 I 
 can't 
 wait
-```
+"""
 
-## 10. Demonstrate examples using arithmetic, assignment, comparison, relational, and logical operators.
-```python
+#10. Demonstrate examples using arithmetic, assignment, comparison, relational, and logical operators.
 print()
 
 a = 3
@@ -261,9 +232,7 @@ print("7. Exponentiation and Assign (a **= 5) => (a = a ** 5) = ", a)
 a = 5; a //= 5
 print("8. Floor Division and Assign (a //= 5) => (a = a // 5) = ", a)
 
-```
-
-```
+"""
 a = 3 | b = 2 | c = 1
 
 Arithmetic Operations Examples:
@@ -298,14 +267,12 @@ Assignment Operators Examples:
 6. Modulus and Assign (a %= 5) => (a = a % 5)  =  0
 7. Exponentiation and Assign (a **= 5) => (a = a ** 5) =  3125
 8. Floor Division and Assign (a //= 5) => (a = a // 5) =  1
+"""
 
-```
-
-# 🎯 Conditional Structures:
-![](files/img6.png)
-
-## 11. Write a program to find the greatest of three numbers.
-```python
+#########################################
+## 🎯 Conditional Structures
+#########################################
+#11. Write a program to find the greatest of three numbers.
 print()
 
 a = 1; b=2; c=3
@@ -318,10 +285,8 @@ elif c > a and c > b:
     print("{c} is greater than {a} and {b}")
 else:
     pass
-```
 
-## 12. Write a single program to check if a number is even or negative and print the result as: “Even but not negative”, “Not even but negative”, “Neither even nor negative”
-```python
+#12. Write a single program to check if a number is even or negative and print the result as: “Even but not negative”, “Not even but negative”, “Neither even nor negative”
 print()
 
 numbers = [-5,-4,-3,-2,-1,0,1,2,3,4,5]
@@ -339,19 +304,16 @@ for number in numbers:
     else:
         print(f"The given number {number} is zero.")
 
-```
-
-## 13. Write a nested `if-else` structure to print course fees:
-```
+#13. Write a nested `if-else` structure to print course fees:
+"""
 * Big Data → 25000
 * Spark → 15000
 * Data Science →
   * Machine Learning → 25000
   * Deep Learning → 45000
   * Both → 50000
-```
+"""
 
-```python
 print('''
 1. BigData
 2. Spark
@@ -398,9 +360,8 @@ if fee != 0:
     print(f"Entered course '{course}' fee is Rs.{fee}.")
 else:
     print("Entered the course is not available.")
-```
 
-```
+"""
 1. BigData
 2. Spark
 3. DataScience
@@ -412,10 +373,9 @@ Enter the course name or number:
 3
 input => course =  3
 Entered course 'Data Science' fee is Rs.70000.
-```
+"""
 
-## 14. Check whether a given string is a palindrome using a reverse function.
-```python
+#14. Check whether a given string is a palindrome using a reverse function.
 print()
 
 print("Enter the word to check whether it is a plaindrome or not:")
@@ -433,17 +393,15 @@ if word == reversed_word:
     print(f"The entered the word '{word}' is a plaindrome.")
 else:
     print(f"The entered the word '{word}' is not a plaindrome.")
-```
 
-```
+"""
 Enter the word to check whether it is a plaindrome or not:
 madam
 reversed_word:madam
-The entered the word 'madam' is a plaindrome.```
-```
+The entered the word 'madam' is a plaindrome.
+"""
 
-## 15. Check whether `x = 100` is an integer or a string using functions like `isinstance()` or `type()`.
-```python
+#15. Check whether `x = 100` is an integer or a string using functions like `isinstance()` or `type()`.
 print()
 
 x = 'hello'
@@ -459,20 +417,17 @@ if type(x) == int :
     print(f"{x} is an integer.")
 elif type(x) == str:
     print(f"{x} is a string.")
-```
 
-```
+"""
 Entered the value: hello
 hello is a string.
 hello is a string.
-```
+"""
 
-# 🎯 Control Statements:
-
-![](files/img7.jpeg)
-
-## 16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
-```python
+#########################################
+## 🎯 Control Statements
+#########################################
+#16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
 print()
 
 numbers = list(range(5,20))
@@ -489,17 +444,13 @@ for i in numbers:
 print(f"oddNumbers: {oddNumbers}")
 print(f"evenNumbers: {evenNumbers}")
 
-```
-
-```
+"""
 Numbers: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 oddNumbers: 5,7,9,11,13,15,17,19,
 evenNumbers: 6,8,10,12,14,16,18,
-```
+"""
 
-
-## 17. Write a while loop to loop from 0 till 21 with the increment of 3, the result should be exactly 3,6,9,12,15,18 and store this result in a list
-```python
+#17. Write a while loop to loop from 0 till 21 with the increment of 3, the result should be exactly 3,6,9,12,15,18 and store this result in a list
 print()
 
 x = 0
@@ -509,14 +460,12 @@ while x < 21 :
         result.append(x)
     x += 1
 print("result:",result)
-```
 
-```
+"""
 result: [3, 6, 9, 12, 15, 18]
-```
+"""
 
-## 18. Write a for or while loop to print the cube of 4, result should be 4*4*4=64 (initiate some variable outside the loop with 4 and loop through 3 times to achieve the result)
-```python
+#18. Write a for or while loop to print the cube of 4, result should be 4*4*4=64 (initiate some variable outside the loop with 4 and loop through 3 times to achieve the result)
 print()
 
 number = int(input("Enter the number:"))
@@ -527,17 +476,14 @@ while x <= cubeNumber:
     result = result * number
     x += 1
 print("result:",result)
-```
 
-```
+"""
 Enter the number:4
 Enter the cube number:4
 result: 256
-```
+"""
 
-## 19. Create a list as sal_lst=[10000,20000,30000,10000,15000], loop through the list and add 1000 bonus to the salary and store in another list sal_bonus_lst=[11000,21000,31000,11000,16000] then store the bonus applied salary in another list where sal>11000
-
-```python
+#19. Create a list as sal_lst=[10000,20000,30000,10000,15000], loop through the list and add 1000 bonus to the salary and store in another list sal_bonus_lst=[11000,21000,31000,11000,16000] then store the bonus applied salary in another list where sal>11000
 print()
 
 sal_lst=[10000,20000,30000,10000,15000]
@@ -554,16 +500,13 @@ for i in sal_lst:
 
 print("revised_sal_lst:",revised_sal_lst)
 print("sal_gt_11000:",sal_gt_11000)
-```
 
-```
+"""
 revised_sal_lst: [11000, 21000, 31000, 11000, 16000]
 sal_gt_11000: [21000, 31000, 16000]
-```
+"""
 
-## 20. Write a do while loop to print “Inception Technologies” n number of times as per the input you get from the user. Minimum it has to be printed at least one time regardless of the user input.
-
-```python
+#20. Write a do while loop to print “Inception Technologies” n number of times as per the input you get from the user. Minimum it has to be printed at least one time regardless of the user input.
 print()
 
 text = "Inception Technologies"
@@ -576,17 +519,14 @@ if nooftimes <= 0:
 while x <= nooftimes:
     print(text)
     x += 1
-```
 
-```
+"""
 How many times you want to print? 2
 Inception Technologies
 Inception Technologies
-```
+"""
 
-## 21. From the given list of list of elements produce the following output using nested for loop lst1=[[10,20],[30,40,50],[60,70,80]], calculate the sum of all number, calculate the min value and the max value of all the elements in the lst1.
-
-```python
+#21. From the given list of list of elements produce the following output using nested for loop lst1=[[10,20],[30,40,50],[60,70,80]], calculate the sum of all number, calculate the min value and the max value of all the elements in the lst1.
 print()
 
 startNumber = 10
@@ -623,17 +563,15 @@ for numbers in lst1:
 print("Sum of all numbers: ",allNumbers)
 print("Min value from the list: ",min(allNumbers))
 print("Max value from the list: ",max(allNumbers))
-```
 
-```
+"""
 lst1:  [[10, 20], [30, 40, 50], [60, 70, 80, 90]]
 Sum of all numbers:  [10, 20, 10, 20, 30, 40, 50, 30, 40, 50, 30, 40, 50, 60, 70, 80, 90, 60, 70, 80, 90, 60, 70, 80, 90, 60, 70, 80, 90]
 Min value from the list:  10
 Max value from the list:  90
-```
+"""
 
-## 22. Create a looping construct to print the multiplication table for 3 up to 10.
-```
+#22. Create a looping construct to print the multiplication table for 3 up to 10.
 print()
 
 tableOf=int(input("Which multiplication do you want? "))
@@ -643,9 +581,8 @@ upToSeq=1
 while upToSeq <= upToMax:
     print(f"{upToSeq} * {tableOf} = {upToSeq*tableOf}")
     upToSeq += 1
-```
 
-```
+"""
 Which multiplication do you want? 2
 Evaluate up to how many numbers? 5
 1 * 2 = 2
@@ -653,28 +590,12 @@ Evaluate up to how many numbers? 5
 3 * 2 = 6
 4 * 2 = 8
 5 * 2 = 10
-```
+"""
 
-# 🎯 Collections: List, Dictionary, Tuple and Set
-
-| | Feature | Python Example |
-| :--- | :--- | :--- |
-| **1.** | A collection is a **container data structure**. Collection or group of values that stored in a format for managing the complex data efficiently. | `my_collection = [1, 2, 3, 4, 5]` \# Create a collection (list) |
-| **2.** | It contains **zero or more elements**. | `print(my_collection)` \# Print the collection with 5 elements <br> `empty_collection = []` \# Create an empty collection <br> `print(empty_collection)` \# Print the empty collection |
-| **3.** | Collections provide a **higher-level abstraction** for working with data. | `print(len(my_collection))` \# Get the length of the collection <br> `print(max(my_collection))` \# Get the maximum value in the collection |
-| **4.** | They enable **declarative(SQL) programming**. | `double_values = [x * 2 for x in my_collection]` \# Declarative programming example <br> `print(double_values)` \# Print the doubled values |
-| **5.** | With an easy-to-use interface, they **eliminate the need to manually iterate or loop** through all the elements. | `print(sum(my_collection))` \# Get the sum of the collection without manual iteration |
-
-![](files/img7.jpg)
-
-<details>
-  <summary> Click to view the difference: </summary>
-  <img src="files/img8.png" alt="E2E Diagram">
-</details>
-
-
-## 23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
-```python
+##################################################
+## 🎯 Collections: List, Dictionary, Tuple, and Set
+##################################################
+#23. Create a list with a range of 10 values starting from 2 to 11 and prove mutability by updating the 3rd element with 100 and prove resizable properties by adding 100 in the 5th position.
 print()
 
 rangeList = list(range(2,11))
@@ -687,16 +608,14 @@ print("updated rangeList: ",rangeList)
 #Inserting a new value 100 in the 5th position
 rangeList.insert(4,100)
 print("resized rangeList: ",rangeList)
-```
 
-```
+"""
 rangeList:  [2, 3, 4, 5, 6, 7, 8, 9, 10]
 updated rangeList:  [2, 3, 100, 5, 6, 7, 8, 9, 10]
 resized rangeList:  [2, 3, 100, 5, 100, 6, 7, 8, 9, 10]
-```
+"""
 
-## 24. Create a tuple of 2 fields eg. ("Inception","Technologies","Pvt","Ltd"), prove immutability and non-resizable nature, access the 2nd and 4th fields and store in another tuple.
-```python
+#24. Create a tuple of 2 fields eg. ("Inception","Technologies","Pvt","Ltd"), prove immutability and non-resizable nature, access the 2nd and 4th fields and store in another tuple.
 print()
 
 namesTuple = ("Inception","Technologies","Pvt","Ltd")
@@ -713,14 +632,11 @@ for name in namesTuple:
     i += 1
 print("filteredNames: ",namesList)
 
-```
-
-```
+"""
 filteredNames:  ['Technologies', 'Ltd']
-```
+"""
 
-## 25. Convert the list of tuples [("Inception","Technologies"),("Apple","Incorporation")] to list of dictionary type, using for loop as given below [{"Inception":"Technologies"},{"Apple":"Incorporation"}] , once the list of dictionary is arrived print only "Incorporation" by passing "Apple" as a key using dict["Apple"] and dict.get("Apple") and try with dict["Apple1"] and dict.get("Apple1") then find the difference between get and using[] notation.
-```python
+#25. Convert the list of tuples [("Inception","Technologies"),("Apple","Incorporation")] to list of dictionary type, using for loop as given below [{"Inception":"Technologies"},{"Apple":"Incorporation"}] , once the list of dictionary is arrived print only "Incorporation" by passing "Apple" as a key using dict["Apple"] and dict.get("Apple") and try with dict["Apple1"] and dict.get("Apple1") then find the difference between get and using[] notation.
 print()
 
 listOfTuples = [("Inception","Technologies"),("Apple","Incorporation")]
@@ -752,9 +668,8 @@ print("dictOfTuples.get('Apple'): ",dictOfTuples.get("Apple"))
 print("dictOfTuples.get('Inception'): ",dictOfTuples.get("Inception"))
 print("dictOfTuples.get('Apple1'): ",dictOfTuples.get("Apple1"))
 print("dictOfTuples.get('Inception1'): ",dictOfTuples.get("Inception1"))
-```
 
-```
+"""
 dictOfTuples:  {'Inception': 'Technologies', 'Apple': 'Incorporation'}
 dictOfTuples['Apple']:  Incorporation
 dictOfTuples['Inception']:  Technologies
@@ -762,11 +677,9 @@ dictOfTuples.get('Apple'):  Incorporation
 dictOfTuples.get('Inception'):  Technologies
 dictOfTuples.get('Apple1'):  None
 dictOfTuples.get('Inception1'):  None
-```
+"""
 
-## 26. Create a list of tuple as given below and delete all duplicate tuples of the list  lst=[("Inceptez","Technologies"),("Apple","Incorporation"),("Inceptez","Technologies"),("Inceptez","Technologies")]
-```python
-
+#26. Create a list of tuple as given below and delete all duplicate tuples of the list  lst=[("Inceptez","Technologies"),("Apple","Incorporation"),("Inceptez","Technologies"),("Inceptez","Technologies")]
 print()
 
 lst=[("Inception","Technologies"),("Apple","Incorporation"),("Inception","Technologies"),("Inception","Technologies")]
@@ -781,23 +694,18 @@ OriginalList:  [('Inception', 'Technologies'), ('Apple', 'Incorporation'), ('Inc
 distinct_set:  {('Apple', 'Incorporation'), ('Inception', 'Technologies')}
 distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies')]
 """
-```
 
-## 27. Append a new tuple `("Intel", "Corp")` to the de-duplicated list.
-```python
+#27. Append a new tuple `("Intel", "Corp")` to the de-duplicated list.
 print()
 
 distinct_list.append(("Intel", "Corp"))
 print("distinct_list: ",distinct_list)
-```
 
-```
+"""
 distinct_list:  [('Apple', 'Incorporation'), ('Inception', 'Technologies'), ('Intel', 'Corp')]
-```
+"""
 
-## 28. Convert the lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}] to lst1=["Inception","Apple"] , think about using for loop, list() function, keys function and list append functions to achieve this.
-```python
-
+#28. Convert the lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}] to lst1=["Inception","Apple"] , think about using for loop, list() function, keys function and list append functions to achieve this.
 print()
 
 lst_dict= [{"Inception":"Technologies"},{"Apple":"Incorporation"}]
@@ -806,15 +714,13 @@ for item in lst_dict:
     for key,value in item.items():
         final_list.append(key)
 print("final_list: ",final_list)
-```
 
-```
+"""
 final_list:  ['Inception', 'Apple']
-```
+"""
 
 
-## 29. Create a list of values lst=[10,20,40,30,20], find the first, last values of the list, sort the list in ascending order, sort in descending order, print the minumum and maximum values of the descending sorted list, find the sum of all elements in the list, remove the number 30 and 20 from the list.
-```python
+#29. Create a list of values lst=[10,20,40,30,20], find the first, last values of the list, sort the list in ascending order, sort in descending order, print the minumum and maximum values of the descending sorted list, find the sum of all elements in the list, remove the number 30 and 20 from the list.
 print()
 
 lst = [10,20,40,30,20]
@@ -843,9 +749,7 @@ lst.remove(30)
 lst.remove(20)
 print(f"After remove the number 30 and 20 from the list: {lst}")
 
-```
-
-```
+"""
 Original List: [10, 20, 40, 30, 20]
 First value: 10 Last value: 20
 Sorted list ascending:  [10, 20, 20, 30, 40]
@@ -853,10 +757,9 @@ Sorted list decending:  [40, 30, 20, 20, 10]
 Minimum value: 10 Maximum value: 40
 Sum of all the elements: 120
 After remove the number 30 and 20 from the list: [40, 20, 10]
-```
+"""
 
-## 30. Perform the same operations from step 29 on a tuple `(10,20,40,30,20)`.
-```python
+#30. Perform the same operations from step 29 on a tuple `(10,20,40,30,20)`.
 print()
 
 lst = (10,20,40,30,20)
@@ -885,9 +788,7 @@ sorted_lst.remove(30)
 sorted_lst.remove(20)
 print(f"Final list: {sorted_lst}")
 
-```
-
-```
+"""
 Original List: (10, 20, 40, 30, 20)
 First value: 10 Last value: 20
 sorted_lst ascending: [10, 20, 20, 30, 40]
@@ -895,444 +796,55 @@ sorted_lst decending: [40, 30, 20, 20, 10]
 Min value: 10 Max value: 40
 Sum of all elements: 120
 Final list: [40, 20, 10]
-```
+"""
 
-## 31. Convert the string `"Inception Technologies Pvt Ltd"` to a list `['Inception', 'Technologies', 'Pvt', 'Ltd']`.
-```
+#31. Convert the string `"Inception Technologies Pvt Ltd"` to a list `['Inception', 'Technologies', 'Pvt', 'Ltd']`.
 print()
 
 name = "Inception Technologies Pvt Ltd"
 nameList = name.split(sep=" ")
 print("name: ",name)
 print("nameList: ",nameList)
-```
 
-## 32. Given:
-emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]  
+#32. Given
+"""
+    emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
 
-Perform:  
-a. Convert the first sublist to a tuple.  
-b. Reverse the first and last name of the second element.  
-c. Convert the entire list into tuples of tuples.  
-d. Calculate the total salary.  
-
-
-```python
-
+    Perform:
+    a. Convert the first sublist to a tuple.
+    b. Reverse the first and last name of the second element.
+    c. Convert the entire list into tuples of tuples.
+    d. Calculate the total salary.
+"""
 print()
 
 emplstlst = [["1", ("Arun","Kumar"), "10000"], ["2", ("Bala","Mohan"), "12000"]]
 
 # a. Convert the first sublist to a tuple.
 tupFirstList = tuple(emplstlst[0])
-print(f"First tuple sublist: ",tupFirstList) # ('1', ('Arun', 'Kumar'), '10000')
+print(f"First tuple sublist: ",tupFirstList)
 
 # b. Reverse the first and last name of the second element.
 secElement = sorted(emplstlst[1][1],reverse=True)
-print(f"secElement: {secElement}") # ['Mohan', 'Bala']
+print(f"secElement: {secElement}")
 
 # c. Convert the entire list into tuples of tuples.
-emplstlst_tuple = []
-for i in emplstlst:
-    emplstlst_tuple.append(tuple(i))
-emplstlst_tuple = tuple(emplstlst_tuple)
-print(f"emplstlst_tuple: {emplstlst_tuple}") # (('1', ('Arun', 'Kumar'), '10000'), ('2', ('Bala', 'Mohan'), '12000'))
+emplstlst_tuple = tuple(emplstlst)
+print(f"emplstlst_tuple: {emplstlst_tuple}")
 
 # d. Calculate the total salary.
 sal = 0
 for item in emplstlst:
     sal = sal + int(item[2])
 
-print(f"Total Sal: {sal}") # 22000
-```
-
-# 🎯 Functions:
-
-| S.No | Function Type               | Description                                                                             |
-|------|-----------------------------|-----------------------------------------------------------------------------------------|
-| 1    | Built-in Function           | Predefined Python functions available without importing anything.                       |
-| 2    | User-defined Function       | Functions created by programmers for reusable logic.                                    |
-| 3    | Lambda (Anonymous) Function | One-line anonymous functions used for short operations.                                 |
-| 4    | Recursive Function          | A function that calls itself until a stopping condition is met.                         |
-| 5    | Higher-Order Function       | Functions that accept or return other functions.                                        |
-| 6    | Generator Function          | Functions that yield values one at a time using `yield`.                                |
-| 7    | Async / Coroutine Function  | Functions that run asynchronously using `async` and `await`.                            |
-| 8    | Instance Method             | Methods that operate on object data using `self`.                                       |
-| 9    | Static Method               | Class-level methods that do not depend on object or class state.                        |
-| 10   | Class Method                | Methods that operate on the class using `cls`.                                          |
-| 11   | Dunder / Magic Method       | Special Python methods used internally (e.g., `__str__`).                               |
-| 12   | Partial Function            | Functions with pre-filled arguments using `functools.partial`.                          |
-| 13   | Callback Function           | Functions passed as arguments and executed by another function.                         |
-| 14   | Decorator Function          | Functions that modify or wrap another function’s behavior.                              |
-| 15   | Nested / Inner Function     | Functions defined entirely inside another function.                                     |
-| 16   | Closure Function            | Nested function that remembers and accesses variables from its outer (enclosing) scope. |
-
-## **Examples:**
-
-### **1. Built-in Function**
-
-```python
-# Predefined Python functions available without importing anything.
-# Real-time use case: Validate password length in login flow
-password = "MySecret123"
-length = len(password)
-print("Password length:", length)
-```
-
-
-
-### **2. User-defined Function**
-
-```python
-# Functions created by programmers for reusable logic.
-# Real-time use case: Billing system to calculate discount
-def calc_discount(price, discount):
-    return price - (price * discount / 100)
-
-print(calc_discount(1000, 10))
-```
-
-
-
-### **3. Lambda (Anonymous) Function**
-
-```python
-# One-line anonymous functions used for short operations.
-# Real-time use case: Data transformation in ETL pipelines
-square = lambda x: x * x
-print(square(9))
-```
-
-
-
-### **4. Recursive Function**
-
-```python
-# A function that calls itself until a stopping condition is met.
-# Real-time use case: Directory scanning / tree traversal
-def factorial(n):
-    if n == 0:
-        return 1
-    return n * factorial(n - 1)
-
-print(factorial(6))
-```
-
-
-
-### **5. `Higher-Order` Function**
-
-```python
-# Functions that accept or return other functions.
-# Real-time use case: Data cleaning using map/filter functions
-
-#Type 1:HOF is a function which takes another function as an input
-def to_upper(x):
-    return x.upper()
-
-names = ["ram", "sam", "nikhil"]
-result = list(map(to_upper, names))
-print(result)
-
-#Type 2:HOF is a function that return another function as a return type. Also called Partial or Currying function.
-def remote(a):
-    if a == 'power':
-        return 'switch off/on'
-    if a == 'settings':
-        def settings(x):
-            if (x =='audio'):
-                return 'Audio option selected.'
-            elif (x=='video'):
-                return 'Video option selected'
-            else:
-                return 'Invalid option.';
-        return settings
-
-print(remote('power'))     #switch off/on
-print(remote('settings'))  # <function remote.<locals>.settings at 0x1026d7740>
-print(remote('settings')('audio')) #Audio option selected.
-print(remote('settings')('color')) #Invalid option.
-```
-
-
-
-### **6. Generator Function**
-
-```python
-# Functions that yield values one at a time using yield.
-# Real-time use case: Streaming log file reading / large dataset iteration
-
-def generate_ids():
-    for i in range(1, 4):
-        yield i
-
-g = generate_ids()
-
-try:
-    print(next(g))
-    print(next(g))
-    print(next(g))
-    print(next(g))  # will raise
-except StopIteration:
-    print("Generator is exhausted")
-
-```
-
-
-
-### **7. `Async / Coroutine` Function**
-
-```python
-# Functions that run asynchronously using async and await.
-# Real-time use case: Making async API calls (e.g., microservices)
-
-"""
-It shows how two functions run at the same time (concurrently) using:
-async → defines an asynchronous function
-await → pauses only that function, not the whole program
-asyncio.gather() → runs multiple async tasks together
-asyncio.run() → starts the event loop and runs everything
-"""
-
-import asyncio,time
-
-async def fetch_data():
-    await asyncio.sleep(5)
-    return f"Data Ready at {time.strftime('%X %x %Z')}."
-
-async def process_data():
-    await asyncio.sleep(1)
-    return f"Processing Complete at {time.strftime('%X %x %Z')}."
-
-async def main():
-    # Run concurrently
-    result1, result2 = await asyncio.gather(
-        fetch_data(),
-        process_data()
-    )
-    print(result1, result2)
-
-#start = asyncio.get_event_loop().time()
-
-asyncio.run(main()) # Data Ready at 07:50:45 12/08/25 IST. Processing Complete at 07:50:41 12/08/25 IST.
-
-#end = asyncio.get_event_loop().time()
-#print(f"Total Time = {end - start:.2f} sec")   # ~3 seconds
-
-"""
-What asyncio.gather() does:
-    1. Starts fetch_data() and process_data() at the same time
-    2. Does NOT wait for one to finish before starting the other
-    3. Waits until both are complete
-    
-⏳Timings:
-    fetch_data → 3 seconds
-    process_data → 1 second
-    
-Since they run concurrently, total time = 3 seconds (the longest one)
-"""
-
-```
-
-
-### **8. Instance Method**
-
-```python
-# Methods that operate on object data using self.
-# Real-time use case: Object-oriented models (Car, Employee, Customer)
-
-class Person:
-    def instance_method(self):
-        return "I am an instance method"
-    
-p = Person()
-p.instance_method()
-```
-
-
-### **9. Static Method**
-
-```python
-# Class-level methods that do not depend on object or class state.
-# Real-time use case: Utility functions like unit conversion
-
-class Person:
-    @staticmethod
-    def static_method(a, b):
-        return a + b
-
-Person.static_method(10, 20)
-```
-
-
-### **10. Class Method**
-
-```python
-# Methods that operate on the class using cls.
-# Real-time use case: Creating objects from file/db records
-class Person:
-    population = 0
-
-    @classmethod
-    def class_method(cls):
-        return f"Total Persons = {cls.population}"
-
-Person.class_method()
-```
-
-
-### **11. Dunder / Magic Method**
-
-```python
-# Special Python methods used internally (e.g., __str__).
-# Python automatically calls these methods in specific situations (object creation, printing, comparisons, math operations, truth checks, iteration, etc.)
-# Real-time use case: Better logging/printing in enterprise apps
-
-class Person:
-    def __init__(self, name, age, salary):
-        """Called automatically when creating a new Person object"""
-        self.name = name
-        self.age = age
-        self.salary = salary
-
-    def __str__(self):
-        """Called when printing the object (user-friendly output)"""
-        return f"Person(name={self.name}, age={self.age})"
-
-    def __repr__(self):
-        """Developer-friendly representation used in debugging"""
-        return f"Person('{self.name}', {self.age}, {self.salary})"
-
-    def __len__(self):
-        """Defines behavior of len(person) — here we treat age as 'length'"""
-        return self.age
-
-    def __add__(self, other):
-        """Add salaries of two Person objects"""
-        return self.salary + other.salary
-
-    def __eq__(self, other):
-        """Compare two Person objects based on name & age"""
-        return self.name == other.name and self.age == other.age
-
-    def __bool__(self):
-        """Person is 'True' if salary > 0"""
-        return self.salary > 0
-
-    def __call__(self, greeting):
-        """Make the person object act like a function"""
-        return f"{greeting}, I am {self.name}"
-
-
-p1 = Person("Murali", 28, 50000)   # __init__
-print(p1)                          # __str__
-p1                                 # __repr__ (IT WORKS ONLY IN REPL/ITERATIVE MODE NOT IN SCRIPTS)
-print(len(p1))                     # __len__
-p2 = Person("Krishna", 30, 60000)
-total_salary = p1 + p2             # __add__ => Overload + operator
-print(total_salary)
-p3 = Person("Murali", 28, 70000)
-print(p1 == p3)                    # __eq__
-if p1:                             # __bool__
-    print("Valid employee")
-print(p1("Hello"))                 # __call__ => Make object behave like a function
-
-```
-
-
-### **12. Partial Function**
-
-```python
-# Functions with pre-filled arguments using functools.partial.
-# Real-time use case: Logging with a Predefined Prefix. Imagine you want to log messages with different tags like INFO, ERROR, DEBUG.
-
-# Without Partial Function:
-def log_messages(msg1,msg2,tag):
-    print(f"[{tag}] {msg1} {msg2}")
-
-log_messages("2025-12-07 01:05:02","Job started","INFO")
-log_messages("2025-12-07 02:05:02","Job completed with errors","ERROR")
-
-# With Partial to simplify:
-from functools import partial
-
-info_log = partial(log_messages, tag="INFO")
-error_log = partial(log_messages, tag="ERROR")
-
-info_log("2025-12-07 01:05:02","Application started....")
-error_log("2025-12-07 02:05:02","Application crashed....")
-```
-
-### **13. Callback Function**
-
-```python
-# Functions passed as arguments and executed by another function.
-# Real-time use case: Notification after an async task completes
-def notify():
-    print("Task Completed!")
-
-def execute(callback):
-    callback()
-
-execute(notify)
-```
-
-### **14. Decorator Function**
-
-```python
-# Functions that modify or wrap another function’s behavior.
-# Real-time use case: Logging, authentication, auditing wrappers
-def log(func):
-    def wrapper():
-        print("Before Execution")
-        func()
-        print("After Execution")
-    return wrapper
-
-@log
-def process():
-    print("Processing...")
-
-process()
-```
-
-
-### **15. Nested / Inner Function**
-
-```python
-# Functions defined entirely inside another function.
-# Real-time use case: Helper logic hidden within outer function
-def outer():
-    def inner():
-        print("Inner Called")
-    inner()
-
-outer()
-```
-
-### **16. `Closure` Function**
-purpose: 
-1.  A closure is a **nested function** that **remembers and accesses** variables from its outer (enclosing) scope.
-2.  It retains access to these variables **even after the outer function has finished execution**, making the data persistent.
-3.  This capability enables **data hiding** and allows the function to maintain state without using global variables or classes.
-
-```python
-def sal_hike(sal,hike):
-    salhike=sal+hike
-    def incentives(incentive):
-        return salhike+incentive
-    return incentives
-
-mainout = sal_hike(20000,2000) #salhike = 22000 and return incentives function
-print(mainout(1000)) # now calling incentives and salhike persistent value will be recused
-#or
-print(sal_hike(20000,2000) (1000)) #23000
-```
-
-## 33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
+print(f"Total Sal: {sal}")
+
+#########################################
+## 🎯 Functions
+#########################################
+#33. Write 'def' functions to make the above usecases (conditional from 11 to 15 and control statements 16 to 22) and the upcoming usecases more generic.
 
 ### 11. Write a program to find the greatest of three numbers.
-```python
 print()
 
 def max_of_three(a:int, b:int, c:int):
@@ -1351,19 +863,17 @@ def max_of_three(a:int, b:int, c:int):
         return f"[Exception] {e}"
 max_of_three(1,2,0) # Positional Argument Function Call
 max_of_three(a=1,b=2,c=0) # Named Argument Function Call
-```
 
-```
+"""
 a = 1 | b = 2 | c = 0
 {b} is greater than {a} and {c}
 Max of three - positional (1,2,0):  None
 a = 1 | b = 2 | c = 0
 {b} is greater than {a} and {c}
 Max of three - named (1,2,0):  None
-```
+"""
 
 ### 12. Write a single program to check if a number is even or negative and print the result as: “Even but not negative”, “Not even but negative”, “Neither even nor negative”
-```python
 print()
 
 def findout_even_odd_positive_negative(number:int):
@@ -1385,20 +895,18 @@ def findout_even_odd_positive_negative(number:int):
 numbers = [-2,-1,0,1,2]
 for i in numbers:
     print(findout_even_odd_positive_negative(i))
-```
 
-```
+"""
 The given number -2 is even and negative.
 The given number -1 is odd and negative.
 The given number 0 is zero.
 The given number 1 is odd and positive.
 The given number 2 is even and positive.
-```
+"""
 
 ### 13. Write a nested if then else to print the course fees - check if student choosing bigdata, then fees is 25000, if student choosing spark then fees is 15000, if the student choosing datascience then check if machinelearning then 25000 or if deep learning then 45000 otherwise if both then 25000+25000.
-
-```python
 print()
+
 
 def get_course_fee(course):
     '''Purpose: Get the course fee.'''
@@ -1452,9 +960,8 @@ print('''
 print("Enter the course name or number:")
 course = input()
 print(get_course_fee(course))
-```
 
-```
+"""
 1. BigData
 2. Spark
 3. DataScience
@@ -1465,10 +972,9 @@ print(get_course_fee(course))
 Enter the course name or number:
 3
 Course fee is 70000
-```
+"""
 
 ### 14. Check whether the given string is palindrome or not (try to use some function like reverse). For eg: x="madam" and y="madam", if x matches with y then print as "palindrome" else "not a  palindrome".
-```python
 print()
 
 def palindrome_check(word):
@@ -1493,17 +999,13 @@ def palindrome_check(word):
 word = "madam"  ##input()
 print(f"Plaindrome check is {palindrome_check(word)}")
 
-```
-
-```
+"""
 Entered Word: madam
 Reversed Word: madam
 Plaindrome check is True
-```
+"""
 
 ### 15. Check whether the x=100 is an integer or string. (try to use some functions like str or upper function etc to execute this use case) or use isinstanceof(variablename,datatype) function.
-
-```python
 print()
 
 def check_string_or_int(x):
@@ -1527,17 +1029,14 @@ print(f"Entered the value {check_string_or_int(x)}")
 x = 100
 print(f"Entered the value {check_string_or_int(x)}")
 
-```
-
-```
+"""
 hello is a string.
 Entered the value hello is a string.
 100 is an integer.
 Entered the value 100 is an integer.
-```
+"""
 
 ### 16. Write a program using for loop to print even numbers and odd numbers in the below range of data (generate using range function) [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] output should be with even as 6,8,10,12,14,16,18,20 and odd as 5,7,9,11,13,15,17,19.
-```python
 print()
 
 def find_odd_even_numbers(numbers:list):
@@ -1556,14 +1055,12 @@ def find_odd_even_numbers(numbers:list):
 
 numbers = list(range(5,20))
 print(find_odd_even_numbers(numbers))
-```
 
-```
+"""
 Odd numbers: 5,7,9,11,13,15,17,19, Even numbers: 6,8,10,12,14,16,18,
-```
+"""
 
 ### 17. Write a while loop to loop from 0 till 21 with the increment of 3, the result should be exactly 3,6,9,12,15,18 and store this result in a list
-```python
 print()
 
 def multiple_of_number(maxnumber:int):
@@ -1580,14 +1077,12 @@ def multiple_of_number(maxnumber:int):
         return f"Exception: {e}"
 
 print(multiple_of_number(maxnumber=21))
-```
 
-```
+"""
 [3, 6, 9, 12, 15, 18]
-```
+"""
 
 ### 18. Write a for or while loop to print the cube of 4, result should be 4*4*4=64 (initiate some variable outside the loop with 4 and loop through 3 times to achieve the result)
-```python
 print()
 
 def get_cube_value(number:int, cubeNumber:int):
@@ -1602,17 +1097,14 @@ def get_cube_value(number:int, cubeNumber:int):
 number = int(input("Enter the number: "))
 cubeNumber = int(input("Enter the cube number: "))
 print("result: ",get_cube_value(number,cubeNumber))
-```
 
-```
+"""
 Enter the number:2
 Enter the cube number:3
 result:  8
-```
+"""
 
 ### 19. Create a list as sal_lst=[10000,20000,30000,10000,15000], loop through the list and add 1000 bonus to the salary and store in another list sal_bonus_lst=[11000,21000,31000,11000,16000] then store the bonus applied salary in another list where sal>11000
-
-```python
 print()
 
 def get_revisied_salary(sal_lst:list):
@@ -1635,11 +1127,8 @@ def get_revisied_salary(sal_lst:list):
 sal_lst = [10000,20000,40000,50000]
 print("Salary List: ",sal_lst)
 print("Revised Salary List: ",get_revisied_salary(sal_lst=sal_lst))
-```
 
-### 20. Write a do while loop to print “Inception Technologies” n number of times as per the input you get from the user. Minimum it has to be printed at least one time regardless of the user input.
-
-```python
+## 20. Write a do while loop to print “Inception Technologies” n number of times as per the input you get from the user. Minimum it has to be printed at least one time regardless of the user input.
 print()
 
 def print_text(text:str,nooftimes:int):
@@ -1658,18 +1147,16 @@ def print_text(text:str,nooftimes:int):
         return f"Exception: {e}"
 
 print(print_text("Hello World!",5))
-```
 
-```
+"""
 Hello World!
 Hello World!
 Hello World!
 Hello World!
 Hello World!
-```
+"""
 
-### 21. From the given list of list of elements produce the following output using nested for loop lst1=[[10,20],[30,40,50],[60,70,80]], calculate the sum of all number, calculate the min value and the max value of all the elements in the lst1.
-```python
+## 21. From the given list of list of elements produce the following output using nested for loop lst1=[[10,20],[30,40,50],[60,70,80]], calculate the sum of all number, calculate the min value and the max value of all the elements in the lst1.
 print()
 
 def number_formatting(startNumber:int, incrementNumber:int, reqlist:list):
@@ -1706,19 +1193,16 @@ print("All numbers: ",allNumbers)
 print("Sum of all numbers: ",sum(allNumbers))
 print("Min value from the list: ",min(allNumbers))
 print("Max value from the list: ",max(allNumbers))
-```
 
-```
+"""
 lst1:  [[10, 20], [30, 40, 50], [60, 70, 80, 90]]
 All numbers:  [10, 20, 30, 40, 50, 60, 70, 80, 90]
 Sum of all numbers:  450
 Min value from the list:  10
 Max value from the list:  90
-```
+"""
 
-### 22. Create a looping construct to create 3 tables upto 10 values.
-
-```python
+## 22. Create a looping construct to create 3 tables upto 10 values.
 print()
 
 def multiplication_table(tableOf:int,upToMax:int):
@@ -1735,16 +1219,12 @@ def multiplication_table(tableOf:int,upToMax:int):
 
 result=multiplication_table(tableOf=5,upToMax=5)
 print(result)
-```
 
-## 34. Call the function from step 11 using both positional and keyword arguments.
-```python
+#34. Call the function from step 11 using both positional and keyword arguments.
 max_of_three(a=2,b=1,c=1000)
 max_of_three(200,1,100)
-```
 
-## 35. Write a calculator function that takes three parameters (`int`, `int`, `str`) to perform add/sub/mul/div. Default the 3rd argument to `"add"`.
-```python
+#35. Write a calculator function that takes three parameters (`int`, `int`, `str`) to perform add/sub/mul/div. Default the 3rd argument to `"add"`.
 print()
 
 def calculator(numbersList:list,oper:str='add/sub/mul/div'):
@@ -1782,18 +1262,15 @@ print("Addition [5,4,3,2,1] :",calculator(oper='ADD',numbersList=[5,4,3,2,1]))
 print("Subtraction [5,4,3,2,1] :",calculator(oper='SUB',numbersList=[5,4,3,2,1]))
 print("Multiplication [5,4,3,2,1] :",calculator(oper='MUL',numbersList=[5,4,3,2,1]))
 print("Division [5,4,3,2,1] :",calculator(oper='DIV',numbersList=[5,4,3,2,1]))
-```
 
-```
+"""
 Addition [5,4,3,2,1] : 15
 Subtraction [5,4,3,2,1] : -5
 Multiplication [5,4,3,2,1] : 120
 Division [5,4,3,2,1] : 0.008333333333333333
-```
+"""
 
-## 36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
-```python
-
+#36. Modify the calculator to return a tuple of all operations `(add, sub, mul, div)` when the 3rd argument is `"all"`.
 print()
 
 def calculator2(numbersList:list,oper:str='add/sub/mul/div/all'):
@@ -1844,17 +1321,16 @@ print("Multiplication [5,4,3,2,1] :",calculator2(oper='MUL',numbersList=[5,4,3,2
 print("Division [5,4,3,2,1] :",calculator2(oper='DIV',numbersList=[5,4,3,2,1]))
 print("All [5,4,3,2,1] :",calculator2(oper='ALL',numbersList=[5,4,3,2,1]))
 print("Add/Sub [5,4,3,2,1] :",calculator2(oper='add/sub',numbersList=[5,4,3,2,1]))
-```
 
-## 37. Write a function that accepts a string like `"inception technologies"` and returns:
+#37. Write a function that accepts a string like `"inception technologies"` and returns:
+"""
 * Capitalized
 * Uppercase
 * Length
 * Word count
 * Ends with “s” (True/False)
 * Replace ‘e’ with ‘a’
-
-```python
+"""
 print()
 
 def word_analysis(inputString:str):
@@ -1872,19 +1348,19 @@ def word_analysis(inputString:str):
         return f"Exception. {e}"
 
 print(word_analysis(inputString="inception technologies"))
-```
 
-```
+"""
 ['Capitalized: Inception technologies', 'Uppercase: INCEPTION TECHNOLOGIES', 'Length: 22', 'Word count: 2', "Ends with 's' True/False: True", "Replace 'e' with 'a': incaption tachnologias"]
-```
+"""
 
-## 38. Create a `promo` function with three parameters: `amount`, `offer_percent`, and `offer_cap_limit`. Apply the discount logic and return the final amount.
+#38. Create a `promo` function with three parameters: `amount`, `offer_percent`, and `offer_cap_limit`. Apply the discount logic and return the final amount.
+"""
 * a. Call with all parameters
 * b. Call using default parameter
 * c. Call using arbitrary arguments (`*args`)
 * d. Call using keyword arguments (`**kwargs`)
+"""
 
-```python
 def promo1(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
     """Purpose: Offer discount logic"""
     try:
@@ -1897,14 +1373,10 @@ def promo1(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
 
 print("promo1 a: amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10))
 print("promo1 b: amount=5000,offer_percent=10 => ",promo1(5000,10))
-```
-
-```
+"""
 promo1 a: amount=50000,offer_percent=10 =>  5000.0
 promo1 b: amount=5000,offer_percent=10 =>  500.0
-```
-
-```python
+"""
 
 def promo2(*args):
     """Purpose: Offer discount logic"""
@@ -1922,10 +1394,6 @@ def promo2(*args):
 
 print("promo2 c: amount=3000,offer_percent=10 => ",promo1(3000,10))
 
-```
-
-```python
-
 def promo3(**kwargs):
     """Purpose: Offer discount logic"""
     amount = kwargs["amount"]
@@ -1941,17 +1409,15 @@ def promo3(**kwargs):
         return f"Exception: {e}"
 
 print("promo3 a: amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10,offer_cap_limit=5000))
-```
 
-```
+"""
 promo1 a: amount=50000,offer_percent=10 =>  5000.0
 promo1 b: amount=5000,offer_percent=10 =>  500.0
 promo2 c: amount=3000,offer_percent=10 =>  300.0
 promo3 a: amount=50000,offer_percent=10 =>  5000.0
-```
+"""
 
-## 39. Create a lambda function with the logic of lam=amount-(amount*offer_percent) and create a regular function with the above same logic with 4 arguments to Calculate if amount*offer_percent < offer_cap_limit then return lam(amount,offer_percent) else return the amount-offer_cap_limit. Eg. Call this function like promo(1000,.10,200,lam) to ensure this is a higher order function
-```python
+#39. Create a lambda function with the logic of lam=amount-(amount*offer_percent) and create a regular function with the above same logic with 4 arguments to Calculate if amount*offer_percent < offer_cap_limit then return lam(amount,offer_percent) else return the amount-offer_cap_limit. Eg. Call this function like promo(1000,.10,200,lam) to ensure this is a higher order function
 lambda_function = lambda amount,offer_percent : amount - (offer_percent/100)
 
 def promo4(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
@@ -1965,32 +1431,28 @@ def promo4(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
         return f"Exception: {e}"
 
 print("promo4 amount=50000,offer_percent=10 => ",promo1(amount=50000,offer_percent=10,offer_cap_limit=5000))
-```
 
-```
+"""
 promo4 amount=50000,offer_percent=10 =>  5000.0
-```
+"""
 
-## 40. Recreate the function from step 38 entirely as a lambda expression.
-```python
+#40. Recreate the function from step 38 entirely as a lambda expression.
+
 promo_lambda_function = lambda amount,offer_percent,offer_cap_limit=100 : (lambda discount_amount : amount - discount_amount if discount_amount < offer_percent else amount - offer_cap_limit)(amount*(offer_percent/100))
 
 print("promo_lambda_function:: amount=50000,offer_percent=10 => ",promo_lambda_function(50000,10,5000))
-```
 
-```
+"""
 promo_lambda_function:: amount=50000,offer_percent=10 =>  45000
-```
-
-# 🎯 Exception Handling:
-
-![](files/img9.png)
-
-## 41. Apply exception handler code in the above usecase number 35 to achieve the followings
+"""
+#########################################
+## 🎯 Exception Handling
+#########################################
+#41. Apply exception handler code in the above usecase number 35 to achieve the followings
+"""
 a.  If the calculator function is called with either the first or second argument as non integer values then raise Exception and call the calculator function with the type casted value
 for eg. calc("10",20, "add") in the except block of the exception handler we have to call the same function as calc(int("10"),20, "add") and return the result to the calling environment.
-
-```python
+"""
 print()
 
 def calculator3(numbersList:tuple,oper:str='add/sub/mul/div/all'):
@@ -2044,15 +1506,13 @@ def calculator3(numbersList:tuple,oper:str='add/sub/mul/div/all'):
 
 print("Addition (5,4,3,2,1) :",calculator3(oper='ADD',numbersList=(5,4,3,2,1)))
 print("Addition ('5','4',3,2,1) :",calculator3(oper='ADD',numbersList=('5','4',3,2,1)))
-```
 
-```
+"""
 Addition (5,4,3,2,1) : ['Addition: 15']
 Addition ('5','4',3,2,1) : ['Addition: 15']
-```
+"""
 
-## 42. Write an exception handler code to raise exception if the 2nd argument passed is a negative value in the function created in step 38
-```python
+#42. Write an exception handler code to raise exception if the 2nd argument passed is a negative value in the function created in step 38
 print()
 
 def promo1ext(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000):
@@ -2070,25 +1530,20 @@ def promo1ext(amount:int = 1000,offer_percent:int = 5,offer_cap_limit:int = 5000
 print("promo1ext a: amount=50000,offer_percent=10 => ",promo1ext(amount=50000,offer_percent=10))
 print("promo1ext b: amount=5000,offer_percent=-10 => ",promo1ext(5000,-10))
 
-```
-
-```
+"""
 promo1ext a: amount=50000,offer_percent=10 =>  5000.0
 promo1ext b: amount=5000,offer_percent=-10 =>  Exception: -> Negative Number Entered
-```
+"""
 
 ## Additional Program #1: FoodApp Promotion Usecase:
-
-```
+"""
 FoodApp Promotion
 #Business req: minimum purchase cap (1000), discount percent 10% or max discount amt 200 rupees whichever is lower
 #Scenarios/test cases
 #Scenario1: amount of purchase = 2500, charge amount 2500-200=2300
 #Scenario2: amount of purchase = 1500, charge amount 1500-(1500*.10)= 1500-150 = 1350
 #Scenario3: amount of purchase = 900, charge amount 900 (no eligible offers)
-```
-
-```python
+"""
 print()
 
 def foodAppPromo(pur_amt:int, min_pur_amt:int=1000,discount_per:float=0.10,max_discount_amt:int=200):
@@ -2109,16 +1564,14 @@ print(foodAppPromo(pur_amt=2500))
 print(foodAppPromo(pur_amt=1500))
 print(foodAppPromo(pur_amt=900))
 
-```
-
-```
+"""
 Final discount amount is 2300 and discount applied 200.
 Final discount amount is 1350.0 and discount applied 150.0.
 Sorry. Minmum purchange amount must be 1000.
-```
+"""
 
 ## Additional Program #2: Create a method to calculate sal+bonus+incentives for different IT companies using either arbitrary keyword arg function
-```
+"""
 #Hewitt/HRworkways..
 #CTS, Infy, HCL calculate sal+bon+inc
 ## where CTS give all the 3 components
@@ -2129,9 +1582,7 @@ Sorry. Minmum purchange amount must be 1000.
 #calc_gross_sal(comp='INFY',sal=100000,bon=5) -> 105000
 #calc_gross_sal(comp='HCL',sal=100000) -> 100000
 from math import factorial
-```
-
-```python
+"""
 print()
 
 def gross_sal_cal(**kwargs):
@@ -2157,18 +1608,15 @@ print(gross_sal_cal(comp='CTS',sal=100000,bon=1000,inc=5000)) # 106000
 print(gross_sal_cal(comp='INFY',sal=100000,bon=500)) # 100500
 print(gross_sal_cal(comp='HCL',sal=100000)) # 100000
 
-```
-
 ## Additional Program #3: Can you create a method called calc_sal_bonus_incentive using closure concepts?
 
-```
+"""
 purpose: 
 1.  A closure is a **nested function** that **remembers and accesses** variables from its outer (enclosing) scope.
 2.  It retains access to these variables **even after the outer function has finished execution**, making the data persistent.
 3.  This capability enables **data hiding** and allows the function to maintain state without using global variables or classes.
-```
+"""
 
-```python
 def sal_hike (salary:int, hike:int):
     salaryhigh = salary + hike
     def bonus(percentage:float):
@@ -2181,667 +1629,27 @@ mainout_bouns, mainout_incentives = sal_hike(10000,1000)
 print(f"Salary with Incentive: {mainout_incentives(1000)}")
 print(f"Salary with Bonus: {mainout_bouns(0.10)}")
 
-```
-# 🎯 OOPS (Object Oriented Programming):
-
-| **S.No** | **Concept**                  | **Description**                               | **Example (Clean, No \n)**                                        |
-| -------- | ---------------------------- | --------------------------------------------- | ----------------------------------------------------------------- |
-| **1**    | **Class**                    | Blueprint for creating objects.               | `class Person: pass`                                              |
-| **2**    | **Object**                   | Instance created from a class.                | `p = Person()`                                                    |
-| **3**    | **Constructor (`__init__`)** | Initializes instance on object creation.      | `def __init__(self, name, age): self.name = name; self.age = age` |
-| **4**    | **Instance Variables**       | Unique to each object.                        | `self.salary = 50000`                                             |
-| **5**    | **Class Variables**          | Shared across all objects.                    | `company = "Infosys"`                                             |
-| **6**    | **Instance Method**          | Works on object data.                         | `def details(self): return f"{self.name} - {self.age}"`           |
-| **7**    | **Class Method**             | Works on class-level data.                    | `@classmethod def info(cls): return cls.company`                  |
-| **8**    | **Static Method**            | Utility method without self/cls.              | `@staticmethod def is_adult(age): return age >= 18`               |
-| **9**    | **Encapsulation**            | Hiding internal data with private variables.  | `self.__pin = 1234`                                               |
-| **10**   | **Abstraction**              | Hiding implementation using abstract classes. | `class Payment(ABC): @abstractmethod def pay(self): pass`         |
-| **11**   | **Single Inheritance**       | One parent class.                             | `class Employee(Person): pass`                                    |
-| **12**   | **Multiple Inheritance**     | Inherits from multiple parents.               | `class Manager(Person, Admin): pass`                              |
-| **13**   | **Multilevel Inheritance**   | Parent → Child → Grandchild.                  | `class Intern(Employee): pass`                                    |
-| **14**   | **Polymorphism**             | Same method → different behavior.             | `animal.speak()` (Dog/Cat)                                        |
-| **15**   | **Method Overriding**        | Child redefines parent method.                | `def speak(self): return "Bark"`                                  |
-| **16**   | **Magic / Dunder Methods**   | Special behavior methods.                     | `def __str__(self): return self.name`                             |
-| **17**   | **Composition**              | Strong “has-a” relationship.                  | `self.engine = Engine()`                                          |
-| **18**   | **Aggregation**              | Weak “has-a” relationship.                    | `emp = Employee(dept_obj)`                                        |
-| **19**   | **Operator Overloading**     | Custom operator behavior.                     | `def __add__(self, other): return self.salary + other.salary`     |
-| **20**   | **Private Members**          | Restricted access using `__`.                 | `self.__bank_balance = 90000`                                     |
-
----
-### **1️⃣ Class – Blueprint for objects**
-
-```python
-# NOTE: Classes act as templates for creating objects in real systems.
-# Real-time: A "User" class in an application.
-
-class Person:
-    pass  # Empty class – acts as a blueprint
-
-p = Person()
-print(p)
-
-# Notes:
-# - 'Person()' creates a new object in memory.
-# - Even without attributes, a class can still create objects.
-```
-
----
-
-### **2️⃣ Object – Instance created from a class**
-
-```python
-# Real-time: Creating multiple users from a User class.
-
-class Car:
-    pass
-
-c1 = Car()
-c2 = Car()
-
-print(id(c1), id(c2))
-
-# Notes:
-# - Each object gets a unique memory address.
-# - Two objects of same class can hold different data later.
-```
-
----
-
-### **3️⃣ Constructor (**init**) – Initializes objects**
-
-```python
-# Real-time: Creating a user with name & age in signup form.
-
-class Person:
-    def __init__(self, name, age):
-        # NOTE: Assigning instance variables
-        self.name = name
-        self.age = age
-
-p = Person("Murali", 30)
-print(p.name, p.age)
-
-# Notes:
-# - __init__ runs automatically during object creation.
-# - Good place to initialize default values.
-```
-
----
-
-### **4️⃣ Instance Variables – Unique per object**
-
-```python
-# Real-time: Each employee has a different salary.
-
-class Employee:
-    def __init__(self, name, salary):
-        self.name = name
-        self.salary = salary  # Instance variable
-
-emp = Employee("John", 80000)
-print(emp.salary)
-
-# Notes:
-# - Each object stores its own salary.
-# - Changing one object’s salary won't affect others.
-```
-
----
-
-### **5️⃣ Class Variables – Shared across all objects**
-
-```python
-# Real-time: Same company name for all employees.
-
-class Employee:
-    company = "Infosys"  # Class variable
-
-emp1 = Employee()
-emp2 = Employee()
-
-print(emp1.company, emp2.company)
-
-# Notes:
-# - Changing company at class-level affects all objects.
-```
-
----
-
-### **6️⃣ Instance Method**
-
-```python
-# Real-time: Displaying user profile.
-
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def details(self):
-        return f"{self.name} - {self.age}"
-
-p = Person("Ajay", 28)
-print(p.details())
-
-# Notes:
-# - Instance methods always take 'self'.
-```
-
----
-
-### **7️⃣ Class Method**
-
-```python
-# Real-time: Fetch company policy for all employees.
-
-class Employee:
-    company = "Infosys"
-
-    @classmethod
-    def get_company(cls):
-        return cls.company
-
-print(Employee.get_company())
-
-# Notes:
-# - Works on class-level data (cls).
-```
-
----
-
-### **8️⃣ Static Method**
-
-```python
-# Real-time: Utility validation method.
-
-class Utils:
-    @staticmethod
-    def is_adult(age):
-        return age >= 18
-
-print(Utils.is_adult(20))
-
-# Notes:
-# - No self or cls required.
-# - Used for helper/utility logic.
-```
-
----
-
-### **9️⃣ Encapsulation – Private Variables**
-
-```python
-# Real-time: ATM machine hides PIN internally.
-
-class Bank:
-    def __init__(self):
-        self.__pin = 1234  # private variable
-
-b = Bank()
-print(b._Bank__pin)   # Accessing via name-mangling
-
-# Notes:
-# - Python uses name-mangling to protect private members.
-```
-
----
-
-### **1️⃣0️⃣ Abstraction – Using abstract classes with default behavior**
-
-```python
-# Real-time: Payment gateway base class with common logic.
-
-from abc import ABC, abstractmethod
-
-class Payment(ABC):
-    @abstractmethod
-    def pay(self):
-        print("Common validation happens here...")
-
-class UPI(Payment):
-    def pay(self):
-        super().pay()  # calling base (optional)
-        return "Paid via UPI"
-
-p = UPI()
-print(p.pay())
-
-# Notes:
-# - Abstract classes force children to implement certain methods.
-# - Base class CAN contain common logic.
-```
-
----
-
-### **1️⃣1️⃣ Single Inheritance**
-
-```python
-# Real-time: Employee inherits basic person properties.
-
-class Person:
-    """
-    The Parent/Base Class: Defines common attributes and behavior.
-    """
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def introduce(self):
-        """A core method inherited by the child."""
-        return f"Hi, I'm {self.name} and I am {self.age} years old."
-
-class Employee(Person):
-    """
-    The Child/Derived Class: Inherits from Person and adds specific features.
-    """
-    def __init__(self, name, age, employee_id):
-        # Use super() to call the parent's __init__ method 
-        # to initialize the inherited 'name' and 'age' attributes.
-        super().__init__(name, age)
-        
-        # Add a new attribute unique to the Employee class
-        self.employee_id = employee_id
-
-    def greet_and_identify(self):
-        # Employee uses the inherited 'introduce' method
-        base_greeting = self.introduce()
-        
-        # Employee adds its own unique data
-        return f"{base_greeting} My ID is {self.employee_id}."
-
-# --- Demonstration ---
-
-new_employee = Employee(name="Alice", age=30, employee_id="EMP552")
-
-# The Employee object directly calls a method defined in the Parent (Person)
-print(f"1. Inherited Method: {new_employee.introduce()}")
-
-# The Employee object calls its own method, which relies on inherited features
-print(f"2. Child Method:     {new_employee.greet_and_identify()}")
-
-print(f"3. Inherited Attribute: Employee's age is {new_employee.age}")
-```
-
----
-
-### **1️⃣2️⃣ Multiple Inheritance**
-
-```python
-# Real-time: Intern inherits behaviour from Student & Employee.
-
-class Student:
-    """
-    Parent 1: Defines academic functionality and attributes.
-    """
-    def __init__(self, school_name):
-        self.school_name = school_name
-    
-    def study(self):
-        return f"Student: Actively studying at {self.school_name}."
-
-class Employee:
-    """
-    Parent 2: Defines professional functionality and attributes.
-    """
-    def __init__(self, employee_id):
-        self.employee_id = employee_id
-        
-    def work(self):
-        return f"Employee: Performing duties with ID {self.employee_id}."
-
-class Intern(Student, Employee):
-    """
-    Child Class: Inherits ALL features from both Student and Employee.
-    """
-    def __init__(self, school_name, employee_id, intern_name):
-        # 1. Initialize the first parent (Student) explicitly
-        Student.__init__(self, school_name) 
-        
-        # 2. Initialize the second parent (Employee) explicitly
-        Employee.__init__(self, employee_id)
-        
-        # 3. Initialize its own unique attribute
-        self.intern_name = intern_name
-
-    def daily_role_check(self):
-        print(f"--- Intern Profile: {self.intern_name} ---")
-        
-        # Calls method from Parent 1 (Student)
-        print(f"Role 1: {self.study()}") 
-        
-        # Calls method from Parent 2 (Employee)
-        print(f"Role 2: {self.work()}")
-        
-        return "The Intern fulfills both academic and professional requirements."
-
-# --- Demonstration ---
-
-new_hybrid = Intern(
-    school_name="Tech University", 
-    employee_id="INT2026", 
-    intern_name="Jamie Doe"
-)
-
-print(new_hybrid.daily_role_check())
-
-print("\n--- Direct Attribute Access ---")
-print(f"School Name (from Student): {new_hybrid.school_name}")
-print(f"Employee ID (from Employee): {new_hybrid.employee_id}")
-```
-
----
-
-### **1️⃣3️⃣ Multilevel Inheritance**
-
-```python
-# Real-time: Intern → Employee → Person.
-
-class Person:
-    """
-    🥇 Grandparent Class: Takes a foundational attribute.
-    """
-    def __init__(self, name):
-        self.name = name
-
-    def get_name(self):
-        return f"Person Name: {self.name}"
-
-class Employee(Person):
-    """
-    🥈 Parent Class: Inherits Person, adds a job-specific attribute.
-    """
-    def __init__(self, name, employee_id):
-        # 1. Call the parent's constructor (Person) to initialize 'name'
-        super().__init__(name)
-        self.employee_id = employee_id
-
-    def get_id(self):
-        return f"Employee ID: {self.employee_id}"
-
-class Intern(Employee):
-    """
-    🥉 Child Class: Inherits Employee, adds an Intern-specific attribute.
-    """
-    def __init__(self, name, employee_id, project_title):
-        # 2. Call the parent's constructor (Employee) to initialize 'name' and 'employee_id'
-        super().__init__(name, employee_id)
-        self.project_title = project_title
-
-    def profile_summary(self):
-        # The Intern object can access ALL attributes defined in the chain.
-        print(self.get_name())               # Method from Person
-        print(self.get_id())                 # Method from Employee
-        print(f"Project Title: {self.project_title}") # Attribute from Intern
-        return "Full profile generated successfully."
-
-# --- Demonstration ---
-
-# When creating the Intern, we must provide all three required parameters.
-intern_object = Intern(name="Alex Smith", employee_id="INT4021", project_title="Data Cleanup")
-
-print(intern_object.profile_summary())
-
-print("\n--- Direct Attribute Access ---")
-print(f"Name (from Person):   {intern_object.name}")
-print(f"ID (from Employee):     {intern_object.employee_id}")
-
-print(f"1. Is the Child an instance of Parent?      {isinstance(intern_object, Person)}")
-print(f"2. Is the Child an instance of Grandparent? {isinstance(intern_object, Employee)}")
-
-```
-
----
-
-### **1️⃣4️⃣ Polymorphism**
-
-```python
-# Real-time: fly() behaves differently for different objects.
-# The foundational classes
-
-class Eagle:
-    """An object that knows how to 'fly' and 'hunt'."""
-    def fly(self):
-        return "The Eagle soars high."
-
-    def hunt(self):
-        return "The Eagle spots its prey."
-
-class JetPlane:
-    """A completely different object that also knows how to 'fly'."""
-    def fly(self):
-        return "The JetPlane breaks the sound barrier."
-
-    def land(self):
-        return "The JetPlane touches down."
-
-
-# The Polymorphic Function
-def make_it_fly(flying_object):
-    """
-    This function accepts ANY object, as long as that object
-    implements a 'fly()' method.
-    """
-    print(flying_object.fly())
-
-# --- Demonstration ---
-
-eagle = Eagle()
-jet = JetPlane()
-
-print("--- Calling the polymorphic function 'make_it_fly()' ---")
-make_it_fly(eagle)  # The function works with an Eagle object
-make_it_fly(jet)    # The SAME function works with a JetPlane object
-```
-
----
-
-### **1️⃣5️⃣ Method Overriding**
-
-```python
-# Real-time: Child modifies parent behavior.
-
-class Animal:
-    """
-    The base class with a generic 'make_sound' behavior.
-    """
-    def make_sound(self):
-        # This is the original implementation
-        return "Generic animal sound"
-
-class Dog(Animal):
-    """
-    The child class that OVERRIDES the parent's make_sound method.
-    It provides its own specific implementation.
-    """
-    def make_sound(self):
-        # This new implementation replaces the parent's implementation
-        return "Woof! Woof!" 
-
-# --- Demonstration ---
-
-# 1. Instance of the Parent Class
-generic_animal = Animal()
-print(f"Animal sound: {generic_animal.make_sound()}")
-
-# 2. Instance of the Child Class
-my_dog = Dog()
-print(f"Dog sound:    {my_dog.make_sound()}") # Calls the OVERRIDDEN method
-```
-
----
-
-### **1️⃣6️⃣ Magic / Dunder Methods**
-
-```python
-# Real-time: __str__ improves readability in logs/APIs.
-
-class Person:
-    def __init__(self, name):
-        self.name = name
-
-    def __str__(self):
-        return f"Person({self.name})"
-
-print(Person("Murali"))
-
-# Notes:
-# - __str__ defines human-readable representation.
-```
-
----
-
-### **1️⃣7️⃣ Composition – Strong HAS-A**
-
-```python
-# Composition Example: Strong HAS-A Relationship
-# Real-time: A Car OWNS the Engine. Engine cannot exist without the Car.
-
-class Engine:
-    def __init__(self, horsepower):
-        self.horsepower = horsepower
-
-    def start(self):
-        return f"Engine with {self.horsepower} HP started."
-
-
-class Car:
-    def __init__(self, brand, horsepower):
-        self.brand = brand
-
-        # NOTE:
-        # - Car CREATES the Engine internally.
-        # - Engine lifecycle is tied to the Car.
-        # - If Car is deleted, Engine is deleted too.
-        self.engine = Engine(horsepower)
-
-    def drive(self):
-        return f"{self.brand} is driving. {self.engine.start()}"
-
-
-# Car creates the Engine — strong composition
-car = Car("Tesla", 500)
-
-print(car.drive())
-print(car.engine.start())   # Accessible because engine belongs to car
-
+#########################################
+## 🎯 Object-Oriented Programming (OOP)
+#########################################
+#43. Create a package named `python.usecases`.
 """
-Tesla is driving. Engine with 500 HP started.
-Engine with 500 HP started.
-"""
-
-```
-
----
-
-### **1️⃣8️⃣ Aggregation – Weak HAS-A**
-
-```python
-# Aggregation Example: Weak HAS-A Relationship
-# Real-time: Employee "uses" a Department object, 
-# but Department can exist independently (even without employees).
-
-class Department:
-    def __init__(self, dept_name, location):
-        self.dept_name = dept_name
-        self.location = location
-
-    def info(self):
-        return f"Department: {self.dept_name} ({self.location})"
-
-
-class Employee:
-    def __init__(self, name, dept):
-        # NOTE:
-        # - We are NOT creating the Department here.
-        # - We are REUSING an already existing Department object.
-        #   This is Aggregation.
-        self.name = name
-        self.dept = dept
-
-    def details(self):
-        return f"{self.name} works in {self.dept.dept_name}"
-
-
-# Department created independently
-dept_it = Department("IT", "Japan")
-
-# Employee "has" a department, but does not own its lifecycle
-emp = Employee("Jack", dept_it)
-
-print(emp.details())
-print(dept_it.info())    # Department still works independently
-
-"""
-Jack works in IT
-Department: IT (Japan)
-"""
-
-```
-
----
-
-### **1️⃣9️⃣ Operator Overloading**
-
-```python
-# Real-time: Adding salaries of two employees.
-
-class Employee:
-    def __init__(self, salary):
-        self.salary = salary
-
-    def __add__(self, other):
-        return self.salary + other.salary
-
-e1 = Employee(50000)
-e2 = Employee(30000)
-print(e1 + e2)
-
-# Notes:
-# - __add__ changes behavior of + operator.
-```
-
----
-
-### **2️⃣0️⃣ Private Members**
-
-```python
-# Real-time: Bank hides customer balance.
-
-class Account:
-    def __init__(self):
-        self.__balance = 5000
-
-a = Account()
-print(a._Account__balance)
-
-# Notes:
-# - Private members use name-mangling.
-# - Cannot be accessed directly as a.__balance.
-```
-
----
-
-
-## 43. Create a package named `python.usecases`.
-```
 python
     __init__.py  #Package initialization
     usecases
         __init__.py  # Sub Package initialization
+"""
 
-```
-
-## 44. Inside the package, create a module called `oops`.
-```
+#44. Inside the package, create a module called `oops`.
+"""
 python
     __init__.py  #Package initialization
     usecases
         __init__.py  # Sub Package initialization
         oops.py      # Module - actual programing file
+"""
 
-```
-## 45. Create two classes: `Mask` and `Endecode`.
-```python
+#45. Create two classes: `Mask` and `Endecode`.
 class Mask:
     def __init__(self):
         pass
@@ -2850,11 +1658,7 @@ class EnDecode:
     def __init__(self):
         pass
 
-```
-
-## 46. In the `Mask` class, define a private variable `addhash = 100` and a method `hashMask(str)` that returns the hash of `str + addhash`.
-
-```python
+#46. In the `Mask` class, define a private variable `addhash = 100` and a method `hashMask(str)` that returns the hash of `str + addhash`.
 class Mask:
     def __init__(self):
         try:
@@ -2869,11 +1673,7 @@ class Mask:
         except Exception as e:
             return f'[ExceptionOccured]{e}'
 
-```
-
-## 47. In the `Endecode` class, define private variable `prefixstr = "aix"` and a method `revEncode(str)` that returns `prefixstr + reverse(str)`.
-
-```python
+#47. In the `Endecode` class, define private variable `prefixstr = "aix"` and a method `revEncode(str)` that returns `prefixstr + reverse(str)`.
 class EnDecode:
     def __init__(self):
         try:
@@ -2898,10 +1698,9 @@ class EnDecode:
                 return "Unable to decode."
         except Exception as e:
             return f"Exception: {e}"
-```
 
-## 48. Create another module in the same package that instantiates objects `objmask` and `objendecode` for the respective classes.
-```python
+
+#48. Create another module in the same package that instantiates objects `objmask` and `objendecode` for the respective classes.
 from python.usecases.oops import Mask
 from python.usecases.oops import EnDecode
 
@@ -2909,9 +1708,7 @@ from python.usecases.oops import EnDecode
 objmask = Mask()
 objendecode = EnDecode()
 
-```
-## 49. Create a list `["alan", "jake", "charlie"]`, and use `map()` to apply `hashMask()` to all elements and print the results.
-```python
+#49. Create a list `["alan", "jake", "charlie"]`, and use `map()` to apply `hashMask()` to all elements and print the results.
 nameslist = ["Alan","Jake","Charlie"]
 print('Names:',nameslist)
 
@@ -2930,39 +1727,31 @@ print(hasMash_value_dict)
 #1.Getting Hash Mask Value:
 {'Alan': -6767629245512748524, 'Jake': 6013411149039668558, 'Charlie': 896875423019824000}
 """
-```
 
-## 50. Apply `revEncode()` on the same list using `map()` and print the encoded values.
-```python
+#50. Apply `revEncode()` on the same list using `map()` and print the encoded values.
 print('#2. Encode the Masked Value:')
 encoded_value_dict = {}
 for name, hashvalue in hasMash_value_dict.items():
     encoded_value_dict[name] = objendecode.revEncode(hashvalue)
     print(f"{name} = {encoded_value_dict[name]}")
-```
 
-```
+"""
 #2. Encode the Masked Value:
 Alan = aix4258472155429267676-
 Jake = aix8558669309411143106
 Charlie = aix000428910324578698
-```
+"""
 
-## 51. Add a method `revDecode()` inside the `Endecode` class to decode the values encoded in step 50.
-```python
+#51. Add a method `revDecode()` inside the `Endecode` class to decode the values encoded in step 50.
 print('#3. Decode the Encoded Value:')
 decoded_value_dict = {}
 for name, value in encoded_value_dict.items():
     decoded_value_dict[name] = objendecode.revDecode(value)
     print(f"{name} = {decoded_value_dict[name]}")
 
-```
-
-```
+"""
 #3. Decode the Encoded Value:
 Alan = -6767629245512748524
 Jake = 6013411149039668558
 Charlie = 896875423019824000
-```
-
-
+"""
