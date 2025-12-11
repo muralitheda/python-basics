@@ -2419,17 +2419,47 @@ print(p.pay())
 # Real-time: Employee inherits basic person properties.
 
 class Person:
-    def greet(self):
-        return "Hello!"
+    """
+    The Parent/Base Class: Defines common attributes and behavior.
+    """
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        """A core method inherited by the child."""
+        return f"Hi, I'm {self.name} and I am {self.age} years old."
 
 class Employee(Person):
-    pass
+    """
+    The Child/Derived Class: Inherits from Person and adds specific features.
+    """
+    def __init__(self, name, age, employee_id):
+        # Use super() to call the parent's __init__ method 
+        # to initialize the inherited 'name' and 'age' attributes.
+        super().__init__(name, age)
+        
+        # Add a new attribute unique to the Employee class
+        self.employee_id = employee_id
 
-e = Employee()
-print(e.greet())
+    def greet_and_identify(self):
+        # Employee uses the inherited 'introduce' method
+        base_greeting = self.introduce()
+        
+        # Employee adds its own unique data
+        return f"{base_greeting} My ID is {self.employee_id}."
 
-# Notes:
-# - Child inherits all parent methods.
+# --- Demonstration ---
+
+new_employee = Employee(name="Alice", age=30, employee_id="EMP552")
+
+# The Employee object directly calls a method defined in the Parent (Person)
+print(f"1. Inherited Method: {new_employee.introduce()}")
+
+# The Employee object calls its own method, which relies on inherited features
+print(f"2. Child Method:     {new_employee.greet_and_identify()}")
+
+print(f"3. Inherited Attribute: Employee's age is {new_employee.age}")
 ```
 
 ---
