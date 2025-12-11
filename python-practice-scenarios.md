@@ -2376,9 +2376,14 @@ print(Utils.is_adult(20))
 class Bank:
     def __init__(self):
         self.__pin = 1234  # private variable
+        
+    def check_pin(self,pin):
+        return self.__pin == pin # Safe way to check the pin
 
 b = Bank()
-print(b._Bank__pin)   # Accessing via name-mangling
+
+print(b.check_pin(1234)) # Safest way   
+print(b._Bank__pin) # Accessing via name-mangling (not recommented since it will defeat the purpose of polymorphism)
 
 # Notes:
 # - Python uses name-mangling to protect private members.
