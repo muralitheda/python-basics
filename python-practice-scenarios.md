@@ -2507,20 +2507,33 @@ for animal in (Dog(), Cat()):
 ### **1️⃣5️⃣ Method Overriding**
 
 ```python
-# Real-time: Child modifies parent behavior.
 
-class Vehicle:
-    def move(self):
-        return "Vehicle moves"
+class Animal:
+    """
+    The base class with a generic 'make_sound' behavior.
+    """
+    def make_sound(self):
+        # This is the original implementation
+        return "Generic animal sound"
 
-class Car(Vehicle):
-    def move(self):
-        return "Car drives"
+class Dog(Animal):
+    """
+    The child class that OVERRIDES the parent's make_sound method.
+    It provides its own specific implementation.
+    """
+    def make_sound(self):
+        # This new implementation replaces the parent's implementation
+        return "Woof! Woof!" 
 
-print(Car().move())
+# --- Demonstration ---
 
-# Notes:
-# - Parent method is replaced in child class.
+# 1. Instance of the Parent Class
+generic_animal = Animal()
+print(f"Animal sound: {generic_animal.make_sound()}")
+
+# 2. Instance of the Child Class
+my_dog = Dog()
+print(f"Dog sound:    {my_dog.make_sound()}") # Calls the OVERRIDDEN method
 ```
 
 ---
